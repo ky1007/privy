@@ -24,17 +24,14 @@
 ### Goals
   * GET /api/entries/goals/
   * GET /api/entries/goals/:id
-  * POST /api/entries
-goals/  * PATCH /api/entries/goals/:id
+  * POST /api/entries/goals/
+  * PATCH /api/entries/goals/:id
   * DELETE /api/entries/goals/:id
 
 ### Comments
   * POST /api/stories/:story_id/comments
   * PATCH /api/comments/:id
   * DELETE /api/comments/:id
-
-### Topics
-  * GET /api/topics
 
 ### Likes
   * POST /api/likes/
