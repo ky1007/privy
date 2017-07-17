@@ -59,7 +59,8 @@ the API.
 **Objective:** Day to catch up if behind or work on bonus features
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
+- [ ] Topics/catagories
+- [ ] Bookmarks
+- [ ] Search functionality
 - [ ] Multiple sessions
+- [ ] Quickly fill out entry entry forms via a smooth Typeform-inspired interface
