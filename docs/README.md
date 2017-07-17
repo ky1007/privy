@@ -18,17 +18,11 @@ By the end of two weeks this app will, at a minimum, satisfy the following crite
 
 
 ## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
-
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+* [View Wireframes](wireframes/all_frames.md)
+* [API endpoints](api_endpoints.md)
+* [React Components](component_hierarchy.md)
+* [Sample State](sample_state.md)
+* [DB Schema](schema.md)
 
 
 ## Implementation Timeline
@@ -37,7 +31,7 @@ By the end of two weeks this app will, at a minimum, satisfy the following crite
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Journal Entry Model, API, and components (2 days)
+### Phase 2: Journal Entry and Goal Model, API, and components (2 days)
 
 **Objective:** Journal entries (posts) can be created, read, edited and destroyed through
 the API.
@@ -63,4 +57,4 @@ the API.
 - [ ] Bookmarks
 - [ ] Search functionality
 - [ ] Multiple sessions
-- [ ] Quickly fill out entry entry forms via a smooth Typeform-inspired interface
+- [ ] Quickly fill out journal entry via a smooth Typeform-inspired interface
