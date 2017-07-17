@@ -2,15 +2,20 @@
   currentUser: {
     id: 1,
     pseudonym: "sample_name",
+    biography: "I come from afar",
+    country: "",
+    age: "",
+    race: "",
     image_url:"",
     follows: boolean
   },
   userProfile: {
     id:
     pseudonym: "",
+    biography: "",
     image_url: "",
-    country: ""
-    age: ""
+    country: "",
+    age: "",
     race: ""
   }
   errors: [],
@@ -25,6 +30,7 @@
       image_url: "",
       writer: {
         pseudonym: "",
+        biography: "",
         image_url: "",
       }
     },
@@ -38,6 +44,7 @@
       image_url: "",
       writer: {
         pseudonym: "",
+        biography: "",
         image_url: "",
       }
     }
@@ -86,6 +93,7 @@ entry: {
     image_url: ""
     writer {
       pseudonym: "",
+      biography: "",
       image_url: "",
       country: "",
       age: "",
