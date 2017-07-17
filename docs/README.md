@@ -18,9 +18,9 @@ By the end of two weeks this app will, at a minimum, satisfy the following crite
 
 
 ## Design Docs
-* [View Wireframes](wireframes/all_frames.md)
+* [View Wireframes](wireframes/)
 * [API endpoints](api_endpoints.md)
-* [React Components](component_hierarchy.md)
+* [React Components](components.md)
 * [Sample State](sample_state.md)
 * [DB Schema](schema.md)
 
