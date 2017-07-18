@@ -23,7 +23,7 @@
 | improvements        | text      |            |
 | goal_id        | text      |            |
 | writer_id   | integer   | not null, indexed     |
-| image_url   | string    | not null              |
+| image_url   | string    |              |
 
 
 | COMMENTS     |           |                       |
@@ -42,7 +42,6 @@
 | first        | string    |      |
 | second        | string    |      |
 | third        | string    |      |
-| order        | integer    |      |
 | done        | boolean    |      |
 
 

@@ -36,7 +36,7 @@ By the end of two weeks this app will, at a minimum, satisfy the following crite
 **Objective:** Journal entries (posts) can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Comments (2 days)
+### Phase 3: Comments (2 days)2
 
 **Objective:** Comments belong to Journals entries that can be created, read, edited and destroyed through the API.
 

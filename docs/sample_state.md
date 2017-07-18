@@ -1,4 +1,4 @@
-{
+```{
   currentUser: {
     id: 1,
     pseudonym: "sample_name",
@@ -119,4 +119,4 @@ entry: {
       }
     }
   }
-}
+}```
