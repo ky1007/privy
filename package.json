@@ -2,7 +2,8 @@
   "name": "Privy",
   "private": true,
   "scripts": {
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
@@ -18,5 +19,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.3.0"
+  },
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
   }
 }
