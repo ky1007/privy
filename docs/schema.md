@@ -21,7 +21,7 @@
 | general        | text      | not null              |
 | gratitude        | text      |            |
 | improvements        | text      |            |
-| goal_id        | text      |            |
+| goal_id        | integer      |            |
 | writer_id   | integer   | not null, indexed     |
 | image_url   | string    |              |
 

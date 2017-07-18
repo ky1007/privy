@@ -1,6 +1,7 @@
 ```json{
   currentUser: {
     id: 1,
+    username: "";
     pseudonym: "sample_name",
     biography: "I come from afar",
     country: "",
@@ -11,6 +12,7 @@
   },
   userProfile: {
     id:
+    username: "";
     pseudonym: "",
     biography: "",
     image_url: "",
@@ -29,6 +31,7 @@
       improvements: "I would focused more on caching.",
       image_url: "",
       writer: {
+        username: "";
         pseudonym: "",
         biography: "",
         image_url: "",
@@ -43,6 +46,7 @@
       improvements: "Wish I chose the squeaker for Breakfast instead.",
       image_url: "",
       writer: {
+        username: "";
         pseudonym: "",
         biography: "",
         image_url: "",
@@ -92,6 +96,7 @@ entry: {
     improvements: "",
     image_url: ""
     writer {
+      username: "";
       pseudonym: "",
       biography: "",
       image_url: "",
