@@ -1,10 +1,18 @@
 $type-scale-large: (
-  h1: 6.911rem,
-  h2: 2.941rem,
-  h3: 1.911rem,
+  h1: 9rem,
+  h2: 2.1rem,
+  h3: 1.8rem,
   h4: 1.663rem,
   p: 1.25rem
 );
+
+// $type-scale-large: (
+//   h1: 6.911rem,
+//   h2: 2.941rem,
+//   h3: 1.911rem,
+//   h4: 1.663rem,
+//   p: 1.25rem
+// );
 
 /* 
  * Modular scale
@@ -86,36 +94,6 @@ h3 {
   display: block;
 }
 
-form {
-  padding-top: 6px;
-}
-
-input {
-  margin-left: 4px;
-  border: 0;
-  -webkit-appearance: none;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 4px;
-  text-align: center;
-}
-
-.session-button {
-  background-color: $yellow;
-  border: 0px solid #333;
-  padding: 8px;
-  margin: 2px;
-  text-decoration: none;
-  text-transform: capitalize;
-  width: 100%;
-  cursor: hand;
-  cursor: pointer;
-}
-
-.session-button:hover {
-  background-color: $dark-yellow;
-}
-
 a {
   text-decoration: none;
   color: green;
@@ -128,5 +106,5 @@ a {
 }
 
 .alt-session {
-  font-size: .8em;
+  @include size(p);
 }

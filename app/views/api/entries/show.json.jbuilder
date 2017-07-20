@@ -1,0 +1,1 @@
+json.partials! "api/entries/show", entry: @entry

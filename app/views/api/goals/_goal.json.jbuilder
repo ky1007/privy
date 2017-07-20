@@ -1,0 +1,1 @@
+json.extract! goal, :id, :body, :done, :entry_id
