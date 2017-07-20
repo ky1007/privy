@@ -1,0 +1,49 @@
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;   
+  font-size: 6em; 
+}
+
+h3 { 
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold; 
+}
+
+.tagline {
+  font-size: 1.4em;
+  font-family: 'Rubik', sans-serif;
+  line-height: 3px;
+  font-weight: light;
+  padding-bottom: 30px;
+}
+
+input {
+  margin-left: 4px;
+  border: 0;
+  -webkit-appearance: none;
+  border-bottom: 1px solid black;
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+button {
+  background-color: #FFEA18; /* Green */
+  border: 0px solid black;
+  padding: 8px;
+  margin: 2px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.session-button {
+  color: #333;
+} 
+
+a {
+  text-decoration: none;
+  color: green;
+}

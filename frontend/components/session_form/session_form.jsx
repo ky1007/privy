@@ -1,2 +1,83 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+class SessionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    } 
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = this.state;
+    this.props.processForm({ user });
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value,
+    });
+  }
+
+  renderErrors() {
+    const { errors } = this.props;
+    if (errors) {
+      return (
+        <ul className="sessionErrors">
+          {errors.map((error, idx) => (
+            <li key={`error=${idx}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return (<div />);
+    }
+  }
+
+  render() {
+    const { username, password } = this.state;
+    const { formType } = this.props;
+    const sessionAction = (formType === 'login') ? 'Login' : 'Sign Up';
+
+    return (
+      <div>
+        <h3>{sessionAction}</h3>
+        <form>
+          {this.renderErrors()}
+          <label>
+          <input type="text" value={username} placeholder="username" onChange={this.update('username')} /></label>
+          
+          <br />
+          
+          <label>
+          <input type="password" value={password} placeholder="password" onChange={this.update('password')} /></label>
+
+          <br />
+
+          <button onClick={this.handleSubmit}>Go</button>
+        </form>
+      </div>
+    );
+  }
+
+}
+
+export default SessionForm;
+// export default withRouter(SessionForm);

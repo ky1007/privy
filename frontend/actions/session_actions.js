@@ -3,20 +3,35 @@ import merge from 'lodash/merge';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERROR = 'RECEIVE_ERROR';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
+export const receiveCurrentUser = currentUser => ({
+  type: RECEIVE_CURRENT_USER,
+  currentUser,
+});
+
+export const receiveError = errors => ({
+  type: RECEIVE_ERROR,
+  errors,
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS,
+});
 
 export const login = userData => dispatch => (
   APIUtil.login(userData).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveError(err.responseJSON))
   ))
 );
 
 export const signup = userData => dispatch => (
-  APIUtil.login(userData).then(user => (
+  APIUtil.signup(userData).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveError(err.responseJSON))
   ))
 );
 
@@ -25,13 +40,3 @@ export const logout = () => dispatch => (
     dispatch(receiveCurrentUser(null))
   ))
 );
-
-export const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
-  currentUser
-});
-
-export const receiveError = error => ({
-  type: RECEIVE_ERROR,
-  error
-});
