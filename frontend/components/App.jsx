@@ -9,10 +9,9 @@ const App = () => (
   <div className="main-container">
 
     <div className="welcome-container">
-      <header className="intro">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker|Grand+Hotel|Rubik:300,700" rel="stylesheet" />      
+      <header className="intro">   
         <h1>Privy</h1>
-        <span className="tagline">journal and reflect on your day, share your day's experience anonymously. Read about others' experiences.</span>
+        <span className="tagline"><span className="JJ">J</span>ournal and reflect on your day, share your day&#39;s experience anonymously. Read about others&#39; experiences.</span>
         <GreetingContainer />
       </header>
 

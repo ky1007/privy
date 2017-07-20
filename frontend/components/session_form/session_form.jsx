@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class SessionForm extends React.Component {
     const sessionAction = (formType === 'login') ? 'Login' : 'Sign Up';
 
     return (
-      <div>
+      <div className="session-form">
         <h3>{sessionAction}</h3>
         <form>
           {this.renderErrors()}

@@ -11,6 +11,7 @@ body {
   margin: 0 auto;
 }
 
+/* -- HOME PAGE ---  */
 .welcome-container {
   display: flex;
   flex-direction: row;
@@ -21,13 +22,21 @@ body {
 .intro {
   flex: 2;
   padding-left: 80px;
+  padding-top: 40px;
   /* border: 1px solid black; */
 }
 
 .session-form-container {
   flex: 1;
   padding: 90px 12px 0 30px;
+  margin: 0 auto;
+  text-align: center;
   /* border: 1px solid black; */
+}
+
+.session-form {
+  max-width: 142px;
+  text-align: center;
 }
 
 

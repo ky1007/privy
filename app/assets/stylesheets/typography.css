@@ -5,12 +5,14 @@ body {
 h1 {
   font-family: 'Permanent Marker', cursive;   
   font-size: 6em; 
+  margin-bottom: -8px;
 }
 
 h3 { 
   font-family: 'Rubik', sans-serif;
   font-size: 1.2em;
   font-weight: bold; 
+  margin-left: 3px;
 }
 
 .tagline {
@@ -18,32 +20,38 @@ h3 {
   font-family: 'Rubik', sans-serif;
   line-height: 3px;
   font-weight: light;
-  padding-bottom: 30px;
+}
+
+form {
+  padding-top: 6px;
 }
 
 input {
   margin-left: 4px;
   border: 0;
   -webkit-appearance: none;
-  border-bottom: 1px solid black;
-  padding: 6px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
   margin-bottom: 4px;
+  text-align: center;
 }
 
 button {
-  background-color: #FFEA18; /* Green */
-  border: 0px solid black;
+  background-color: #FFEA18;
+  border: 0px solid #333;
   padding: 8px;
   margin: 2px;
   text-decoration: none;
   text-transform: capitalize;
+  width: 100%;
 }
-
-.session-button {
-  color: #333;
-} 
 
 a {
   text-decoration: none;
   color: green;
+}
+
+.sessionErrors {
+  font-size: .8em;
+  color: red;
 }
