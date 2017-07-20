@@ -27,6 +27,15 @@
 | public   | boolean    |    not null        |
 
 
+| GOALS     |           |                       |
+|--------------|-----------|-----------------------|
+| column name  | data type | details               |
+| id           | integer   | not null, primary key |
+| body        | string    |   not null   |
+| done        | boolean    |    not null  |
+| entry_id        | integer    |   not null, indexed   |
+
+
 | COMMENTS     |           |                       |
 |--------------|-----------|-----------------------|
 | column name  | data type | details               |
@@ -34,17 +43,6 @@
 | writer_id    | integer   | not null, indexed     |
 | entry_id     | integer   | not null, indexed     |
 | body         | text      | not null              |
-
-
-| GOALS     |           |                       |
-|--------------|-----------|-----------------------|
-| column name  | data type | details               |
-| id           | integer   | not null, primary key |
-| first        | string    |      |
-| second        | string    |      |
-| third        | string    |      |
-| done        | boolean    |      |
-| order        | integer    |      |
 
 
 | LIKES       |           |                       |

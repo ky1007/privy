@@ -1,79 +1,87 @@
+```json
 {
   session: {
     // The user that is signed in
     currentUser: {
-      email: "this@this.com",
-      name: "First Last"
+      id: 1,
+      username: "thisisausername",
+      email: "this@isanemail.com",
+      bio: "thisisabio",
+      image_url: "https://heyhey.com/hey.jpg",
+      age: 73,
+      country: "United Kingdom",
+      state: "thisisastate",
+      race: "thisisarace",
     },
     // Any errors that need to be displayed
     errors: []
   },
 
   entries: {
-    // All entries the currentUser has written
-    all_entries: {
-      1: {
-        name: "Team 1",
-        id: 1
-      }
-    },
-    // Current team being viewed
-    current: {
-      name: "Team 1",
-      id: 1
-    }
-  },
-
-  users: {
-    // All Users in the current(Team)
+    // All Users that match the search criteria
     all_users: {
       1: {
-        email: "this@this.com",
-        name: "First Last"
+        id: 1,
+        username: "thisisausername",
+        email: "this@isanemail.com",
+        bio: "thisisabio",
+        image_url: "https://heyhey.com/hey.jpg",
+        age: 73,
+        country: "United Kingdom",
+        state: "thisisastate",
+        race: "thisisarace",
       }
     },
     // Current user profile being viewed (only other users)
     current: {
-      email: "this@this.com",
-      name: "First Last"
+      id: 1,
+      username: "thisisausername",
+      email: "this@isanemail.com",
+      bio: "thisisabio",
+      image_url: "https://heyhey.com/hey.jpg",
+      age: 32,
+      country: "United Kingdom",
+      state: "thisisastate",
+      race: "thisisarace",
     }
   },
 
-  projects: {
-    // All projects for current(Team)
-    all_projects: {
+  goals: {
+    // All goals for current(Entry)
+    all_goals: {
       1: {
-        title: "title",
-        id: 1
+        id: 1,
+        body: "this is my goal",
+        done: true,
+        entry_id: 1
       }
     },
-    // Current project being viewed
+    // Current goal being viewed
     current: {
-      title: "title",
-      id: 1
+      id: 1,
+      body: "this is my goal",
+      done: tru,
+      entry_id: 1
     }
   }
 
-  tasks: {
-    // All tasks connected to current(Project)
-    all_tasks: {
+  comments: {
+    // All comments connected to current(Entry)
+    all_comments: {
       1: {
-        title: "title",
-        completed: false,
-        project_id: 1,
-        assignee_id: 1
+        id: 1,
+        body: "",
+        entry_id: 1,
+        writer_id: 1
       }
     },
-    // Current task being viewed
+    // Current comment being viewed
     current: {
-      title: "title",
-      description: "description",
-      creator_id: 1,
-      assignee_id: 1,
-      project_id: 1,
-      completed: false,
-      created_at: DATE,
-      assigned_at: DATE
+      id: 1,
+      body: "",
+      entry_id: 1,
+      writer_id: 1
     }
   }
 }
+```
