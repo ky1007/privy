@@ -1,3 +1,58 @@
+$type-scale-large: (
+  h1: 6.911rem,
+  h2: 2.941rem,
+  h3: 1.911rem,
+  h4: 1.663rem,
+  p: 1.25rem
+);
+
+/* 
+ * Modular scale
+ * http://www.modularscale.com/?1.25&em&1.25&web&text
+*/
+
+$type-scale-medium: (
+  h1: 3.052rem,
+  h2: 2.441rem,
+  h3: 1.953em,
+  h4: 1.563rem,
+  p: 1.25rem,
+);
+
+
+/* 
+ * Modular scale
+ * http://www.modularscale.com/?1.1&em&1.25&web&text
+*/
+
+$type-scale-small: (
+  h1: 2.686rem,
+  h2: 2.148rem,
+  h3: 1.719rem,
+  h4: 1.375rem,
+  p: 1.1rem
+);
+
+
+$breakpoint-medium: 75em;
+$breakpoint-small: 45em;
+
+@mixin size($level) {
+  font-size: map-get($type-scale-large, $level);
+  @media (max-width: $breakpoint-medium) {
+     font-size: map-get($type-scale-medium, $level);
+  }
+  @media (max-width: $breakpoint-small) {
+     font-size: map-get($type-scale-small, $level);
+  }
+}
+
+// Example
+
+.title {
+  @include size(h1);
+}
+
 body {
   font-family: $base-font, sans-serif;
   font-weight: 300;
@@ -5,15 +60,17 @@ body {
 
 h1 {
   font-family: $logo-font, cursive;   
-  font-size: 6em; 
+  // font-size: 6em; 
   margin-bottom: -11px;
+  @include size(h1);
 }
 
 h3 { 
   font-family: 'Rubik', sans-serif;
-  font-size: 1.2em;
+  // font-size: 1.2em;
   font-weight: bold; 
   margin-left: 3px;
+  @include size(h3);
 }
 
 .tagline {
@@ -21,6 +78,7 @@ h3 {
   font-family: $base-font, sans-serif;
   line-height: 1.3em;
   font-weight: light;
+  @include size(h3);
 }
 
 .intro p {
