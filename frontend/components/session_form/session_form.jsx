@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
     const { errors } = this.props;
     if (errors) {
       return (
-        <ul className="sessionErrors">
+        <ul className="session-errors">
           {errors.map((error, idx) => (
             <li key={`error=${idx}`}>
               {error}
@@ -56,10 +56,14 @@ class SessionForm extends React.Component {
     const { username, password } = this.state;
     const { formType } = this.props;
     const sessionAction = (formType === 'login') ? 'Login' : 'Sign Up';
+    const oppSessionAction = (formType === 'login') ? 'sign up' : 'login';
+    const oppSessLink = (formType === 'login') ? '/signup' : '/login';
 
     return (
       <div className="session-form">
         <h3>{sessionAction}</h3>
+        <span className="alt-session">or <Link to={oppSessLink}>{oppSessionAction}</Link> instead</span>
+
         <form>
           {this.renderErrors()}
           <label>
@@ -72,7 +76,7 @@ class SessionForm extends React.Component {
 
           <br />
 
-          <button onClick={this.handleSubmit}>Go</button>
+          <button onClick={this.handleSubmit} className="session-button">Go</button>
         </form>
       </div>
     );
@@ -81,4 +85,3 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
-// export default withRouter(SessionForm);

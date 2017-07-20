@@ -1,11 +1,12 @@
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: $base-font, sans-serif;
+  font-weight: 300;
 }
 
 h1 {
-  font-family: 'Permanent Marker', cursive;   
+  font-family: $logo-font, cursive;   
   font-size: 6em; 
-  margin-bottom: -8px;
+  margin-bottom: -11px;
 }
 
 h3 { 
@@ -17,9 +18,14 @@ h3 {
 
 .tagline {
   font-size: 1.4em;
-  font-family: 'Rubik', sans-serif;
-  line-height: 3px;
+  font-family: $base-font, sans-serif;
+  line-height: 1.3em;
   font-weight: light;
+}
+
+.intro p {
+  margin-left: 6px;
+  display: block;
 }
 
 form {
@@ -36,14 +42,20 @@ input {
   text-align: center;
 }
 
-button {
-  background-color: #FFEA18;
+.session-button {
+  background-color: $yellow;
   border: 0px solid #333;
   padding: 8px;
   margin: 2px;
   text-decoration: none;
   text-transform: capitalize;
   width: 100%;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.session-button:hover {
+  background-color: $dark-yellow;
 }
 
 a {
@@ -51,7 +63,12 @@ a {
   color: green;
 }
 
-.sessionErrors {
+.session-errors {
+  font-size: .7em;
+  color: $error;
+  padding-bottom: 5px;
+}
+
+.alt-session {
   font-size: .8em;
-  color: red;
 }

@@ -1,5 +1,5 @@
 body {
-  background: url(map.svg) no-repeat center center fixed; 
+  background: url(http://res.cloudinary.com/dtxfmomdh/image/upload/v1500522720/map_gp66el.svg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,26 +17,29 @@ body {
   flex-direction: row;
   align-items: baseline;
   flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 750px;
 }
 
 .intro {
   flex: 2;
-  padding-left: 80px;
-  padding-top: 40px;
+  // padding-left: 80px;
+  padding: 40px 20px 10px 20px;
   /* border: 1px solid black; */
+  margin: 0 auto;
 }
 
 .session-form-container {
   flex: 1;
-  padding: 90px 12px 0 30px;
-  margin: 0 auto;
+  padding: 30px 12px 0 0;
   text-align: center;
-  /* border: 1px solid black; */
 }
 
 .session-form {
   max-width: 142px;
   text-align: center;
+  margin: 0 auto;
 }
 
 
