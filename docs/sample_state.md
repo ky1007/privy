@@ -1,4 +1,4 @@
-```json
+```js
 {
   session: {
     // The user that is signed in
