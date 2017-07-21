@@ -43,7 +43,8 @@
       country: "United Kingdom",
       state: "thisisastate",
       race: "thisisarace",
-    }
+    },
+
   },
 
   goals: {

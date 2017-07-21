@@ -1,1 +1,1 @@
-json.partials! "api/entries/show", entry: @entry
+json.partial! "api/entries/entry", entry: @entry

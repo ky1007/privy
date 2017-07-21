@@ -1,3 +1,3 @@
 @goals.each do |goal|
-  json.partial! "api/goals/show", goal: goal
+  json.partial! "api/goals/goal", goal: goal
 end

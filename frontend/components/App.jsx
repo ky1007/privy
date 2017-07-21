@@ -5,6 +5,10 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavContainer from './nav/nav_container';
 import { AuthRoute } from '../util/route_util';
 
+// THIS IS TEMPORARY -- TESTING
+import * as APItest from '../util/entry_api_util';
+// END
+
 const App = () => (
   <div className="main-container">
 
