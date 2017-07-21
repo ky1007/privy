@@ -38,7 +38,7 @@ class Api::GoalsController < ApplicationController
       if @goal.destroy
         render :show
       elsif @goal
-        render json: @goal.error.full_messages, # status: 
+        render json: @goal.error.full_messages#,  status: 
       else
         render json: ["The goal you're attempting to destroy was not found. Perhaps it's already been deleted."], status: 404
       end
