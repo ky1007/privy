@@ -1,1 +1,1 @@
-json.partial! "api/goals/goal, goal: @goal
+json.partial! "api/goals/goal", goal: @goal

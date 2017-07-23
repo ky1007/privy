@@ -25,11 +25,14 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // still need this even though this event because the button is inside of a form
+    e.preventDefault();
     const user = this.state;
     this.props.processForm({ user });
   }
 
   handleDemo(e) {
+    e.preventDefault();
     this.state = {
       username: "rlstein",
       password: "asdfasdf",

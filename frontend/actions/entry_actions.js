@@ -5,45 +5,45 @@ import * as APIUtil from '../util/entry_api_util';
 export const RECEIVE_ENTRIES = 'RECEIVE_ENTRIES';
 export const RECEIVE_ENTRY = 'RECEIVE_ENTRY';
 
-export const receiveEntries = (all_entries) => ({
-  action: RECEIVE_ENTRIES,
-  all_entries,
+export const receiveEntries = allEntries => ({
+  type: RECEIVE_ENTRIES,
+  allEntries,
 });
 
-export const receiveEntry = (current) => ({
-  action: RECEIVE_ENTRY,
+export const receiveEntry = current => ({
+  type: RECEIVE_ENTRY,
   current,
 });
 
-// ajax TESTED TO WORK
+// ajax TESTED TO WORK, state works!
 export const createEntry = entry => dispatch => (
   APIUtil.createEntry(entry).then(entry => (
     dispatch(receiveEntry(entry))
   ))
 );
 
-// ajax TESTED TO WORK
-export const fetchEntry = entry => dispatch => (
-  APIUtil.fetchEntry(entry).then(entry => (
-    dispatch(receiveEntry(entry))
-  ))
-);
-
-// ajax TESTED TO WORK
-export const destroyEntry = entry => dispatch => (
-  APIUtil.destroyEntry(entry).then(entry => (
-    dispatch(receiveEntry(entry))
-  ))
-);
-
-// ajax TESTED TO WORK (only returns 1?)
+// ajax TESTED TO WORK (only returns 1?), same with state (only returns 1)!
 export const fetchEntries = entry => dispatch => (
   APIUtil.fetchEntries(entry).then(entry => (
     dispatch(receiveEntries(entry))
   ))
 );
 
-// bonus test
+// ajax TESTED TO WORK, same with state! USED: dispatch(fetchEntry(2));
+export const fetchEntry = id => dispatch => (
+  APIUtil.fetchEntry(id).then(entry => (
+    dispatch(receiveEntry(entry))
+  ))
+);
+
+// ajax TESTED TO WORK, same with state! USED: dispatch(destroyEntry(2));
+export const destroyEntry = id => dispatch => (
+  APIUtil.destroyEntry(id).then(entry => (
+    dispatch(receiveEntry(entry))
+  ))
+);
+
+// untested, will test after React components are built
 export const updateEntry = entry => dispatch => (
   APIUtil.updateEntry(entry).then(entry => (
     dispatch(receiveEntry(entry))
@@ -59,10 +59,12 @@ export const updateEntry = entry => dispatch => (
 //   ))
 // );
 
+// TEMP - for testing
 window.createEntry = createEntry;
 window.fetchEntry = fetchEntry;
 window.destroyEntry = destroyEntry;
 window.fetchEntries = fetchEntries;
+window.fetchEntry = fetchEntry;
 
 export const tentry = {
   title: "hey",
@@ -78,10 +80,15 @@ export const findrr = {
   entry: {
     writer_id: 1,
   }
-}
+};
 
 window.tentry = tentry;
 window.findrr = findrr;
 
-// console.log(store.dispatch(createEntry(tentry)));
+// dispatch(createEntry(tentry));
+// dispatch(fetchEntry(2));
+// dispatch(fetchEntries());
+// dispatch(fetchEntries({writer_id: 1}));
+// dispatch(destroyEntry(3));
 
+// TEMP END

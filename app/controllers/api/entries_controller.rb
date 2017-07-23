@@ -1,16 +1,16 @@
 class Api::EntriesController < ApplicationController
   def index
-    if params[:entry][:writer_id] # && params[:entry][:latest_entries]
-      @entries = Entry.where(writer_id: params[:entry][:writer_id]).limit(10)
+    if params[:writer_id] # && params[:latest_entries]
+      @entries = Entry.where(writer_id: params[:writer_id]).limit(2)
       render :index
-    # elsif params[:entry][:latest_entries]
+    # elsif params[:latest_entries]
     #   # QUESTION: show to return a certain number the most recent of entries
     #   # AR has limit function (or can do SQL string)
     #   @entries = Entry.limit(10)
     #   render :index
     else
       # QUESTION: how to limit number of entries returned per request? 
-      @entries = Entry.limit(10)
+      @entries = Entry.all
       render :index
     end
 
@@ -22,7 +22,7 @@ class Api::EntriesController < ApplicationController
     if @entry
       render :show
     else 
-      render json: ['Entry not found'], stauts: 422
+      render json: ['Entry not found!'], stauts: 422
     end
   end
 

@@ -4,7 +4,7 @@ import { RECEIVE_ENTRIES, RECEIVE_ENTRY } from '../actions/entry_actions';
 
 // WHAT ACTION LOOKS LIKE COMING IN
 // {
-//   all_entries: {
+//   allEntries: {
 //     id: 1,
 //     moreStuff: 2,
 //   }
@@ -19,7 +19,7 @@ const entryReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ENTRIES:
-      const entries = action.all_entries;
+      const entries = { allEntries: action.allEntries };
       return merge({}, state, entries);
     case RECEIVE_ENTRY:
       return merge({}, state, { current: action.current });

@@ -4,7 +4,7 @@ export const fetchEntries = entry => (
   $.ajax({
     method: 'GET',
     url: '/api/entries',
-    data: { entry },
+    data: entry,
   })
 );
 
@@ -32,6 +32,7 @@ export const createEntry = entry => (
   })
 );
 
+// untested, will test after React components are built
 export const updateEntry = entry => (
   $.ajax({
     method: 'PATCH',

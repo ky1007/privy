@@ -13,6 +13,18 @@ input {
   text-align: center;
 }
 
+button {
+  background-color: $yellow;
+  border: 0px solid #333;
+  padding: 8px;
+  margin: 2px;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+  cursor: hand;
+  cursor: pointer;
+}
+
 .session-button {
   background-color: $yellow;
   border: 0px solid #333;

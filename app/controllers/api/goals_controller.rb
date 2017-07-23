@@ -1,9 +1,7 @@
 class Api::GoalsController < ApplicationController
   def index
-    if params[entry_id]
-      @goals = Goal.where(entry_id: params[entry_id])
-    elsif params[writer_id]
-      @goals = Goal.entries.where(writer_id: params[writer_id])
+    if params[:entry_id]
+      @goals = Goal.entry.where(entry_id: params[:entry_id])
     else
       @goals = Goal.all
     end
@@ -11,6 +9,11 @@ class Api::GoalsController < ApplicationController
 
   def show
     @goal = Goal.find_by(id: params[:id])
+    if @goal
+      render :show
+    else
+      render json: ["Couldn't find this goal, perhaps it was destroyed?"], status: 404
+    end
   end
 
   def create
@@ -34,7 +37,7 @@ class Api::GoalsController < ApplicationController
   end
 
   def destroy
-    @goal = Goal.find_by(id: parmas[:id])
+    @goal = Goal.find_by(id: params[:id])
       if @goal.destroy
         render :show
       elsif @goal
