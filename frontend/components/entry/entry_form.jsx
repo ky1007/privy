@@ -37,39 +37,48 @@ class EntryForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
     this.submitGoals = this.submitGoals.bind(this);
+    this.pullEntryId = this.pullEntryId.bind(this);
     // DON'T FORGET to add goals to this.state
     // You can add public if you want to, mull this over.
   }
 
-  submitGoals(entry) {
-    const { createGoal } = this.props;
+  pullEntryId(entry) {
     const { goals } = this.state;
-    console.log(entry, 'returned entry');
-    if (goals.goal1.body !== '') {
-      const currentState = this.state;
-      this.state = merge(
-        {},
-        currentState,
-        { goals: { goal1: { entry_id: entry.current.id } } });
-      console.log(this.state, 'newstate');
-      return createGoal(goals.goal1);
+
+    for (const goalId of Object.keys(this.state.goals)) {
+      if (goals[goalId].body !== '') {
+        this.setState(update(
+          this.state,
+          { goals: { [goalId]: { entry_id: { $set: entry.current.id } } } }));
+      }
     }
-  // if (goals.goal2.body !== '') {
-  //   createGoal(goals.goal2);
-  // }
-  // if (goals.goal3.body !== '') {
-  //   createGoal(goals.goal3);
-  // }
+    return this.state;
+  }
+
+  submitGoals(createdEntry) {
+    const { goals } = this.state;
+    const { createGoal } = this.props;
+
+    for (const goalId of Object.keys(this.state.goals)) {
+      if (goals[goalId].body !== '') {
+        createGoal(createdEntry.goals[goalId]);
+      }
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    const { journal } = this.state; 
-    const { createEntry } = this.props; 
+    const { journal } = this.state;
+    const { createEntry } = this.props;
+    const { createGoal } = this.props;
 
     if (journal.general !== '') {
-      createEntry(journal).then(entry => this.submitGoals(entry));
+      createEntry(journal)
+        .then(entry => this.pullEntryId(entry))
+        .then(createdEntry => this.submitGoals(createdEntry));
+        // .then(createdEntry => createGoal(createdEntry.goals.goal2));
+        // .then(createdEntry => createGoal(createdEntry.goals.goal3));
     }
     // if (goals.goal1.body !== '') {
     //   createGoal(goals.goal1);
@@ -90,9 +99,9 @@ class EntryForm extends React.Component {
   }
 
   updateGoals(field) {
-    const currentState = this.state;
+    // const currentState = this.state;
     return e => (this.setState(update(
-      currentState, { goals: { [field]: { body: { $set: e.target.value } } } },
+      this.state, { goals: { [field]: { body: { $set: e.target.value } } } },
     )));
   }
 
