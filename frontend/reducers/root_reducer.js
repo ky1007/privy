@@ -9,4 +9,29 @@ const rootReducer = combineReducers({
   goals: goalReducer,
 });
 
+// STATE SHAPE: 
+// {
+//   session: {
+//     currentUser: {
+//       id: 23,
+//       username: asjfl,
+//     },
+//     errors: [],
+//   },
+//   entries: {
+//     allEntries: {
+//       1: {
+//         id: 1,
+//         title: "This title",
+//         general: "This title",
+//       },
+//     },
+//     current: {
+//       id: 1, 
+//       title: "This title",
+//       general: "General stuff",
+//     }
+//   }
+// }
+
 export default rootReducer;

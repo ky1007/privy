@@ -3,8 +3,9 @@ import { Route } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
 import EntryFormContainer from './entry/entry_form_container';
+import EntryShowContainer from './entry/entry_show_container';
 import NavContainer from './nav/nav_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 // THIS IS TEMPORARY -- TESTING
 // import * as APItest from '../util/entry_api_util';
@@ -16,11 +17,12 @@ const App = () => (
   <div className="main-container">
 
     <div className="welcome-container">
-      <header className="intro">   
+      <header className="intro">
         <h1>Privy</h1>
         <span className="tagline">Journal and reflect on your day, share your day&#39;s experience anonymously. Read about others&#39; experiences.</span>
         <Route exact path="/" component={NavContainer} />
-        <Route exact path="/new_entry" component={EntryFormContainer} />
+        <ProtectedRoute exact path="/new_entry" component={EntryFormContainer} />
+        <ProtectedRoute exact path="/me/entries/:entryId" component={EntryShowContainer} />
       </header>
 
       <div className="session-form-container">
