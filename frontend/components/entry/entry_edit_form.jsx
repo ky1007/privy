@@ -16,31 +16,14 @@ class EntryEditForm extends React.Component {
         public: null,
       },
       goals: {
-        goal1: {
-          id: null,
-          body: '',
-          done: null,
-          entry_id: null,
-        },
-        goal2: {
-          id: null,
-          body: '',
-          done: null,
-          entry_id: null,
-        },
-        goal3: {
-          id: null,
-          body: '',
-          done: null,
-          entry_id: null,
-        },
+        goals1: null,
       },
     };
 
     this.update = this.update.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.submitGoals = this.submitGoals.bind(this);
+    this.submitGoals = this.submitGoals.bind(this);
     // this.pullEntryId = this.pullEntryId.bind(this);
   }
 
@@ -71,14 +54,23 @@ class EntryEditForm extends React.Component {
     )));
   }
 
-  updateGoals(field) {
+  updateGoals(id) {
     let copyState = merge({}, this.state);
-    
+   
     return e => {
-      debugger;
-      copyState.goals[field].body = e.currentTarget.value;
+      copyState.goals[id].body = e.currentTarget.value;
       this.setState(copyState);
     };
+  }
+
+  submitGoals() {
+    const { goals } = this.state;
+
+    for (const id of Object.keys(this.state.goals)) {
+      if (goals[id].body !== '') {
+        this.props.updateGoal(goals[id]);
+      }
+    }
   }
 
   handleSubmit(e) {
@@ -89,6 +81,7 @@ class EntryEditForm extends React.Component {
     
     if (entry.general !== '') {
       updateEntry(entry);
+      this.submitGoals();
     }
   }
 
@@ -101,8 +94,6 @@ class EntryEditForm extends React.Component {
   render() {
     const { title, general, gratitude, improvements } = this.state.entry;
     const { goals } = this.state;
-    const { goalsArr } = this.props;
-    // console.log(goalsArr);
 
     if (this.props.entry && this.props.goals) {
       return (
@@ -130,7 +121,7 @@ class EntryEditForm extends React.Component {
             </textarea></label>
 
             <label> <h2>three main things you want to get done</h2>
-              {goalsArr.map(goal => <GoalItem key={goal.id} goal={goal} updateGoals={this.updateGoals} />)}
+               {Object.keys(goals).map(id => <input type="text" key={id} value={goals[id].body} onChange={this.updateGoals(id)} />)} 
             </label>
 
             <button onClick={this.handleSubmit}>Submit</button>
@@ -142,10 +133,5 @@ class EntryEditForm extends React.Component {
     }
   }
 }
-
-const GoalItem = ({ goal, updateGoals }) => (
-  // console.log(goalBody)
-  <input type="text" value={goal.body} onChange={updateGoals(goal.id)} />
-);
 
 export default EntryEditForm;

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+import { updateGoal } from '../../actions/goal_actions';
 import { updateEntry, destroyEntry } from '../../actions/entry_actions';
 import EntryEditForm from './entry_edit_form';
 import { selectGoals } from '../../reducers/selectors';
@@ -17,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
   fetchEntry: id => dispatch(fetchEntry(id)),
   fetchGoals: entryId => dispatch(fetchGoals(entryId)),
   destroyGoal: id => dispatch(destroyGoal(id)),
+  updateGoal: goal => dispatch(updateGoal(goal)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryEditForm);
