@@ -3,7 +3,7 @@ $type-scale-large: (
   h2: 2.1rem,
   h3: 1.8rem,
   h4: 1.663rem,
-  p: 1.25rem
+  p: 1.663rem,
 );
 
 // $type-scale-large: (
@@ -66,6 +66,10 @@ body {
   font-weight: 300;
 }
 
+h1, h2, h3 {
+  font-weight: 700;
+}
+
 h1 {
   font-family: $logo-font, cursive;   
   // font-size: 6em; 
@@ -74,7 +78,7 @@ h1 {
 }
 
 h3 { 
-  font-family: 'Rubik', sans-serif;
+  font-family: $base-font, sans-serif;
   // font-size: 1.2em;
   font-weight: bold; 
   margin-left: 3px;
@@ -107,4 +111,17 @@ a {
 
 .alt-session {
   @include size(p);
+}
+
+/* -- SHOWING an ENTRY -- */
+article {
+  @include size(p);
+}
+
+section {
+  padding-bottom: 1.5em;
+}
+
+section h2 {
+  padding-bottom: 0.4em;
 }

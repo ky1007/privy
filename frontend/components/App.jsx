@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import SessionFormContainer from './session_form/session_form_container';
+import GreetingContainer from './greeting/greeting_container';
 import EntryFormContainer from './entry/entry_form_container';
 import EntryEditFormContainer from './entry/entry_edit_form_container';
 import EntryShowContainer from './entry/entry_show_container';
@@ -16,24 +16,21 @@ import * as ACTIONgoalTEST from '../actions/goal_actions';
 
 const App = () => (
   <div className="main-container">
-
-    <div className="welcome-container">
-      <header className="intro">
-        <h1>Privy</h1>
-        <span className="tagline">Journal and reflect on your day, share your day&#39;s experience anonymously. Read about others&#39; experiences.</span>
-        <Route exact path="/" component={NavContainer} />
-        <ProtectedRoute exact path="/new_entry" component={EntryFormContainer} />
-        <ProtectedRoute exact path="/me/entries/:entryId" component={EntryShowContainer} />
-        <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} />
-      </header>
-
-      <div className="session-form-container">
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
-      </div>
-
+    <div className="nav-bar">
     </div>
 
+    {/* Will show up on the Homepage when someone is logged out */}
+    <Switch>
+      <AuthRoute exact path="/" component={GreetingContainer} />
+      <ProtectedRoute path="/" component={NavContainer} />
+    </Switch>
+
+    <Switch>
+      <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
+      <ProtectedRoute exact={true} path="/me/entries/:entryId" component={EntryShowContainer} />
+      <ProtectedRoute exact={true} path="/me/entries/:entryId/edit" component={EntryEditFormContainer} />
+      {/* <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} /> */}
+    </Switch>
   </div>
 );
 
@@ -48,7 +45,7 @@ window.destroyGoal = ACTIONgoalTEST.destroyGoal;
 window.fetchGoal = ACTIONgoalTEST.fetchGoal;
 
 const goal = {  
-  body: "My goalz is to learn",
+  body: "goal body here",
   done: true,
   entry_id: null,
 };

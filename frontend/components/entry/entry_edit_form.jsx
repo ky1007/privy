@@ -1,5 +1,6 @@
 import React from 'react';
 import update from 'react-addons-update';
+import merge from 'lodash/merge';
 
 class EntryEditForm extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class EntryEditForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     // this.submitGoals = this.submitGoals.bind(this);
     // this.pullEntryId = this.pullEntryId.bind(this);
   }
@@ -50,7 +51,6 @@ class EntryEditForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.state = {
       entry: {
         id: nextProps.entry.id,
@@ -72,9 +72,24 @@ class EntryEditForm extends React.Component {
   }
 
   updateGoals(field) {
-    return e => (this.setState(update(
-      this.state, { goals: { [field]: { body: { $set: e.target.value } } } },
-    )));
+    let copyState = merge({}, this.state);
+    
+    return e => {
+      debugger;
+      copyState.goals[field].body = e.currentTarget.value;
+      this.setState(copyState);
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const { entry } = this.state;
+    const { updateEntry } = this.props;
+    
+    if (entry.general !== '') {
+      updateEntry(entry);
+    }
   }
 
   waitingToLoad() {
@@ -86,42 +101,36 @@ class EntryEditForm extends React.Component {
   render() {
     const { title, general, gratitude, improvements } = this.state.entry;
     const { goals } = this.state;
+    const { goalsArr } = this.props;
+    // console.log(goalsArr);
+
     if (this.props.entry && this.props.goals) {
       return (
         <div>
           <form action="">
             <label> 
             <textarea rows="4" cols="5"
-                      placeholder={title}
+                      placeholder="what was on your mind"
                       value={general}
                       onChange={this.update('entry', 'general')}>
             </textarea></label>
 
             <label> 
             <textarea rows="4" cols="5"
-                      placeholder="What are you thankful for?"
+                      placeholder="things you felt thankful for"
                       value={gratitude}
                       onChange={this.update('entry', 'gratitude')}>
             </textarea></label>
 
             <label> 
             <textarea rows="4" cols="5"
-                      placeholder="Is there anything you wanted to improve? What would you have done differently?"
+                      placeholder="things you had wished you could have improved"
                       value={improvements}
                       onChange={this.update('entry', 'improvements')}>
             </textarea></label>
 
-            <label> 
-            <textarea rows="4" cols="5"
-                      placeholder="Add a title if you'd like"
-                      value={title}
-                      onChange={this.update('entry', 'title')}>
-            </textarea></label>
-
-            <label> Goals
-              <input type="text" value={goals[Object.keys(goals)[0]].body} />
-              <input type="text" value={goals[Object.keys(goals)[1]].body} />
-              <input type="text" value={goals[Object.keys(goals)[2]].body} />
+            <label> <h2>three main things you want to get done</h2>
+              {goalsArr.map(goal => <GoalItem key={goal.id} goal={goal} updateGoals={this.updateGoals} />)}
             </label>
 
             <button onClick={this.handleSubmit}>Submit</button>
@@ -133,5 +142,10 @@ class EntryEditForm extends React.Component {
     }
   }
 }
+
+const GoalItem = ({ goal, updateGoals }) => (
+  // console.log(goalBody)
+  <input type="text" value={goal.body} onChange={updateGoals(goal.id)} />
+);
 
 export default EntryEditForm;

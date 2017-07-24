@@ -94,42 +94,35 @@ class EntryForm extends React.Component {
     const { goals: { goal1, goal2, goal3 } } = this.state;
     const { createEntry } = this.props;
 
-    return(
+    return (
       <div>
-        <form action="">
+        <form className="entry-form">
           <label> 
           <textarea rows="4" cols="5"
-                    placeholder="What's on your mind?"
+                    placeholder="what's on your mind"
                     value={general}
                     onChange={this.update('entry', 'general')}>
           </textarea></label>
 
           <label> 
           <textarea rows="4" cols="5"
-                    placeholder="What are you thankful for?"
+                    placeholder="things you feel thankful for"
                     value={gratitude}
                     onChange={this.update('entry', 'gratitude')}>
           </textarea></label>
 
           <label> 
           <textarea rows="4" cols="5"
-                    placeholder="Is there anything you wanted to improve? What would you have done differently?"
+                    placeholder="things you could have done better today"
                     value={improvements}
                     onChange={this.update('entry', 'improvements')}>
           </textarea></label>
 
-          <label> 
-          <textarea rows="4" cols="5"
-                    placeholder="Add a title if you'd like"
-                    value={title}
-                    onChange={this.update('entry', 'title')}>
-          </textarea></label>
+          <label> <h3>three main things you want to get done today</h3>
 
-          <label> Goals
-
-            <input type="text" value={goal1.body} onChange={this.updateGoals('goal1')} />
-            <input type="text" value={goal2.body} onChange={this.updateGoals('goal2')} />
-            <input type="text" value={goal3.body} onChange={this.updateGoals('goal3')} />
+            <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
+            <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
+            <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
           </label>
 
           <button onClick={this.handleSubmit}>Submit</button>

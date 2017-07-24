@@ -40,3 +40,75 @@ button {
 .session-button:hover {
   background-color: $dark-yellow;
 }
+
+/*  -- ENTRY FORM -- */
+form {
+  @include size(h4);
+  font-family: $base-font, sans-serif;
+  text-align: center;
+}
+textarea {
+  width: 100%;
+  height: 20em;
+  padding: 2em;
+  box-sizing: border-box;
+  border: 0px solid #fff;
+  resize: none;
+  @include size(h4);
+  font-family: $base-font, sans-serif;
+  outline: none;
+}
+
+// .entry-form-placeholder {
+//   @include size(h2);
+//   font-weight: bold;
+//   color: #888;
+//   font-family: $base-font, sans-serif;
+// }
+
+::-webkit-input-placeholder:focus {
+  @include size(h2);
+  font-weight: bold;
+  color: #777;
+}
+:-moz-placeholder:focus {
+  @include size(h2);
+  font-weight: bold;
+  color: #777;
+}
+::-moz-placeholder:focus {
+  @include size(h2);
+  font-weight: bold;
+  color: #777;
+} 
+:-ms-input-placeholder:focus { 
+  @include size(h2);
+  font-weight: bold;
+  color: #777;
+}
+
+::-webkit-input-placeholder {
+  @include size(h2);
+  font-weight: bold;
+}
+:-moz-placeholder {
+  @include size(h2);
+  font-weight: bold;
+}
+::-moz-placeholder {
+  @include size(h2);
+  font-weight: bold;
+} 
+:-ms-input-placeholder { 
+  @include size(h2);
+  font-weight: bold;
+}
+
+/* goals */
+input[type="text"] {
+  width: 100%;
+  text-align: left;
+  @include size(h4);
+  font-family: $base-font, sans-serif;
+  outline: none;
+}
