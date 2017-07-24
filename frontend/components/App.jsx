@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
 import EntryFormContainer from './entry/entry_form_container';
+import EntryEditFormContainer from './entry/entry_edit_form_container';
 import EntryShowContainer from './entry/entry_show_container';
 import NavContainer from './nav/nav_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -23,6 +24,7 @@ const App = () => (
         <Route exact path="/" component={NavContainer} />
         <ProtectedRoute exact path="/new_entry" component={EntryFormContainer} />
         <ProtectedRoute exact path="/me/entries/:entryId" component={EntryShowContainer} />
+        <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} />
       </header>
 
       <div className="session-form-container">

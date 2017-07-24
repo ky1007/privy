@@ -1,10 +1,7 @@
 import React from 'react';
+import GoalIndexContainer from './goal_index_container';
 
 class EntryShow extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidMount() {
     this.props.fetchEntry(this.props.entryId)
   }
@@ -19,7 +16,8 @@ class EntryShow extends React.Component {
     return (
       <div>
         {this.props.entry.id}, 
-        {this.props.entry.general}
+        {this.props.entry.general},
+        <GoalIndexContainer entryId={this.props.entry.id} />
       </div>
     );
   }

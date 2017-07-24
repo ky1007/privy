@@ -5,7 +5,7 @@ class EntryForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      journal: {
+      entry: {
         title: '',
         general: '',
         gratitude: '',
@@ -67,11 +67,11 @@ class EntryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { journal } = this.state;
+    const { entry } = this.state;
     const { createEntry } = this.props;
 
-    if (journal.general !== '') {
-      createEntry(journal)
+    if (entry.general !== '') {
+      createEntry(entry)
         .then(entry => this.pullEntryId(entry))
         .then(createdEntry => this.submitGoals(createdEntry));
     }
@@ -90,7 +90,7 @@ class EntryForm extends React.Component {
   }
 
   render() {
-    const { journal: { title, general, gratitude, improvements } } = this.state;
+    const { entry: { title, general, gratitude, improvements } } = this.state;
     const { goals: { goal1, goal2, goal3 } } = this.state;
     const { createEntry } = this.props;
 
@@ -101,28 +101,28 @@ class EntryForm extends React.Component {
           <textarea rows="4" cols="5"
                     placeholder="What's on your mind?"
                     value={general}
-                    onChange={this.update('journal', 'general')}>
+                    onChange={this.update('entry', 'general')}>
           </textarea></label>
 
           <label> 
           <textarea rows="4" cols="5"
                     placeholder="What are you thankful for?"
                     value={gratitude}
-                    onChange={this.update('journal', 'gratitude')}>
+                    onChange={this.update('entry', 'gratitude')}>
           </textarea></label>
 
           <label> 
           <textarea rows="4" cols="5"
                     placeholder="Is there anything you wanted to improve? What would you have done differently?"
                     value={improvements}
-                    onChange={this.update('journal', 'improvements')}>
+                    onChange={this.update('entry', 'improvements')}>
           </textarea></label>
 
           <label> 
           <textarea rows="4" cols="5"
                     placeholder="Add a title if you'd like"
                     value={title}
-                    onChange={this.update('journal', 'title')}>
+                    onChange={this.update('entry', 'title')}>
           </textarea></label>
 
           <label> Goals

@@ -1,7 +1,7 @@
 class Api::GoalsController < ApplicationController
   def index
-    if params[:entry_id]
-      @goals = Goal.entry.where(entry_id: params[:entry_id])
+    if params[:goal][:entry_id]
+      @goals = Goal.where(entry_id: params[:goal][:entry_id])
     else
       @goals = Goal.all
     end
