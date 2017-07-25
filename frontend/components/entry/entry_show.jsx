@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import GoalIndexContainer from './goal_index_container';
+import { isEmpty } from '../../util/helpers';
 
 class EntryShow extends React.Component {
   componentDidMount() {
@@ -13,14 +16,16 @@ class EntryShow extends React.Component {
   }
 
   showEntryWithGoals() {
+    const { general, gratitude, improvements, id } = this.props.entry;
+
     return (
       <main>
         <article className="entry-show">
-        
-          <section><h2>thoughts</h2>{this.props.entry.general}</section>
-          <section><h2>things you felt grateful for</h2>{this.props.entry.gratitude}</section>
-          <section><h2>things you wished to improve</h2>{this.props.entry.improvements}</section>
-          <GoalIndexContainer entryId={this.props.entry.id} />
+          { isEmpty(general) ? <div /> : <section><h2>thoughts</h2>{general}</section> }
+          { isEmpty(improvements) ? <div /> : <section><h2>things you wished to improve</h2>{improvements}</section> }
+          { isEmpty(gratitude) ? <div /> : <section><h2>things you felt grateful for</h2>{gratitude}</section> }
+          <GoalIndexContainer entryId={id} />
+          <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link>
         </article>
       </main>
     );
@@ -34,6 +39,5 @@ class EntryShow extends React.Component {
     }
   }
 }
-
 
 export default EntryShow;

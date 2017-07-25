@@ -1,22 +1,6 @@
 import React from 'react';
 import GoalIndexItem from './goal_index_item';
-
-// const isEmpty = object => {
-//   for(let key in object) {
-//     if (object.hasOwnProperty(key)) {
-//       return true;
-//     }
-//   }
-//   return false;
-// };
-
-const isEmpty = obj => {
-  for(let key in obj) {
-    if(obj.hasOwnProperty(key))
-      return false;
-  }
-  return true;
-};
+import { isEmpty } from '../../util/helpers';
 
 class GoalIndex extends React.Component {
   componentDidMount() {
@@ -32,11 +16,12 @@ class GoalIndex extends React.Component {
 
   showGoals() {
     const { goals } = this.props;
+    
     return (
-      <div>
-        { isEmpty(goals.allGoals) ? <div /> : <section><h2>three main goals</h2></section> }
+      <section>
+        { isEmpty(goals) ? <div /> : <h2>three main goals</h2> }
         {goals.map(goal => <GoalIndexItem key={goal.id} goal={goal} />)}
-      </div>
+      </section>
     );
   }
 

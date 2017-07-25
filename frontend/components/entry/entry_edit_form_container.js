@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { updateGoal } from '../../actions/goal_actions';
+import { updateGoal, fetchGoals } from '../../actions/goal_actions';
 import { updateEntry, destroyEntry } from '../../actions/entry_actions';
 import EntryEditForm from './entry_edit_form';
 import { selectGoals } from '../../reducers/selectors';
@@ -9,7 +9,6 @@ const mapStateToProps = ({ entries, goals }, { match }) => ({
   entry: entries.current,
   entryId: parseInt(match.params.entryId),
   goals: goals.allGoals,
-  goalsArr: selectGoals(goals.allGoals),
 });
 
 const mapDispatchToProps = dispatch => ({

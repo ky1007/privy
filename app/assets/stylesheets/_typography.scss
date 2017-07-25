@@ -108,7 +108,7 @@ a {
   @include size(p);
 }
 .session-errors {
-  font-size: .7em;
+  @include size(small);
   color: $error;
   padding-bottom: 5px;
 }
@@ -120,6 +120,10 @@ a {
 /* -- SHOWING an ENTRY -- */
 article {
   @include size(p);
+}
+
+article h2 {
+  color: $light-gray;
 }
 
 section {

@@ -2,19 +2,6 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_GOALS, RECEIVE_GOAL } from '../actions/goal_actions';
 
-// WHAT ACTION LOOKS LIKE COMING IN
-// {
-//   allGoals: {
-//     1: {
-//       id: 1,
-//       moreStuff: 2,
-//     }
-//   }
-//   current: {
-//     id: 1,
-//     moreStuff: 1,
-//   }
-// }
 
 const goalReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -34,3 +21,18 @@ const goalReducer = (state = {}, action) => {
 };
 
 export default goalReducer;
+
+// WHAT ACTION LOOKS LIKE COMING IN
+// {
+//   allGoals: {
+//     1: {
+//       id: 1,
+//       moreStuff: 2,
+//     }
+//   }
+//   current: {
+//     id: 1,
+//     moreStuff: 1,
+//   }
+// }
+//

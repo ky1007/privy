@@ -1,6 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update';
 import merge from 'lodash/merge';
+import { isEmpty } from '../../util/helpers';
 
 class EntryEditForm extends React.Component {
   constructor(props) {
@@ -120,11 +121,12 @@ class EntryEditForm extends React.Component {
                       onChange={this.update('entry', 'improvements')}>
             </textarea></label>
 
-            <label> <h2>three main things you want to get done</h2>
+            <label> 
+              { isEmpty(goals) ? <div /> : <h2>three main things you want to get done</h2> }
                {Object.keys(goals).map(id => <input type="text" key={id} value={goals[id].body} onChange={this.updateGoals(id)} />)} 
             </label>
 
-            <button onClick={this.handleSubmit}>Submit</button>
+            <button onClick={this.handleSubmit}>Update Entry</button>
           </form>
         </div>
       );
