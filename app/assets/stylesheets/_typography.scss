@@ -136,3 +136,28 @@ section h2 {
 
 li { list-style: none; }
 .nav-links li { padding-left: 1rem; }
+
+// --- ENTRY form --- 
+.entry-form h2 {
+  padding-bottom: 0.3em;
+  color: $darker-gray;
+}
+
+@mixin form-placeholder {
+  @include size(h3);
+  color: $darker-gray;
+  font-weight: bold;
+}
+
+.entry-form ::-webkit-input-placeholder {
+  @include form-placeholder;
+}
+.entry-form :-moz-placeholder {
+  @include form-placeholder;
+}
+.entry-form ::-moz-placeholder {
+  @include form-placeholder;
+} 
+.entry-form :-ms-input-placeholder { 
+  @include form-placeholder;
+}

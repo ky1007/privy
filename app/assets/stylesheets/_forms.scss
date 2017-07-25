@@ -76,51 +76,6 @@ textarea {
   font-weight: 700;
 }
 
-// .entry-form-placeholder {
-//   @include size(h2);
-//   font-weight: bold;
-//   color: #888;
-//   font-family: $base-font, sans-serif;
-// }
-
-// ::-webkit-input-placeholder:focus {
-//   @include size(small);
-//   font-weight: bold;
-//   color: #777;
-// }
-// :-moz-placeholder:focus {
-//   @include size(small);
-//   font-weight: bold;
-//   color: #777;
-// }
-// ::-moz-placeholder:focus {
-//   @include size(small);
-//   font-weight: bold;
-//   color: #777;
-// } 
-// :-ms-input-placeholder:focus { 
-//   @include size(small);
-//   font-weight: bold;
-//   color: #777;
-// }
-
-.entry-form ::-webkit-input-placeholder {
-  @include size(h3);
-  font-weight: bold;
-}
-.entry-form :-moz-placeholder {
-  @include size(h3);
-  font-weight: bold;
-}
-.entry-form ::-moz-placeholder {
-  @include size(h3);
-  font-weight: bold;
-} 
-.entry-form :-ms-input-placeholder { 
-  @include size(h3);
-  font-weight: bold;
-}
-
 /* --- LOGIN / LOGOUT form --- */
 .session-form input {
   width: 100%;

@@ -86,6 +86,17 @@ class EntryEditForm extends React.Component {
     }
   }
 
+  showGoals() {
+    const { goals } = this.state;
+    if (isEmpty(goals)) {
+      return (<div />);
+    } else {
+      return (
+        Object.keys(goals).map(id => <input type="text" key={id} value={goals[id].body} onChange={this.updateGoals(id)} />)
+      );
+    }
+  }
+
   waitingToLoad() {
     return (
       <div>Loading screen!</div>
@@ -122,8 +133,8 @@ class EntryEditForm extends React.Component {
             </textarea></label>
 
             <label> 
-              { isEmpty(goals) ? <div /> : <h2>three main things you want to get done</h2> }
-               {Object.keys(goals).map(id => <input type="text" key={id} value={goals[id].body} onChange={this.updateGoals(id)} />)} 
+              {isEmpty(goals) ? <div /> : <h2>three main things you want to get done</h2>}
+               {this.showGoals()} 
             </label>
 
             <button onClick={this.handleSubmit}>Update Entry</button>

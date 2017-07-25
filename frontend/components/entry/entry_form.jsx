@@ -56,12 +56,14 @@ class EntryForm extends React.Component {
   submitGoals(createdEntry) {
     const { goals } = this.state;
     const { createGoal } = this.props;
+    let captureGoal;
 
     for (const goalId of Object.keys(this.state.goals)) {
       if (goals[goalId].body !== '') {
-        return createGoal(createdEntry.goals[goalId]);
+        captureGoal = createGoal(createdEntry.goals[goalId]);
       }
     }
+    return captureGoal;
   }
 
   handleSubmit(e) {
@@ -122,8 +124,8 @@ class EntryForm extends React.Component {
                     onChange={this.update('entry', 'improvements')}>
           </textarea></label>
 
-          <label> <h3>three main things you want to get done today</h3>
-
+          <label> 
+            <h2>three main things you want to get done today</h2>
             <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
             <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
             <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />

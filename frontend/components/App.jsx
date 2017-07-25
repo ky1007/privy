@@ -6,6 +6,7 @@ import GreetingContainer from './greeting/greeting_container';
 import EntryFormContainer from './entry/entry_form_container';
 import EntryEditFormContainer from './entry/entry_edit_form_container';
 import EntryShowContainer from './entry/entry_show_container';
+import EntryIndexContainer from './entry/entry_index_container';
 import NavContainer from './nav/nav_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -20,16 +21,17 @@ const App = () => (
     <div className="nav-bar">
     </div>
 
-    {/* Will show up on the Homepage when someone is logged out */}
+    {/* Homepage (when someone is signed out) */}
     <Switch>
       <AuthRoute exact path="/" component={GreetingContainer} />
       <AuthRoute exact path="/login" component={GreetingContainer} />
       <AuthRoute exact path="/signup" component={GreetingContainer} />
       <ProtectedRoute path="/" component={NavContainer} />
     </Switch>
-    
+        
     <Switch>
       <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
+      <ProtectedRoute exact={true} path="/me/entries/" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/me/entries/:entryId" component={EntryShowContainer} />
       <ProtectedRoute exact={true} path="/me/entries/:entryId/edit" component={EntryEditFormContainer} />
       {/* <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} /> */}

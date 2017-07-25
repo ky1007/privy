@@ -1,4 +1,4 @@
 import { values } from 'lodash';
 
 export const selectGoals = allGoals => values(allGoals);
-// export const selectEntryItems = entry => values(entry);
+export const selectEntries = allEntries => values(allEntries);

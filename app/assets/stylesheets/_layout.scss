@@ -67,4 +67,20 @@ nav {
   margin: 0 auto;
 }
 
+main .entry-list-items {
+  // color: #fff;
+  // border: 1px solid #000;
+  // background: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
+.entry-list-items article {
+  color: #fff;
+  flex: 1;
+  padding: 2em;
+  margin-bottom: 1em;
+  background: #000;
+  max-width: 40em;
+}

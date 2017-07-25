@@ -8,6 +8,10 @@ class GoalIndex extends React.Component {
     this.props.fetchGoals(entry_id);
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   this.props.goals = nextProps.goals;
+  // }
+
   waitingToLoad() {
     return (
       <div>Loading goals...</div>

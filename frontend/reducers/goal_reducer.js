@@ -2,18 +2,22 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_GOALS, RECEIVE_GOAL } from '../actions/goal_actions';
 
+const initialState = {
+  allGoals: null,
+  current: null,
+};
 
-const goalReducer = (state = {}, action) => {
+const goalReducer = (state = initialState, action) => {
   Object.freeze(state);
 
   switch (action.type) {
     
     case RECEIVE_GOALS:
       const goals = { allGoals: action.allGoals };
-      return merge({}, state, goals);
+      return merge({}, initialState, goals);
     
     case RECEIVE_GOAL:
-      return merge({}, state, { current: action.current });
+      return merge({}, initialState, { current: action.current });
     
     default:
       return state;
