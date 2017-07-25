@@ -16,11 +16,13 @@ class EntryShow extends React.Component {
   }
 
   showEntryWithGoals() {
-    const { general, gratitude, improvements, id } = this.props.entry;
+    const { general, gratitude, improvements, id, created_at } = this.props.entry;
+    console.log(this.props.entry.created_at);
 
     return (
       <main>
         <article className="entry-show">
+          { isEmpty(created_at) ? <div /> : <h1>{created_at.slice(0, 10)}</h1> }
           { isEmpty(general) ? <div /> : <section><h2>thoughts</h2>{general}</section> }
           { isEmpty(improvements) ? <div /> : <section><h2>things you wished to improve</h2>{improvements}</section> }
           { isEmpty(gratitude) ? <div /> : <section><h2>things you felt grateful for</h2>{gratitude}</section> }

@@ -122,7 +122,7 @@ class EntryForm extends React.Component {
           </textarea></label>
 
           <label> 
-            <h2>three main things you want to get done today</h2>
+            <h2>three main things you want to get done tomorrow</h2>
             <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
             <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
             <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
