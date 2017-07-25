@@ -59,7 +59,7 @@ class EntryForm extends React.Component {
 
     for (const goalId of Object.keys(this.state.goals)) {
       if (goals[goalId].body !== '') {
-        createGoal(createdEntry.goals[goalId]);
+        return createGoal(createdEntry.goals[goalId]);
       }
     }
   }
@@ -67,13 +67,17 @@ class EntryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { entry } = this.state;
+    const { entry, goals } = this.state;
     const { createEntry } = this.props;
 
-    if (entry.general !== '') {
+    if (entry.general !== '' && goals.goal1.body != '') {
       createEntry(entry)
         .then(entry => this.pullEntryId(entry))
-        .then(createdEntry => this.submitGoals(createdEntry));
+        .then(createdEntry => this.submitGoals(createdEntry))
+        .then(goal => this.props.history.push(`/me/entries/${goal.current.entry_id}`));
+    } else if (entry.general !== '') {
+      createEntry(entry)
+        .then(entry => this.props.history.push(`/me/entries/${entry.current.id}`));
     }
   }
 

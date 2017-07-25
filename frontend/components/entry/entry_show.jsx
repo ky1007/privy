@@ -15,12 +15,12 @@ class EntryShow extends React.Component {
   showEntryWithGoals() {
     return (
       <main>
-        <article class="entry-show">
+        <article className="entry-show">
         
           <section><h2>thoughts</h2>{this.props.entry.general}</section>
           <section><h2>things you felt grateful for</h2>{this.props.entry.gratitude}</section>
           <section><h2>things you wished to improve</h2>{this.props.entry.improvements}</section>
-          <section><h2>three main goals</h2><GoalIndexContainer entryId={this.props.entry.id} /></section>
+          <GoalIndexContainer entryId={this.props.entry.id} />
         </article>
       </main>
     );

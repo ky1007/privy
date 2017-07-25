@@ -24,7 +24,6 @@ class EntryEditForm extends React.Component {
     this.updateGoals = this.updateGoals.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitGoals = this.submitGoals.bind(this);
-    // this.pullEntryId = this.pullEntryId.bind(this);
   }
 
   componentDidMount() {
@@ -77,11 +76,12 @@ class EntryEditForm extends React.Component {
     e.preventDefault();
 
     const { entry } = this.state;
-    const { updateEntry } = this.props;
+    const { updateEntry, entryId } = this.props;
     
     if (entry.general !== '') {
       updateEntry(entry);
       this.submitGoals();
+      this.props.history.push(`/me/entries/${entryId}`);
     }
   }
 

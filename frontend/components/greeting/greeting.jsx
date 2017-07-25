@@ -13,8 +13,7 @@ const loggedOutGreeting = () => (
       </header>
 
       <div className="session-form-container">
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
+        <AuthRoute path="/" component={SessionFormContainer} />
       </div>
     </div>
 );
