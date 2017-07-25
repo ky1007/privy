@@ -1,0 +1,1 @@
+json.extract! reflection, :writer_id, :entry_id, :body

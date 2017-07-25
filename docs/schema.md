@@ -31,7 +31,7 @@
 | column name  | data type | details               |
 | id           | integer   | not null, primary key |
 | body        | string    |   not null   |
-| done        | boolean    |    not null  |
+ | done        | boolean    |    not null  | 
 | entry_id        | integer    |   not null, indexed   |
 
 

@@ -1,0 +1,1 @@
+json.partial! "api/reflections/reflection", reflection: @reflection
