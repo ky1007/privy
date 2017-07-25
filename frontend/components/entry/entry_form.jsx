@@ -104,22 +104,19 @@ class EntryForm extends React.Component {
       <div className="entry-form">
         <form>
           <label> 
-          <textarea rows="4" cols="5"
-                    placeholder="what's on your mind"
+          <textarea placeholder="what's on your mind"
                     value={general}
                     onChange={this.update('entry', 'general')}>
           </textarea></label>
 
           <label> 
-          <textarea rows="4" cols="5"
-                    placeholder="things you feel thankful for"
+          <textarea placeholder="things you feel thankful for"
                     value={gratitude}
                     onChange={this.update('entry', 'gratitude')}>
           </textarea></label>
 
           <label> 
-          <textarea rows="4" cols="5"
-                    placeholder="things you could have done better today"
+          <textarea placeholder="things you could have done better today"
                     value={improvements}
                     onChange={this.update('entry', 'improvements')}>
           </textarea></label>

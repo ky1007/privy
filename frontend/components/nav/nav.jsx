@@ -11,7 +11,7 @@ const createSessionLinks = () => (
 
 const loggedInLinks = (currentUser, logout) => (
   <nav>
-    <header className="nav-logo"><Link to="/feed">Privy</Link></header>
+    <header className="nav-logo"><Link to="/me/entries">Privy</Link></header>
     <section className="nav-links">
        {/* <ul className="nav">  */}
         <li><Link to="/new_entry">New Entry</Link></li>
