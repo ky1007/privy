@@ -15,32 +15,39 @@ $type-scale-large: (
 //   p: 1.25rem
 // );
 
-/* 
- * Modular scale
- * http://www.modularscale.com/?1.25&em&1.25&web&text
-*/
+// $type-scale-medium: (
+//   h1: 3.052rem,
+//   h2: 2.441rem,
+//   h3: 1.953em,
+//   h4: 1.563rem,
+//   p: 1.25rem,
+// );
 
+// $type-scale-small: (
+//   h1: 2.686rem,
+//   h2: 2.148rem,
+//   h3: 1.719rem,
+//   h4: 1.375rem,
+//   p: 1.1rem
+// );
 $type-scale-medium: (
-  h1: 3.052rem,
-  h2: 2.441rem,
-  h3: 1.953em,
-  h4: 1.563rem,
-  p: 1.25rem,
+  h1:	7.92rem,
+  h2:	1.848rem,
+  h3:	1.584rem,
+  h4:	1.46344rem,
+  p:	1.46344rem,
+  small:	0.88rem,
 );
-
-
-/* 
- * Modular scale
- * http://www.modularscale.com/?1.1&em&1.25&web&text
-*/
 
 $type-scale-small: (
-  h1: 2.686rem,
-  h2: 2.148rem,
-  h3: 1.719rem,
-  h4: 1.375rem,
-  p: 1.1rem
+  h1: 6.9696rem,
+  h2: 1.62624rem,
+  h3: 1.39392rem,
+  h4: 1.2878272rem,
+  p: 1.2878272rem,
+  small: 0.7744rem,
 );
+
 
 
 $breakpoint-medium: 75em;
