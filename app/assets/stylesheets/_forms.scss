@@ -13,7 +13,7 @@ input {
   text-align: center;
 }
 
-button {
+button.session-button {
   background-color: $yellow;
   border: 0px solid #333;
   padding: 8px;
@@ -66,49 +66,58 @@ textarea {
 //   font-family: $base-font, sans-serif;
 // }
 
-::-webkit-input-placeholder:focus {
-  @include size(h2);
+// ::-webkit-input-placeholder:focus {
+//   @include size(small);
+//   font-weight: bold;
+//   color: #777;
+// }
+// :-moz-placeholder:focus {
+//   @include size(small);
+//   font-weight: bold;
+//   color: #777;
+// }
+// ::-moz-placeholder:focus {
+//   @include size(small);
+//   font-weight: bold;
+//   color: #777;
+// } 
+// :-ms-input-placeholder:focus { 
+//   @include size(small);
+//   font-weight: bold;
+//   color: #777;
+// }
+
+.entry-form ::-webkit-input-placeholder {
+  @include size(h3);
   font-weight: bold;
-  color: #777;
 }
-:-moz-placeholder:focus {
-  @include size(h2);
+.entry-form :-moz-placeholder {
+  @include size(h3);
   font-weight: bold;
-  color: #777;
 }
-::-moz-placeholder:focus {
-  @include size(h2);
+.entry-form ::-moz-placeholder {
+  @include size(h3);
   font-weight: bold;
-  color: #777;
 } 
-:-ms-input-placeholder:focus { 
-  @include size(h2);
+.entry-form :-ms-input-placeholder { 
+  @include size(h3);
   font-weight: bold;
-  color: #777;
 }
 
-::-webkit-input-placeholder {
-  @include size(h2);
-  font-weight: bold;
-}
-:-moz-placeholder {
-  @include size(h2);
-  font-weight: bold;
-}
-::-moz-placeholder {
-  @include size(h2);
-  font-weight: bold;
-} 
-:-ms-input-placeholder { 
-  @include size(h2);
-  font-weight: bold;
+/* --- LOGIN / LOGOUT form --- */
+.session-form input {
+  width: 100%;
+  text-align: center;
+  @include size(small);
+  font-family: $base-font, sans-serif;
+  outline: none;
 }
 
-/* goals */
-input[type="text"] {
+/* -- ENTRY and GOALS -- */
+.entry-form input {
   width: 100%;
   text-align: left;
-  @include size(h4);
+  @include size(h3);
   font-family: $base-font, sans-serif;
   outline: none;
 }

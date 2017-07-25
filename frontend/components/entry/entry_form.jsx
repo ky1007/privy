@@ -99,8 +99,8 @@ class EntryForm extends React.Component {
     const { createEntry } = this.props;
 
     return (
-      <div>
-        <form className="entry-form">
+      <div className="entry-form">
+        <form>
           <label> 
           <textarea rows="4" cols="5"
                     placeholder="what's on your mind"

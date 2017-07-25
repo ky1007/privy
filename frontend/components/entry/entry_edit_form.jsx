@@ -97,7 +97,7 @@ class EntryEditForm extends React.Component {
 
     if (this.props.entry && this.props.goals) {
       return (
-        <div>
+        <div className="entry-form">
           <form action="">
             <label> 
             <textarea rows="4" cols="5"

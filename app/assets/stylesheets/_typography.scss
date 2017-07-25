@@ -4,6 +4,7 @@ $type-scale-large: (
   h3: 1.8rem,
   h4: 1.663rem,
   p: 1.663rem,
+  small: 1rem,
 );
 
 // $type-scale-large: (
@@ -72,7 +73,6 @@ h1, h2, h3 {
 
 h1 {
   font-family: $logo-font, cursive;   
-  // font-size: 6em; 
   margin-bottom: -11px;
   @include size(h1);
 }
@@ -103,14 +103,18 @@ a {
   color: green;
 }
 
+/* -- STYLING the login/signup form -- */
+.session-form input {
+  @include size(p);
+}
 .session-errors {
   font-size: .7em;
   color: $error;
   padding-bottom: 5px;
 }
 
-.alt-session {
-  @include size(p);
+.session-option {
+  @include size(small);
 }
 
 /* -- SHOWING an ENTRY -- */
@@ -125,3 +129,6 @@ section {
 section h2 {
   padding-bottom: 0.4em;
 }
+
+li { list-style: none; }
+.nav-links li { padding-left: 1rem; }

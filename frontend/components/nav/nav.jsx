@@ -10,10 +10,15 @@ const createSessionLinks = () => (
 );
 
 const loggedInLinks = (currentUser, logout) => (
-  <div>
-    <Link to="/new_entry">New Entry</Link>
-    <button onClick={logout} className="logout-button">Logout</button>
-  </div>
+  <nav>
+    <header className="nav-logo"><Link to="/feed">Privy</Link></header>
+    <section className="nav-links">
+       {/* <ul className="nav">  */}
+        <li><Link to="/new_entry">New Entry</Link></li>
+        <li><Link to="/" onClick={logout} className="logout-button">Logout</Link></li>
+       {/* </ul>  */}
+    </section>
+  </nav>
 );
 
 const Nav = ({ currentUser, logout }) => {

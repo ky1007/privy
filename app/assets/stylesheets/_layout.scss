@@ -13,6 +13,29 @@ body {
   padding-right: 1.5rem;
 }
 
+// --- NAV styling ---
+nav {
+  padding: .6rem 0.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.nav-logo {
+  flex: 1;
+  @include size(h2);
+  font-family: $logo-font, sans-serif;
+  align-items: baseline;
+}
+
+.nav-logo a { color: $logo-color; }
+
+.nav-links {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
 /* -- HOME PAGE ---  */
 .welcome-container {
   display: flex;
@@ -26,12 +49,12 @@ body {
 
 .intro {
   flex: 2;
-  // padding-left: 80px;
-  padding: 40px 20px 10px 20px;
-  /* border: 1px solid black; */
+  // border: 1px solid black;
+  padding: 5rem 0.4rem;
   margin: 0 auto;
 }
 
+// --- LOGIN / LOGOUT form --- 
 .session-form-container {
   flex: 1;
   padding: 30px 12px 0 0;
@@ -39,7 +62,7 @@ body {
 }
 
 .session-form {
-  max-width: 142px;
+  max-width: 150px;
   text-align: center;
   margin: 0 auto;
 }
