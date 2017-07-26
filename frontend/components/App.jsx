@@ -14,8 +14,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import * as APItest from '../util/entry_api_util';
 // import * as APItestGoal from '../util/goal_api_util';
 // import * as ACTIONgoalTEST from '../actions/goal_actions';
-// import * as APIactRef from '../actions/reflection_actions';
-import * as APIref from '../util/reflection_api_util';
+import * as APIref from '../actions/reflection_actions';
+// import * as APIref from '../util/reflection_api_util';
 // END
 
 const App = () => (
@@ -61,13 +61,11 @@ window.createReflection = APIref.createReflection;
 window.fetchReflections = APIref.fetchReflections;
 window.fetchReflection = APIref.fetchReflection;
 window.destroyReflection = APIref.destroyReflection;
-// window.destroyReflection = APIref.destroyReflection;
-// window.fetchReflection = APIref.fetchGoal;
 
 const reflection = {
-  entry_id: 2,
+  entry_id: 85,
   writer_id: 2,
-  body: "made via API!"
+  body: "made via thunk action creator!"
 };
 
 window.reflection = reflection;

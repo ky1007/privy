@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
-
 import { RECEIVE_GOALS, RECEIVE_GOAL } from '../actions/goal_actions';
 
 const initialState = {

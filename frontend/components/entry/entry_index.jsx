@@ -9,7 +9,6 @@ class EntryIndex extends Component {
 
   render() {
     const { entries } = this.props;
-    console.log(entries, 'entries from props');
     if (entries.length > 0) {
       return (
         <div>

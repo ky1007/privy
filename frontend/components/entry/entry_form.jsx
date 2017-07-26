@@ -39,6 +39,10 @@ class EntryForm extends React.Component {
     this.pullEntryId = this.pullEntryId.bind(this);
   }
 
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
   pullEntryId(entry) {
     const { goals } = this.state;
 
@@ -104,7 +108,8 @@ class EntryForm extends React.Component {
       <div className="entry-form">
         <form>
           <label> 
-          <textarea placeholder="what's on your mind"
+          <textarea ref={(input) => { this.nameInput = input; }}
+                    placeholder="what's on your mind"
                     value={general}
                     onChange={this.update('entry', 'general')}>
           </textarea></label>

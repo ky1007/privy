@@ -16,9 +16,7 @@ class EntryEditForm extends React.Component {
         writer_id: null,
         public: null,
       },
-      goals: {
-        goals1: null,
-      },
+      goals: null,
     };
 
     this.update = this.update.bind(this);
@@ -34,18 +32,20 @@ class EntryEditForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.state = {
-      entry: {
-        id: nextProps.entry.id,
-        title: nextProps.entry.title,
-        general: nextProps.entry.general,
-        gratitude: nextProps.entry.gratitude,
-        improvements: nextProps.entry.improvements,
-        writer_id: nextProps.entry.writer_id,
-        public: nextProps.entry.public,
-      },
-      goals: nextProps.goals,
-    };
+    if (true) {
+      this.setState({
+        entry: {
+          id: nextProps.entry.id,
+          title: nextProps.entry.title,
+          general: nextProps.entry.general,
+          gratitude: nextProps.entry.gratitude,
+          improvements: nextProps.entry.improvements,
+          writer_id: nextProps.entry.writer_id,
+          public: nextProps.entry.public,
+        },
+        goals: nextProps.goals,
+      });
+    }
   }
 
   update(subject, field) {

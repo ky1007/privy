@@ -2,17 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import GoalIndexContainer from './goal_index_container';
+import ReflectionIndexItem from '../reflection/reflection_index';
 import { isEmpty } from '../../util/helpers';
 
 class EntryShow extends React.Component {
   componentDidMount() {
-    this.props.fetchEntry(this.props.entryId)
+    const { entryId } = this.props;
+    this.props.fetchEntry(entryId);
+    this.props.fetchReflections({ entry_id: entryId });
   }
 
   waitingToLoad() {
     return (
       <div>Loading screen!</div>
     );
+  }
+
+  showReflections() {
+    const { reflections } = this.props;
+
+    if (reflections) {
+      return (
+        <section>
+          {reflections.map(reflection => <ReflectionIndexItem key={reflection.id} reflection={reflection} />)}
+        </section>
+      );
+    }
+    return (<div />);
   }
 
   showEntryWithGoals() {
@@ -28,6 +44,7 @@ class EntryShow extends React.Component {
           <GoalIndexContainer entryId={id} />
           <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link>
         </article>
+        {this.showReflections()}
       </main>
     );
   }
