@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import GoalIndexContainer from './goal_index_container';
-import ReflectionIndexItem from '../reflection/reflection_index';
+import ReflectionIndexItem from '../reflection/reflection_index_item';
 import { isEmpty } from '../../util/helpers';
 
 class EntryShow extends React.Component {
@@ -47,11 +47,11 @@ class EntryShow extends React.Component {
       .then(() => this.setState({ title: '' }));
   }
 
-  handleDelete(e) {
-    e.preventDefault();
-
-    const reflectionId = e.target.value;
-    this.props.destroyReflection(reflectionId);
+  handleDelete(id) {
+    // e.preventDefault();
+    return () => this.props.destroyReflection(id);
+    // const reflectionId = e.target.value;
+    // this.props.destroyReflection(reflectionId);
   }
 
   showReflections() {

@@ -87,11 +87,27 @@ main .entry-list-items {
   max-width: 40em;
 }
 
+// --- REFLECTIONS page ---
+
 .reflections article {
   background: #444;
-  padding: 2em;
+  padding: 2em 2em 1em 2em;
   margin-bottom: 1em;
   color: #fff;
+  width: 100%;
+}
+
+.reflection-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.reflection-item-content {
+  flex: 40;
+}
+.reflection-item-action {
+  flex: 1;
+  text-align: right;
 }
 
 // --- ENTRY SHOW page ---

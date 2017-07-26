@@ -139,7 +139,7 @@ class EntryForm extends React.Component {
               <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
             </label>
 
-            <button onClick={this.handleSubmit}>Submit</button>
+            <button onClick={this.handleSubmit} className="entry-submit-button">Submit</button>
           </form>
         </div>
       </div>

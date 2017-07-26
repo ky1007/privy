@@ -75,9 +75,10 @@ textarea {
 }
 
 @mixin entry-form-buttons {
-  background-color: $yellow;
-  border: 0px solid #333;
+  background-color: #fff;
   margin-top: 2.3em;
+  margin-bottom: 4em;
+  margin-left: 1em;
   padding: .6em .4em;
   text-decoration: none;
   text-transform: lowercase;
@@ -86,19 +87,31 @@ textarea {
   cursor: pointer;
   @include size(h4);
   font-weight: 700;
-  margin-bottom: 4em;
-}
-.entry-form button {
- @include entry-form-buttons; 
-}
-.edit-entry-form button {
- @include entry-form-buttons; 
+  border: 1px solid $purple;
+  color: $purple;
 }
 
-button .entry-delete-button {
+@mixin entry-submit-hover {
+  background: $purple;
+  color: #fff;
+}
+
+.entry-submit-button {
+ @include entry-form-buttons; 
+}
+.entry-submit-button:hover {
+  @include entry-submit-hover;
+}
+
+.entry-delete-button {
   @include entry-form-buttons; 
-  border: 1px solid purple;
+  border: 1px solid $red;
+  color: $red;
   background-color: #fff;
+}
+.entry-delete-button:hover {
+  background: $red;
+  color: #fff;
 }
 
 .edit-entry-form input {
@@ -110,6 +123,19 @@ button .entry-delete-button {
   margin: 0 0 1em 0;
   width: 7rem;
   text-align: center
+}
+
+.reflections-form button:hover {
+  @include entry-submit-hover;
+}
+
+.unstyled-button {
+  background:none;
+  border:none;
+  color: #fff;
+  @include size(p);
+  cursor: hand;
+  cursor: pointer;
 }
 
 /* --- LOGIN / LOGOUT form --- */
