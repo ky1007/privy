@@ -6,6 +6,7 @@ import { createGoal } from '../../actions/goal_actions';
 
 const mapStateToProps = ({ session }) => ({
   writerId: session.currentUser.id,
+  writer: session.currentUser.username,
 });
 
 const mapDispatchToProps = dispatch => ({

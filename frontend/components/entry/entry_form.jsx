@@ -1,5 +1,6 @@
 import React from 'react';
 import update from 'react-addons-update';
+import moment from 'moment';
 
 class EntryForm extends React.Component {
   constructor(props) {
@@ -102,39 +103,45 @@ class EntryForm extends React.Component {
   render() {
     const { entry: { title, general, gratitude, improvements } } = this.state;
     const { goals: { goal1, goal2, goal3 } } = this.state;
-    const { createEntry } = this.props;
+    const { createEntry, writer } = this.props;
+    const date = moment().format("MMM Do");
 
     return (
-      <div className="entry-form">
-        <form>
-          <label> 
-          <textarea ref={(input) => { this.nameInput = input; }}
-                    placeholder="what's on your mind"
-                    value={general}
-                    onChange={this.update('entry', 'general')}>
-          </textarea></label>
+      <div>
+        <article>
+          <h1>{date}</h1>
+        </article>
+        <div className="entry-form">
+          <form>
+            <label> 
+            <textarea ref={(input) => { this.nameInput = input; }}
+                      placeholder={`what's on your mind, ${writer}?`}
+                      value={general}
+                      onChange={this.update('entry', 'general')}>
+            </textarea></label>
 
-          <label> 
-          <textarea placeholder="things you feel thankful for"
-                    value={gratitude}
-                    onChange={this.update('entry', 'gratitude')}>
-          </textarea></label>
+            <label> 
+            <textarea placeholder="things you feel thankful for"
+                      value={gratitude}
+                      onChange={this.update('entry', 'gratitude')}>
+            </textarea></label>
 
-          <label> 
-          <textarea placeholder="things you could have done better today"
-                    value={improvements}
-                    onChange={this.update('entry', 'improvements')}>
-          </textarea></label>
+            <label> 
+            <textarea placeholder="things you could have done better today"
+                      value={improvements}
+                      onChange={this.update('entry', 'improvements')}>
+            </textarea></label>
 
-          <label> 
-            <h2>three main things you want to get done tomorrow</h2>
-            <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
-            <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
-            <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
-          </label>
+            <label> 
+              <h2>three main things you want to get done tomorrow</h2>
+              <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
+              <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
+              <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
+            </label>
 
-          <button onClick={this.handleSubmit}>Submit</button>
-        </form>
+            <button onClick={this.handleSubmit}>Submit</button>
+          </form>
+        </div>
       </div>
     );
   }

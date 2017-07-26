@@ -1,6 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update';
 import merge from 'lodash/merge';
+import moment from 'moment';
 import { isEmpty } from '../../util/helpers';
 
 class EntryEditForm extends React.Component {
@@ -106,39 +107,43 @@ class EntryEditForm extends React.Component {
   render() {
     const { title, general, gratitude, improvements } = this.state.entry;
     const { goals } = this.state;
+    const date = moment().format("MMM Do YY"); 
 
     if (this.props.entry && this.props.goals) {
       return (
-        <div className="entry-form">
-          <form action="">
-            <label> 
-            <textarea rows="4" cols="5"
-                      placeholder="what was on your mind"
-                      value={general}
-                      onChange={this.update('entry', 'general')}>
-            </textarea></label>
+        <div>
+          <article><h1>{date}</h1></article>
+          <div className="edit-entry-form">
+            <form action="">
+              <label> <h2>what was on your mind</h2>
+              <textarea rows="4" cols="5"
+                        placeholder="what was on your mind"
+                        value={general}
+                        onChange={this.update('entry', 'general')}>
+              </textarea></label>
 
-            <label> 
-            <textarea rows="4" cols="5"
-                      placeholder="things you felt thankful for"
-                      value={gratitude}
-                      onChange={this.update('entry', 'gratitude')}>
-            </textarea></label>
+              <label> <h2>things you felt thankful for</h2>
+              <textarea rows="4" cols="5"
+                        placeholder="things you felt thankful for"
+                        value={gratitude}
+                        onChange={this.update('entry', 'gratitude')}>
+              </textarea></label>
 
-            <label> 
-            <textarea rows="4" cols="5"
-                      placeholder="things you had wished you could have improved"
-                      value={improvements}
-                      onChange={this.update('entry', 'improvements')}>
-            </textarea></label>
+              <label> <h2>things you had wished you could have improved</h2>
+              <textarea rows="4" cols="5"
+                        placeholder="things you had wished you could have improved"
+                        value={improvements}
+                        onChange={this.update('entry', 'improvements')}>
+              </textarea></label>
 
-            <label> 
-              {isEmpty(goals) ? <div /> : <h2>three main things you want to get done</h2>}
-               {this.showGoals()} 
-            </label>
+              <label>
+                {isEmpty(goals) ? <div /> : <h2>three main things you want to get done</h2>}
+                {this.showGoals()} 
+              </label>
 
-            <button onClick={this.handleSubmit}>Update Entry</button>
-          </form>
+              <button onClick={this.handleSubmit}>Update Entry</button>
+            </form>
+          </div>
         </div>
       );
     } else {

@@ -48,8 +48,6 @@ $type-scale-small: (
   small: 0.7744rem,
 );
 
-
-
 $breakpoint-medium: 75em;
 $breakpoint-small: 45em;
 
@@ -136,9 +134,9 @@ article h1 {
   padding-bottom: .3em;
   // background-color: $yellow;
   text-align: center;
-  border-bottom: 1px solid $yellow;
+  border-bottom: 1px solid $purple;
   font-weight:300;
-  color: $dark-yellow;
+  color: $purple;
 }
 
 article h2 {
@@ -159,8 +157,14 @@ li { list-style: none; }
 
 // --- ENTRY form --- 
 .entry-form h2 {
-  padding-bottom: 0.3em;
+  padding-bottom: 0.4em;
   color: $darker-gray;
+  text-align: center;
+}
+.edit-entry-form h2 {
+  padding-bottom: 0.4em;
+  color: $light-gray;
+  text-align: left;
 }
 
 @mixin form-placeholder {
@@ -180,4 +184,12 @@ li { list-style: none; }
 } 
 .entry-form :-ms-input-placeholder { 
   @include form-placeholder;
+}
+
+// -- REFLECTIONS form ---
+.reflections h2 {
+  @include size(h3);
+  color: $darker-gray;
+  text-align: center;
+  padding-bottom: 0.4em;
 }
