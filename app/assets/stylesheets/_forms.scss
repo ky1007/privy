@@ -40,6 +40,16 @@ button.session-button {
   background-color: $dark-yellow;
 }
 
+// --- GOALS INPUT on entry edit/create page --
+
+@mixin goals-input {
+  width: 100%;
+  text-align: left;
+  @include size(h3);
+  font-family: $base-font, sans-serif;
+  outline: none;
+}
+
 /*  -- ENTRY FORM -- */
 form {
   @include size(h4);
@@ -71,7 +81,7 @@ textarea {
   padding: .6em .4em;
   text-decoration: none;
   text-transform: lowercase;
-  width: 50%;
+  width: 30%;
   cursor: hand;
   cursor: pointer;
   @include size(h4);
@@ -83,6 +93,16 @@ textarea {
 }
 .edit-entry-form button {
  @include entry-form-buttons; 
+}
+
+button .entry-delete-button {
+  @include entry-form-buttons; 
+  border: 1px solid purple;
+  background-color: #fff;
+}
+
+.edit-entry-form input {
+  @include goals-input;
 }
 
 .reflections-form button {
@@ -103,11 +123,7 @@ textarea {
 
 /* -- ENTRY and GOALS -- */
 .entry-form input {
-  width: 100%;
-  text-align: left;
-  @include size(h3);
-  font-family: $base-font, sans-serif;
-  outline: none;
+  @include goals-input;
 }
 
 .entry-form { text-align: left; }

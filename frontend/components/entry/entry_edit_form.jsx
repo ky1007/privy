@@ -98,6 +98,7 @@ class EntryEditForm extends React.Component {
 
   showGoals() {
     const { goals } = this.state;
+
     if (isEmpty(goals)) {
       return (<div />);
     } else {
@@ -148,7 +149,7 @@ class EntryEditForm extends React.Component {
               </label>
 
               <button onClick={this.handleSubmit}>Update Entry</button>
-              <button onClick={this.handleDelete} value={id}>Delete Entry</button>
+              <button onClick={this.handleDelete} value={id} className="entry-delete-button">Delete Entry</button>
             </form>
           </div>
         </div>
