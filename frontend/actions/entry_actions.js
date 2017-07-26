@@ -4,6 +4,7 @@ import * as APIUtil from '../util/entry_api_util';
 
 export const RECEIVE_ENTRIES = 'RECEIVE_ENTRIES';
 export const RECEIVE_ENTRY = 'RECEIVE_ENTRY';
+export const DELETE_ENTRY = 'DELETE_ENTRY';
 
 export const receiveEntries = allEntries => ({
   type: RECEIVE_ENTRIES,
@@ -13,6 +14,11 @@ export const receiveEntries = allEntries => ({
 export const receiveEntry = current => ({
   type: RECEIVE_ENTRY,
   current,
+});
+
+export const deleteEntry = id => ({
+  type: DELETE_ENTRY,
+  current: id,
 });
 
 // ajax TESTED TO WORK, state works!
@@ -36,10 +42,9 @@ export const fetchEntry = id => dispatch => (
   ))
 );
 
-// ajax TESTED TO WORK, same with state! USED: dispatch(destroyEntry(2));
 export const destroyEntry = id => dispatch => (
   APIUtil.destroyEntry(id).then(entry => (
-    dispatch(receiveEntry(entry))
+    dispatch(deleteEntry(entry))
   ))
 );
 

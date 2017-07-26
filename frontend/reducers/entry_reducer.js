@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_ENTRIES, RECEIVE_ENTRY } from '../actions/entry_actions';
+import { RECEIVE_ENTRIES, RECEIVE_ENTRY, DELETE_ENTRY } from '../actions/entry_actions';
 
 // WHAT ACTION LOOKS LIKE COMING IN
 // {
@@ -21,8 +21,16 @@ const entryReducer = (state = {}, action) => {
     case RECEIVE_ENTRIES:
       const entries = { allEntries: action.allEntries };
       return merge({}, state, entries);
+    
     case RECEIVE_ENTRY:
       return merge({}, state, { current: action.current });
+    
+    case DELETE_ENTRY:
+      const newState = merge({}, state);
+      delete newState.current;
+      delete newState.allEntries[action.current.id];
+      return newState;
+
     default:
       return state;
   }

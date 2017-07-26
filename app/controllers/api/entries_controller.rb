@@ -10,7 +10,7 @@ class Api::EntriesController < ApplicationController
     #   render :index
     else
       # QUESTION: how to limit number of entries returned per request? 
-      @entries = Entry.all
+      @entries = Entry.all.order(created_at: :desc)
       render :index
     end
 

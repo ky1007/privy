@@ -71,19 +71,25 @@ class EntryShow extends React.Component {
   }
 
   showEntryWithGoals() {
-    const { general, gratitude, improvements, id, created_at, writer_pseudonym } = this.props.entry;
+    const { currentUser } = this.props;
+    const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
     const date = moment(created_at.slice(0, 10), 'YYYY-MM-DD').fromNow();
 
     return (
-      <main>
-        <article className="entry-show">
-          <h1>{writer_pseudonym}</h1>
-          <section><h2>thoughts</h2>{general}</section>
-          { isEmpty(improvements) ? <div /> : <section><h2>things you wished to improve</h2>{improvements}</section> }
-          { isEmpty(gratitude) ? <div /> : <section><h2>things you felt grateful for</h2>{gratitude}</section> }
-          <GoalIndexContainer entryId={id} />
-          <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link>
-        </article>
+      <div className="entry-item-container">
+        <h1><strong>{writer_pseudonym}'s</strong> life {date}</h1>
+        <main className="entry-item">
+          <aside className="entry-item-writer-info">
+             {/* <h2>{writer_pseudonym}</h2>  */}
+          </aside>
+          <article className="entry-show">
+            <section><h2>thoughts</h2>{general}</section>
+            { isEmpty(improvements) ? <div /> : <section><h2>things you wished to improve</h2>{improvements}</section> }
+            { isEmpty(gratitude) ? <div /> : <section><h2>things you felt grateful for</h2>{gratitude}</section> }
+            <GoalIndexContainer entryId={id} />
+            { (currentUser.id === writer_id) ? <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> : <div /> }
+          </article>
+        </main>
         <form className="reflections-form">
             <label> <h2>reflect back on this entry</h2>
             <textarea value={this.state.body}
@@ -93,7 +99,7 @@ class EntryShow extends React.Component {
             <button onClick={this.handleSubmit}>add</button>
           </form>
         {this.showReflections()}
-      </main>
+      </div>
     );
   }
 

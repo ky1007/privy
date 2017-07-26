@@ -58,7 +58,11 @@ textarea {
   outline: none;
 }
 
-.entry-show a { text-align: center; }
+.entry-show a { 
+  text-align: right; 
+  @include size(small);
+  color: $purple;
+}
 
 @mixin entry-form-buttons {
   background-color: $yellow;

@@ -23,6 +23,7 @@ class EntryEditForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.submitGoals = this.submitGoals.bind(this);
   }
 
@@ -33,14 +34,14 @@ class EntryEditForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (true) {
+    if (nextProps.entry) {
       this.setState({
         entry: {
           id: nextProps.entry.id,
           title: nextProps.entry.title,
           general: nextProps.entry.general,
-          gratitude: nextProps.entry.gratitude,
-          improvements: nextProps.entry.improvements,
+          gratitude: nextProps.entry.gratitude || '',
+          improvements: nextProps.entry.improvements || '',
           writer_id: nextProps.entry.writer_id,
           public: nextProps.entry.public,
         },
@@ -87,6 +88,14 @@ class EntryEditForm extends React.Component {
     }
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+
+    const entryId = e.target.value;
+    this.props.destroyEntry(entryId);
+    this.props.history.push(`/me/entries/`);
+  }
+
   showGoals() {
     const { goals } = this.state;
     if (isEmpty(goals)) {
@@ -105,9 +114,9 @@ class EntryEditForm extends React.Component {
   }
 
   render() {
-    const { title, general, gratitude, improvements } = this.state.entry;
+    const { title, general, gratitude, improvements, id } = this.state.entry;
     const { goals } = this.state;
-    const date = moment().format("MMM Do YY"); 
+    const date = moment().format("MMM Do YYYY"); 
 
     if (this.props.entry && this.props.goals) {
       return (
@@ -116,22 +125,19 @@ class EntryEditForm extends React.Component {
           <div className="edit-entry-form">
             <form action="">
               <label> <h2>what was on your mind</h2>
-              <textarea rows="4" cols="5"
-                        placeholder="what was on your mind"
+              <textarea 
                         value={general}
                         onChange={this.update('entry', 'general')}>
               </textarea></label>
 
               <label> <h2>things you felt thankful for</h2>
-              <textarea rows="4" cols="5"
-                        placeholder="things you felt thankful for"
+              <textarea 
                         value={gratitude}
                         onChange={this.update('entry', 'gratitude')}>
               </textarea></label>
 
               <label> <h2>things you had wished you could have improved</h2>
-              <textarea rows="4" cols="5"
-                        placeholder="things you had wished you could have improved"
+              <textarea 
                         value={improvements}
                         onChange={this.update('entry', 'improvements')}>
               </textarea></label>
@@ -142,6 +148,7 @@ class EntryEditForm extends React.Component {
               </label>
 
               <button onClick={this.handleSubmit}>Update Entry</button>
+              <button onClick={this.handleDelete} value={id}>Delete Entry</button>
             </form>
           </div>
         </div>

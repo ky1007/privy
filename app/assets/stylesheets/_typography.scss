@@ -127,7 +127,7 @@ article {
   @include size(p);
 }
 
-article h1 {
+@mixin entry-heading {
   font-family: $base-font, sans-serif;
   @include size(h4);
   margin-bottom: 1em;
@@ -137,6 +137,10 @@ article h1 {
   border-bottom: 1px solid $purple;
   font-weight:300;
   color: $purple;
+}
+
+article h1 {
+  @include entry-heading;
 }
 
 article h2 {
@@ -192,4 +196,19 @@ li { list-style: none; }
   color: $darker-gray;
   text-align: center;
   padding-bottom: 0.4em;
+}
+
+// -- ENTRY SHOW page
+.entry-item-writer-info h2 {
+  font-family: $base-font;
+  @include size(h4);
+  padding-right: 1em;
+}
+
+.entry-item-container h1 {
+  @include entry-heading;
+}
+
+strong {
+  font-weight: 700;
 }
