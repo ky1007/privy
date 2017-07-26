@@ -81,6 +81,13 @@ textarea {
  @include entry-form-buttons; 
 }
 
+.reflections-form button {
+  @include entry-form-buttons;
+  margin: 0 0 1em 0;
+  width: 7rem;
+  text-align: center
+}
+
 /* --- LOGIN / LOGOUT form --- */
 .session-form input {
   width: 100%;
@@ -102,8 +109,13 @@ textarea {
 .entry-form { text-align: left; }
 
 // --- REFLECTIONS form ---
-.reflections textarea {
+.reflections-form textarea {
   height: 10rem;
-  border: 1px solid $darker-gray;
   padding: 1em;
+  background: $lighter-gray;
+  margin: 0;
+}
+
+.reflections-form h2 {
+  padding-bottom: 1em;
 }

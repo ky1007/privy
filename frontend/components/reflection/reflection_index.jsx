@@ -1,26 +1,10 @@
 import React from 'react';
 
-const ReflectionIndexItem = ({ reflection }) => (
+const ReflectionIndexItem = ({ reflection, handleDelete }) => (
   <article key={reflection.id}>
     {reflection.body}
+    <button onClick={handleDelete} value={reflection.id}>delete</button>
   </article>
 );
 
 export default ReflectionIndexItem;
-
-
-// class ReflectionIndex extends React.Component {
-
-//   render () {
-//     return (
-      // <section>
-      //   {reflections.map(reflection => <ReflectionIndexItem reflection={reflection} />)}
-      //   <ReflectionIndexItem />
-      // </section>
-//     );
-//   }
-// }
-
-
-// const ReflectionIndex = ({ reflections }) => 
-// DELETE once reflections is working 

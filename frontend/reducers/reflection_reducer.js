@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_REFLECTIONS, RECEIVE_REFLECTION } from '../actions/reflection_actions';
+import { RECEIVE_REFLECTIONS, RECEIVE_REFLECTION, DELETE_REFLECTION } from '../actions/reflection_actions';
 
 const initialState = {
   allReflections: null,
@@ -9,14 +9,23 @@ const initialState = {
 const reflectionReducer = (state = initialState, action) => {
   Object.freeze(state);
 
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_REFLECTIONS:
       const reflections = { allReflections: action.allReflections };
       return merge({}, state, reflections);
 
     case RECEIVE_REFLECTION:
-      console.log(action, 'action');
-      return merge({}, state, { current: action.current });
+      const allReflections = merge({}, state.allReflections);
+      allReflections[action.current.id] = action.current;
+      return merge({}, state, {
+        current: action.current,
+        allReflections,
+      });
+
+    case DELETE_REFLECTION:
+      const newState = Object.assign({}, state);
+      delete newState.allReflections[action.reflection.id];
+      return newState;
 
     default:
       return state;

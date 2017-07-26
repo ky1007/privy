@@ -2,6 +2,7 @@ import * as APIUtil from '../util/goal_api_util';
 
 export const RECEIVE_GOALS = 'RECEIVE_GOALS';
 export const RECEIVE_GOAL = 'RECEIVE_GOAL';
+export const CLEAR_GOALS = 'CLEAR_GOALS';
 
 export const receiveGoals = allGoals => ({
   type: RECEIVE_GOALS,
@@ -11,6 +12,11 @@ export const receiveGoals = allGoals => ({
 export const receiveGoal = current => ({
   type: RECEIVE_GOAL,
   current,
+});
+
+export const clearGoals = () => ({
+  type: CLEAR_GOALS,
+  allGoals: null,
 });
 
 // ajax TESTED TO WORK, state works!
