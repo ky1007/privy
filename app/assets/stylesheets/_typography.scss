@@ -198,6 +198,12 @@ li { list-style: none; }
   padding-bottom: 0.4em;
 }
 
+.reflection-time {
+  @include size(small);
+  padding-bottom: 0.5rem;
+  color: $gray;
+}
+
 // -- ENTRY SHOW page
 .entry-item-writer-info h2 {
   font-family: $base-font;

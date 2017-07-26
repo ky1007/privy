@@ -73,7 +73,7 @@ class EntryShow extends React.Component {
   showEntryWithGoals() {
     const { currentUser } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
-    const date = moment(created_at.slice(0, 10), 'YYYY-MM-DD').fromNow();
+    const date = moment(created_at).fromNow();
 
     return (
       <div className="entry-item-container">
