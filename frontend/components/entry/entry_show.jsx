@@ -54,7 +54,25 @@ class EntryShow extends React.Component {
     // this.props.destroyReflection(reflectionId);
   }
 
-  showReflections() {
+  showReflectionForm() {
+    const { currentUser, entry } = this.props;
+
+    if (currentUser.id === entry.writer_id) {
+      return (
+        <form className="reflections-form">
+          <label> <h2>reflect back on this entry</h2>
+          <textarea value={this.state.body}
+                    onChange={this.update('body')}
+                    placeholder="thoughts on your old self">
+          </textarea></label>
+          <button onClick={this.handleSubmit}>add</button>
+        </form>
+      );
+    }
+    return (<div />);
+  }
+
+  showReflections(created_at) {
     const { reflections } = this.props;
 
     if (reflections) {
@@ -62,7 +80,7 @@ class EntryShow extends React.Component {
         <div className="reflections">
           <section>
             {reflections.map(reflection =>
-              (<ReflectionIndexItem key={reflection.id} reflection={reflection} handleDelete={this.handleDelete} />))}
+              (<ReflectionIndexItem key={reflection.id} entryCreatedAt={created_at} reflection={reflection} handleDelete={this.handleDelete} />))}
           </section>
         </div>
       );
@@ -73,32 +91,25 @@ class EntryShow extends React.Component {
   showEntryWithGoals() {
     const { currentUser } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
-    const date = moment(created_at).fromNow();
-
+    const entryDate = moment(created_at).fromNow();
+    console.log(created_at, 'frst created at');
     return (
       <div className="entry-item-container">
-        <h1><strong>{writer_pseudonym}'s</strong> life {date}</h1>
+        <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>
         <main className="entry-item">
           <aside className="entry-item-writer-info">
              {/* <h2>{writer_pseudonym}</h2>  */}
           </aside>
           <article className="entry-show">
             <section><h2>thoughts</h2>{general}</section>
-            { isEmpty(improvements) ? <div /> : <section><h2>things you wished to improve</h2>{improvements}</section> }
-            { isEmpty(gratitude) ? <div /> : <section><h2>things you felt grateful for</h2>{gratitude}</section> }
+            { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
+            { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
             <GoalIndexContainer entryId={id} />
             { (currentUser.id === writer_id) ? <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> : <div /> }
           </article>
         </main>
-        <form className="reflections-form">
-            <label> <h2>reflect back on this entry</h2>
-            <textarea value={this.state.body}
-                      onChange={this.update('body')}
-                      placeholder="thoughts on your old self">
-            </textarea></label>
-            <button onClick={this.handleSubmit}>add</button>
-          </form>
-        {this.showReflections()}
+        {this.showReflectionForm()}
+        {this.showReflections(created_at)}
       </div>
     );
   }
