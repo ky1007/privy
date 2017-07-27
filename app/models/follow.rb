@@ -4,6 +4,6 @@ class Follow < ApplicationRecord
     class_name: :User
 
   belongs_to :followee,
-    foreign_key: followee_id,
+    foreign_key: :followee_id,
     class_name: :User
 end

@@ -15,6 +15,8 @@ class User < ApplicationRecord
     foreign_key: :followee_id,
     class_name: :Follow
 
+  has_many 
+
   attr_reader :password
   after_initialize :ensure_session_token
 
