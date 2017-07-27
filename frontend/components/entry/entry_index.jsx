@@ -8,11 +8,14 @@ class EntryIndex extends Component {
     username ? fetchEntries(username) : fetchEntries();
   }
 
-  // componentWillRecieveProps(nextProps) {
-  //   if (username !== nextProps.username) {
+  componentWillReceiveProps(nextProps) {
+    const { username, fetchEntries } = nextProps;
+    window.scrollTo(0, 0);
 
-  //   }
-  // }
+    if (nextProps.username !== this.props.username) {
+      username ? fetchEntries(username) : fetchEntries();
+    }
+  }
 
   render() {
     const { entries, username } = this.props;
@@ -28,9 +31,8 @@ class EntryIndex extends Component {
             </section>
         </div>
       );
-    } else {
-      return (<div />);
     }
+    return (<div />);
   }
 }
 

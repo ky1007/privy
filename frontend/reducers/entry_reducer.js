@@ -20,7 +20,7 @@ const entryReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ENTRIES:
       const entries = { allEntries: action.allEntries };
-      return merge({}, state, entries);
+      return entries;
     
     case RECEIVE_ENTRY:
       return merge({}, state, { current: action.current });

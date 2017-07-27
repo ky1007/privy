@@ -17,9 +17,9 @@
     errors: []
   },
 
-  entries: {
+  Users: {
     // All Users that match the search criteria
-    all_users: {
+    allUsers: {
       1: {
         id: 1,
         username: "thisisausername",
@@ -30,6 +30,7 @@
         country: "United Kingdom",
         state: "thisisastate",
         race: "thisisarace",
+        following: true,
       }
     },
     // Current user profile being viewed (only other users)
@@ -43,8 +44,8 @@
       country: "United Kingdom",
       state: "thisisastate",
       race: "thisisarace",
+      following: true,
     },
-
   },
 
   goals: {
@@ -66,9 +67,9 @@
     }
   }
 
-  comments: {
+  reflections: {
     // All comments connected to current(Entry)
-    all_comments: {
+    allReflections: {
       1: {
         id: 1,
         body: "",
@@ -77,7 +78,7 @@
       }
     },
     // Current comment being viewed
-    current: {
+    reflections: {
       id: 1,
       body: "",
       entry_id: 1,

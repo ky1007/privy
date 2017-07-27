@@ -3,12 +3,14 @@ import sessionReducer from './session_reducer';
 import entryReducer from './entry_reducer';
 import goalReducer from './goal_reducer';
 import reflectionReducer from './reflection_reducer';
+import userReducer from './user_reducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   entries: entryReducer,
   goals: goalReducer,
   reflections: reflectionReducer,
+  users: userReducer,
 });
 
 // STATE SHAPE: 

@@ -32,6 +32,14 @@ class EntryShow extends React.Component {
     this.props.clearGoals();
   }
 
+  // componentWillReceiveProps() {
+  //   this.props.fetchGoals(this.props.entryId);
+  // }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params. !== nextProps.match.params)
+  // }
+
   waitingToLoad() {
     return (
       <div>Loading screen!</div>

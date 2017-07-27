@@ -63,7 +63,15 @@ $breakpoint-small: 45em;
   }
 }
 
-// Example
+.nav-logo {
+  flex: 1;
+  @include size(h2);
+  font-family: $logo-font, sans-serif;
+  align-items: baseline;
+}
+
+.nav-logo a { color: $light-purple; }
+
 
 .title {
   @include size(h1);

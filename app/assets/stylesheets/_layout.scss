@@ -21,15 +21,6 @@ nav {
   align-items: baseline;
 }
 
-.nav-logo {
-  flex: 1;
-  @include size(h2);
-  font-family: $logo-font, sans-serif;
-  align-items: baseline;
-}
-
-.nav-logo a { color: $logo-color; }
-
 .nav-links {
   display: flex;
   align-items: baseline;
