@@ -58,7 +58,7 @@ form {
 }
 textarea {
   width: 100%;
-  height: 20em;
+  height: 12em;
   margin-bottom: 2em;
   box-sizing: border-box;
   border: 0px solid #fff;
@@ -128,7 +128,7 @@ textarea {
   @include entry-submit-hover;
 }
 
-.unstyled-button {
+.trash-button {
   background:none;
   border:none;
   color: #fff;
@@ -151,7 +151,14 @@ textarea {
   @include goals-input;
 }
 
-.entry-form { text-align: left; }
+.entry-form { 
+  text-align: left; 
+}
+
+.entry-form textarea, 
+.edit-entry-form textarea {
+  border-bottom: 1px solid $light-gray;
+}
 
 // --- REFLECTIONS form ---
 .reflections-form textarea {

@@ -218,3 +218,26 @@ li { list-style: none; }
 strong {
   font-weight: 700;
 }
+
+// -- ENTRY INDEX 
+.entry-index-header h1 {
+  @include size(h2);
+  font-family: $base-font;
+  text-align: center;
+  color: $darker-gray;
+  padding-bottom: 2.4rem;
+  font-weight: 300;
+  color: $purple;
+}
+
+.entry-index-metadata {
+  @include size(h4);
+  font-weight: 300;
+  color: $darkest-gray;
+  background-color: $lighter-gray;
+  padding: .4em;
+}
+
+.entry-index-metadata small {
+  @include size(small);
+}

@@ -73,14 +73,18 @@ class EntryShow extends React.Component {
   }
 
   showReflections(created_at) {
-    const { reflections } = this.props;
+    const { reflections, currentUser } = this.props;
 
     if (reflections) {
       return (
         <div className="reflections">
           <section>
             {reflections.map(reflection =>
-              (<ReflectionIndexItem key={reflection.id} entryCreatedAt={created_at} reflection={reflection} handleDelete={this.handleDelete} />))}
+              (<ReflectionIndexItem key={reflection.id} 
+                                    entryCreatedAt={created_at} 
+                                    reflection={reflection} 
+                                    currentUser={currentUser}
+                                    handleDelete={this.handleDelete} />))}
           </section>
         </div>
       );

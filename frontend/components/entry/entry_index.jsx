@@ -12,7 +12,10 @@ class EntryIndex extends Component {
     if (entries.length > 0) {
       return (
         <div>
-          {entries.map(entry => <EntryIndexItem key={entry.id} entry={entry}  />)}
+          <header className="entry-index-header"><h1>the most recent journal entries from everyone</h1></header>
+            <section className="entry-index">
+              {entries.map(entry => <EntryIndexItem key={entry.id} entry={entry} />)}
+            </section>
         </div>
       );
     } else {

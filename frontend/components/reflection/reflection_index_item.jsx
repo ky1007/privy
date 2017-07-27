@@ -1,7 +1,18 @@
 import React from 'react';
 import moment from 'moment';
 
-const ReflectionIndexItem = ({ reflection, handleDelete, entryCreatedAt }) => {
+const showReflectionDelete = (currentUser, reflection, handleDelete) => {
+  if (currentUser.id === reflection.writer_id) {
+    return (
+      <button onClick={handleDelete(reflection.id)} className="trash-button"> 
+        <i className="fa fa-trash" aria-hidden="true"></i>
+      </button> 
+    );
+  }
+  return (<div />);
+};
+
+const ReflectionIndexItem = ({ reflection, handleDelete, entryCreatedAt, currentUser }) => {
   const entryDate = moment(entryCreatedAt);
   const reflectionDate = moment(reflection.created_at);
   const timeElapsed = moment.duration(reflectionDate.diff(entryDate));
@@ -12,12 +23,12 @@ const ReflectionIndexItem = ({ reflection, handleDelete, entryCreatedAt }) => {
       <div className="reflection-time">{reflection.writer_pseudonym} reflected {hours} hours later</div>
       <div className="reflection-item-content">{reflection.body}</div>
       <div className="reflection-item-action">
-          <button onClick={handleDelete(reflection.id)} className="unstyled-button"> 
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </button>  
+          {showReflectionDelete(currentUser, reflection, handleDelete)}
       </div>
-   </article> 
+    </article>
   );
 };
 
 export default ReflectionIndexItem;
+
+

@@ -69,29 +69,53 @@ nav {
 
 
 // -- ENTRY INDEX page --- 
+
+.entry-index {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-index-container {
+  display: flex;
+  flex-direction: row;
+    align-items: flex-start;
+
+}
+
+.entry-index-metadata {
+  flex: 2;
+  text-align: right;
+  padding-right: 1rem;
+  // flex-grow: 1;
+  // width: 20%;
+}
+
 main .entry-list-items {
   // color: #fff;
   // border: 1px solid #000;
   // background: #000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: flex-start;
+  flex: 8;
+  // flex-grow: 3;
+  // width: 80%;
 }
 
 .entry-list-items article {
   color: #fff;
-  flex: 1;
   padding: 2em;
   margin-bottom: 1em;
   background: #000;
   max-width: 40em;
 }
 
+
 // --- REFLECTIONS page ---
 
 .reflections article {
   background: #444;
-  padding: 2em 2em 1em 2em;
+  padding: 1.7em 2em 1.7em 2em;
   margin-bottom: 1em;
   color: #fff;
   width: 100%;
@@ -104,6 +128,8 @@ main .entry-list-items {
 }
 .reflection-item-content {
   flex: 40;
+    overflow: hidden;
+
 }
 .reflection-item-action {
   flex: 1;
