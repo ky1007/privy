@@ -48,6 +48,15 @@ usr4 = User.create({
   age: "",
   race: "",
 })
+usr5 = User.create({
+  username: "Alfred Jones",
+  password: "asdfasdf",
+  email: "pa632ie@gmail.com",
+  biography: "I would travel the world",
+  country: "South Africa",
+  age: "28",
+  race: "Korean",
+})
 
 Goal.delete_all 
 goal1 = Goal.create({

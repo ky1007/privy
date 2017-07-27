@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { fetchEntry } from '../../actions/entry_actions';
 import { fetchReflections, destroyReflection, createReflection, clearReflections } from '../../actions/reflection_actions';
 import { clearGoals, fetchGoals } from '../../actions/goal_actions';
+import { fetchUser } from '../../actions/user_actions';
 
 import { selectReflections } from '../../reducers/selectors';
 import EntryShow from './entry_show';
 
-const mapStateToProps = ({ entries, reflections, session }, { match }) => ({
+const mapStateToProps = ({ entries, reflections, session, users }, { match }) => ({
   currentUser: session.currentUser,
   entry: entries.current,
+  writer: users.current,
   entryId: match.params.entryId,
   reflections: selectReflections(reflections.allReflections),
 });
@@ -21,7 +23,8 @@ const mapDispatchToProps = dispatch => ({
   createReflection: entry => dispatch(createReflection(entry)),
   clearReflections: () => dispatch(clearReflections()),
   clearGoals: () => dispatch(clearGoals()),
-  fetchGoals: entryId => dispatch(fetchGoals(entryId)),
+  // fetchGoals: entryId => dispatch(fetchGoals(entryId)),
+  fetchUser: id => dispatch(fetchUser(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryShow);

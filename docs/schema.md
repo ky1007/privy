@@ -11,6 +11,7 @@
 | country     | string    |                           |
 | age       | integer    |                           |
 | race       | string    |                           |
+| gender       | string    |                           |
 
 
 | ENTRIES     |           |                       |

@@ -22,8 +22,11 @@ class EntryShow extends React.Component {
   }
 
   componentDidMount() {
-    const { entryId } = this.props;
-    this.props.fetchEntry(entryId);
+    const { entry, entryId } = this.props;
+    
+    this.props.fetchEntry(entryId)
+      .then(entry => this.props.fetchUser(entry.current.writer_id));
+
     this.props.fetchReflections({ entry_id: entryId });
   }
 
@@ -67,6 +70,21 @@ class EntryShow extends React.Component {
     };
   }
 
+  showUserProfile() {
+    const { writer } = this.props;
+    if (writer) {
+      return (
+        <div>
+          {/* {writer.biography}<br />
+          {writer.age}<br />
+          {writer.race}<br />
+          {writer.country}<br /> */}
+        </div>
+      );
+    }
+    return null;
+  }
+
   showReflectionForm() {
     const { currentUser, entry, reflections } = this.props;
 
@@ -97,7 +115,6 @@ class EntryShow extends React.Component {
 
   showReflections(created_at) {
     const { reflections, currentUser } = this.props;
-
     if (reflections) {
       return (
         <div className="reflections">
@@ -113,10 +130,10 @@ class EntryShow extends React.Component {
         </div>
       );
     }
-    return (<div />);
+    return null;
   }
 
-  showEntryWithGoals() {
+  showCompleteEntry() {
     const { currentUser } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
@@ -129,7 +146,7 @@ class EntryShow extends React.Component {
              {/* <h2>{writer_pseudonym}</h2>  */}
           </aside>
           <article className="entry-show">
-            <section><h2>thoughts</h2>{general}</section>
+            <section><h2>thoughts</h2>{this.showUserProfile()}{general}</section>
             { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
             { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
             <GoalIndexContainer entryId={id} />
@@ -147,7 +164,7 @@ class EntryShow extends React.Component {
 
   render() {
     if (this.props.entry) {
-      return (this.showEntryWithGoals());
+      return (this.showCompleteEntry());
     } else {
       return (this.waitingToLoad());
     }
