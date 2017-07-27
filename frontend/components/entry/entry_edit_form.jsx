@@ -65,9 +65,7 @@ class EntryEditForm extends React.Component {
     };
   }
 
-  submitGoals() {
-    const { goals } = this.state;
-
+  submitGoals(goals) {
     for (const id of Object.keys(this.state.goals)) {
       if (goals[id].body !== '') {
         this.props.updateGoal(goals[id]);
@@ -77,14 +75,14 @@ class EntryEditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    const { entry } = this.state;
+    const newState = merge({}, this.state);
+    const { entry, goals } = newState;
     const { updateEntry, entryId } = this.props;
     
     if (entry.general !== '') {
-      updateEntry(entry);
-      this.submitGoals();
-      this.props.history.push(`/me/entries/${entryId}`);
+      updateEntry(entry)
+        .then(() => this.submitGoals(goals))
+        .then(() => this.props.history.push(`/me/entries/${entryId}`));
     }
   }
 
@@ -103,7 +101,10 @@ class EntryEditForm extends React.Component {
       return (<div />);
     } else {
       return (
-        Object.keys(goals).map(id => <input type="text" key={id} value={goals[id].body} onChange={this.updateGoals(id)} />)
+        Object.keys(goals).map(id => <input type="text" key={id} 
+                                            value={goals[id].body} 
+                                            onChange={this.updateGoals(id)} 
+                                    />)
       );
     }
   }

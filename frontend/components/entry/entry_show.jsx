@@ -32,7 +32,7 @@ class EntryShow extends React.Component {
 
   componentWillUnmount() {
     this.props.clearReflections();
-    this.props.clearGoals();
+    // this.props.clearGoals();
   }
 
   // componentWillReceiveProps() {
