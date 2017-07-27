@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const EntryIndexItem = ({ entry }) => (
+const EntryIndexItem = ({ entry, username }) => (
   <div className="entry-index-container">
     <aside className="entry-index-metadata">
-      {entry.writer_pseudonym}<br />
+      <h3>{entry.writer_pseudonym}</h3>
       <small>{moment(entry.created_at).fromNow()}</small>
     </aside>
     <main className="entry-list-items">

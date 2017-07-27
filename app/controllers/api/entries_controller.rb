@@ -1,7 +1,7 @@
 class Api::EntriesController < ApplicationController
   def index
-    if params[:writer_id] # && params[:latest_entries]
-      @entries = Entry.where(writer_id: params[:writer_id]).limit(2)
+    if params[:username] # && params[:latest_entries]
+      @entries = Entry.writer.where(username: params[:username]).limit(10)
       render :index
     # elsif params[:latest_entries]
     #   # QUESTION: show to return a certain number the most recent of entries

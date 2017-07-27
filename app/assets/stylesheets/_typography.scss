@@ -3,8 +3,10 @@ $type-scale-large: (
   h2: 2.1rem,
   h3: 1.8rem,
   h4: 1.663rem,
+  h5: 1.5rem,
   p: 1.663rem,
-  small: 1rem,
+  small: 1.3rem,
+  // small: 1rem,
 );
 
 // $type-scale-large: (
@@ -105,7 +107,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: $darker-gray;
+  color: $light-purple;
 }
 
 a:hover {
@@ -224,7 +226,7 @@ li { list-style: none; }
 // -- ENTRY SHOW page
 .entry-item-writer-info h2 {
   font-family: $base-font;
-  @include size(h4);
+  @include size(h5);
   padding-right: 1em;
 }
 
@@ -242,17 +244,23 @@ strong {
   font-family: $base-font;
   text-align: center;
   color: $darker-gray;
-  padding-bottom: 2.4rem;
+  padding-bottom: 3.1rem;
   font-weight: 300;
   color: $purple;
 }
 
 .entry-index-metadata {
-  @include size(h4);
-  font-weight: 300;
-  color: $darkest-gray;
   background-color: $lighter-gray;
-  padding: .4em;
+  padding: .8em;
+  color: $gray;
+}
+
+.entry-index-metadata h3 {
+  @include size(h5);
+  font-weight: 300;
+  font-size: 1.5rem;
+  // margin-bottom: -0.55rem;
+
 }
 
 .entry-index-metadata small {

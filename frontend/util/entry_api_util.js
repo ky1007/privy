@@ -1,10 +1,10 @@
 // writer_id is written in ruby syntax because that's what
 // the rails controller is expecting
-export const fetchEntries = entry => (
+export const fetchEntries = username => (
   $.ajax({
     method: 'GET',
     url: '/api/entries',
-    data: entry,
+    data: { username },
   })
 );
 

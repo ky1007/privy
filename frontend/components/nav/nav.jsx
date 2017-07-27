@@ -11,12 +11,10 @@ const createSessionLinks = () => (
 
 const loggedInLinks = (currentUser, logout) => (
   <nav>
-    <header className="nav-logo"><Link to="/me/entries">Privy</Link></header>
+    <header className="nav-logo"><Link to="/everyone">Privy</Link></header>
     <section className="nav-links">
-       {/* <ul className="nav">  */}
         <li><Link to="/new_entry">New Entry</Link></li>
         <li><Link to="/" onClick={logout} className="logout-button">Logout</Link></li>
-       {/* </ul>  */}
     </section>
   </nav>
 );

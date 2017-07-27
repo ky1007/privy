@@ -44,7 +44,7 @@ class EntryShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReflection(this.state)
-      .then(() => this.setState({ title: '' }));
+      .then(() => this.setState({ body: '' }));
   }
 
   handleDelete(id) {
@@ -65,16 +65,18 @@ class EntryShow extends React.Component {
           <button onClick={this.handleSubmit}>add</button>
         </form>
       );
-    } else if (isEmpty(reflections.allReflections)) {
+    } else if (isEmpty(reflections)) {
       return (
-        <div>
-          <header className="reflection">
-            <h2><strong>{entry.writer_pseudonym}</strong> reflecting on this entry</h2>
-          </header>
-        </div>
+        <div />
       );
     }
-    return (<div />);
+    return (
+      <div>
+        <header className="reflection">
+          <h2><strong>{entry.writer_pseudonym}</strong> reflecting on this entry</h2>
+        </header>
+      </div>
+    );
   }
 
   showReflections(created_at) {
@@ -85,11 +87,12 @@ class EntryShow extends React.Component {
         <div className="reflections">
           <section>
             {reflections.map(reflection =>
-              (<ReflectionIndexItem key={reflection.id} 
-                                    entryCreatedAt={created_at} 
-                                    reflection={reflection} 
+              (<ReflectionIndexItem key={reflection.id}
+                                    entryCreatedAt={created_at}
+                                    reflection={reflection}
                                     currentUser={currentUser}
-                                    handleDelete={this.handleDelete} />))}
+                                    handleDelete={this.handleDelete}
+              />))}
           </section>
         </div>
       );
