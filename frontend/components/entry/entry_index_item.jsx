@@ -5,7 +5,9 @@ import moment from 'moment';
 const EntryIndexItem = ({ entry, username }) => (
   <div className="entry-index-container">
     <aside className="entry-index-metadata">
-      <h3>{entry.writer_pseudonym}</h3>
+      <h3>
+        <Link to={`/${entry.writer_pseudonym}/entries`}>{entry.writer_pseudonym}</Link>
+      </h3>
       <small>{moment(entry.created_at).fromNow()}</small>
     </aside>
     <main className="entry-list-items">

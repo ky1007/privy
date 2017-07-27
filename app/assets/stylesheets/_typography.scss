@@ -5,8 +5,8 @@ $type-scale-large: (
   h4: 1.663rem,
   h5: 1.5rem,
   p: 1.663rem,
-  small: 1.3rem,
-  // small: 1rem,
+  // small: 1.3rem,
+  small: 1rem,
 );
 
 // $type-scale-large: (
@@ -250,8 +250,6 @@ strong {
 }
 
 .entry-index-metadata {
-  background-color: $lighter-gray;
-  padding: .8em;
   color: $gray;
 }
 

@@ -78,16 +78,17 @@ nav {
 .entry-index-container {
   display: flex;
   flex-direction: row;
-    align-items: flex-start;
+  align-items: flex-start;
 
 }
 
 .entry-index-metadata {
   flex: 2;
   text-align: right;
-  padding-right: 1rem;
-  // flex-grow: 1;
-  // width: 20%;
+  // padding-right: 2rem;
+  // background-color: $lighter-gray;
+  // padding: .8em;
+  padding: 1.2em 2em 1.2em 0;
 }
 
 main .entry-list-items {
@@ -128,7 +129,7 @@ main .entry-list-items {
 }
 .reflection-item-content {
   flex: 40;
-    overflow: hidden;
+  overflow: hidden;
 
 }
 .reflection-item-action {
