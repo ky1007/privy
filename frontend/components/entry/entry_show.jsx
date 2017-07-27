@@ -48,14 +48,11 @@ class EntryShow extends React.Component {
   }
 
   handleDelete(id) {
-    // e.preventDefault();
     return () => this.props.destroyReflection(id);
-    // const reflectionId = e.target.value;
-    // this.props.destroyReflection(reflectionId);
   }
 
   showReflectionForm() {
-    const { currentUser, entry } = this.props;
+    const { currentUser, entry, reflections } = this.props;
 
     if (currentUser.id === entry.writer_id) {
       return (
@@ -67,6 +64,14 @@ class EntryShow extends React.Component {
           </textarea></label>
           <button onClick={this.handleSubmit}>add</button>
         </form>
+      );
+    } else if (isEmpty(reflections.allReflections)) {
+      return (
+        <div>
+          <header className="reflection">
+            <h2><strong>{entry.writer_pseudonym}</strong> reflecting on this entry</h2>
+          </header>
+        </div>
       );
     }
     return (<div />);
@@ -96,7 +101,7 @@ class EntryShow extends React.Component {
     const { currentUser } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
-    console.log(created_at, 'frst created at');
+
     return (
       <div className="entry-item-container">
         <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>

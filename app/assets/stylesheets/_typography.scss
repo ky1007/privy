@@ -105,7 +105,11 @@ h3 {
 
 a {
   text-decoration: none;
-  color: green;
+  color: $darker-gray;
+}
+
+a:hover {
+  color: $purple;
 }
 
 /* -- STYLING the login/signup form -- */
@@ -152,8 +156,12 @@ section {
   white-space: pre-wrap;
 }
 
+.entry-show section {
+  line-height: 2.37rem;
+}
+
 section h2 {
-  padding-bottom: 0.4em;
+  padding-bottom: 0.14rem;
 }
 
 li { list-style: none; }
@@ -202,6 +210,15 @@ li { list-style: none; }
   @include size(small);
   padding-bottom: 0.5rem;
   color: $gray;
+}
+
+.reflection h2 {
+  @include size(h3);
+  color: $darkest-gray;
+  text-align: center;
+  padding-bottom: 1.7rem;
+  padding-top: 1rem;
+  font-weight: 300;
 }
 
 // -- ENTRY SHOW page

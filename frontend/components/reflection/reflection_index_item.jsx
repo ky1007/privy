@@ -20,7 +20,7 @@ const ReflectionIndexItem = ({ reflection, handleDelete, entryCreatedAt, current
 
   return (
     <article key={reflection.id} className="reflection-item">
-      <div className="reflection-time">{reflection.writer_pseudonym} reflected {hours} hours later</div>
+      <div className="reflection-time">{reflection.writer_pseudonym} reflected {hours} hours later after writing this post</div>
       <div className="reflection-item-content">{reflection.body}</div>
       <div className="reflection-item-action">
           {showReflectionDelete(currentUser, reflection, handleDelete)}

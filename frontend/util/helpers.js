@@ -7,6 +7,6 @@ export const isEmpty = obj => {
 };
 
 export const toDate = (dateString) => {
-  const [year, month, day] = dateString.split("-");
+  const [year, month, day] = dateString.split('-');
   return new Date(year, month - 1, day);
 };

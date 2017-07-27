@@ -26,6 +26,8 @@ const rootReducer = combineReducers({
 //         id: 1,
 //         title: "This title",
 //         general: "This title",
+//         writer: "Tim",
+//         followed: true
 //       },
 //     },
 //     current: {
