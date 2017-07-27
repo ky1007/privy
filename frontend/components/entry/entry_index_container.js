@@ -4,10 +4,14 @@ import EntryIndex from './entry_index';
 import { fetchEntries } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
 
-const mapStateToProps = ({ entries, session }, { match }) => ({
-  entries: selectEntries(entries.allEntries),
-  username: match.params.username,
-});
+const mapStateToProps = ({ entries, session }, { match }) => {
+  const sortEntries = selectEntries(entries.allEntries);
+  sortEntries.sort((a, b) => b.id - a.id);
+  return {
+    entries: sortEntries,
+    username: match.params.username,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchEntries: username => dispatch(fetchEntries(username)),

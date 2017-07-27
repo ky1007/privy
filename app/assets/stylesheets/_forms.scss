@@ -96,10 +96,16 @@ textarea {
   color: #fff;
 }
 
+.entry-show button {
+  @include entry-form-buttons; 
+  margin: -6rem 0 3rem 0;
+}
+
 .entry-submit-button {
  @include entry-form-buttons; 
 }
-.entry-submit-button:hover {
+.entry-submit-button:hover,
+.entry-show button:hover {
   @include entry-submit-hover;
 }
 

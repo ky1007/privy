@@ -18,6 +18,7 @@ class EntryShow extends React.Component {
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,13 @@ class EntryShow extends React.Component {
 
   handleDelete(id) {
     return () => this.props.destroyReflection(id);
+  }
+
+  handleFollow() {
+    const follow_request = {
+      follower: this.props.currentUser.id,
+      followee: this.props.entry.writer_id,
+    };
   }
 
   showReflectionForm() {
@@ -117,7 +125,10 @@ class EntryShow extends React.Component {
             { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
             { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
             <GoalIndexContainer entryId={id} />
-            { (currentUser.id === writer_id) ? <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> : <div /> }
+            { (currentUser.id === writer_id) ? 
+              <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> 
+              : <button onClick={this.handleFollow}>Follow {writer_pseudonym}</button> 
+            }
           </article>
         </main>
         {this.showReflectionForm()}

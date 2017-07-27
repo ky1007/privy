@@ -4,13 +4,7 @@ class Api::EntriesController < ApplicationController
       user = User.find_by(username: params[:username])
       @entries = user.entries.limit(10)
       render :index
-    # elsif params[:latest_entries]
-    #   # QUESTION: show to return a certain number the most recent of entries
-    #   # AR has limit function (or can do SQL string)
-    #   @entries = Entry.limit(10)
-    #   render :index
     else
-      # QUESTION: how to limit number of entries returned per request? 
       @entries = Entry.all.order(created_at: :desc)
       render :index
     end

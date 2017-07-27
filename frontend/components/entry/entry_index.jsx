@@ -5,8 +5,14 @@ class EntryIndex extends Component {
 
   componentDidMount() {
     const { username, fetchEntries } = this.props;
-    (username) ? fetchEntries(username) : fetchEntries();
+    username ? fetchEntries(username) : fetchEntries();
   }
+
+  // componentWillRecieveProps(nextProps) {
+  //   if (username !== nextProps.username) {
+
+  //   }
+  // }
 
   render() {
     const { entries, username } = this.props;
