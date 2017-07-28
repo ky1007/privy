@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 
+import { createFollow, destroyFollow } from '../../actions/follow_actions';
 import { fetchEntry } from '../../actions/entry_actions';
 import { fetchReflections, destroyReflection, createReflection, clearReflections } from '../../actions/reflection_actions';
-import { clearGoals, fetchGoals } from '../../actions/goal_actions';
+import { clearGoals } from '../../actions/goal_actions';
 import { fetchUser } from '../../actions/user_actions';
 
 import { selectReflections } from '../../reducers/selectors';
@@ -23,8 +24,9 @@ const mapDispatchToProps = dispatch => ({
   createReflection: entry => dispatch(createReflection(entry)),
   clearReflections: () => dispatch(clearReflections()),
   clearGoals: () => dispatch(clearGoals()),
-  // fetchGoals: entryId => dispatch(fetchGoals(entryId)),
   fetchUser: id => dispatch(fetchUser(id)),
+  createFollow: followRequest => dispatch(createFollow(followRequest)),
+  destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryShow);

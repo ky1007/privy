@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_USERS, RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_FOLLOW } from '../actions/follow_actions';
 
 const userReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,6 +13,12 @@ const userReducer = (state = {}, action) => {
 
     case RECEIVE_USER:
       return merge({}, state, { current: action.current });
+
+    case RECEIVE_FOLLOW:
+      debugger
+      const newState = merge({}, state);
+      newState.current = action.following;
+      return newState;
 
     default:
       return state;

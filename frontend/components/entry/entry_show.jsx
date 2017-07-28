@@ -64,10 +64,11 @@ class EntryShow extends React.Component {
   }
 
   handleFollow() {
-    const follow_request = {
-      follower: this.props.currentUser.id,
-      followee: this.props.entry.writer_id,
+    const followRequest = {
+      follower_id: this.props.currentUser.id,
+      followee_id: this.props.entry.writer_id,
     };
+    this.props.createFollow(followRequest);
   }
 
   showUserProfile() {

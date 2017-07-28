@@ -1,6 +1,11 @@
 import * as APIUtil from '../util/follow_api_util';
 
-export const receiveFollow = follow
+export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
+
+export const receiveFollow = following => ({
+  type: RECEIVE_FOLLOW,
+  following,
+});
 
 export const createFollow = followRequest => dispatch => (
   APIUtil.follow(followRequest).then(followRequest => (
@@ -8,8 +13,8 @@ export const createFollow = followRequest => dispatch => (
   ))
 );
 
-export const destroyFollow = id => dispatch => (
-  APIUtil.follow(id).then(unfollowRequest => (
-    dispatch(deleteFollow(unfollowRequest))
+export const destroyFollow = unfollowRequest => dispatch => (
+  APIUtil.unfollow(unfollowRequest).then(unfollowRequest => (
+    dispatch(receiveFollow(unfollowRequest))
   ))
 );
