@@ -19,7 +19,7 @@ class EntryShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
-    this.handleUnfollow = this.handleUnfollow.bind(this);
+    // this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -55,28 +55,28 @@ class EntryShow extends React.Component {
     return () => this.props.destroyReflection(id);
   }
 
-  // handleFollow(followAction) {
+  handleFollow(followAction) {
+    const followRequest = {
+      follower_id: this.props.currentUser.id,
+      followee_id: this.props.entry.writer_id,
+    };
+    return () => followAction(followRequest);
+  }
+  
+  // handleUnfollow() {
   //   const followRequest = {
   //     follower_id: this.props.currentUser.id,
   //     followee_id: this.props.entry.writer_id,
   //   };
-  //   return () => followAction(followRequest);
+  //   this.props.destroyFollow(followRequest);
   // }
-  
-  handleUnfollow() {
-    const followRequest = {
-      follower_id: this.props.currentUser.id,
-      followee_id: this.props.entry.writer_id,
-    };
-    this.props.destroyFollow(followRequest);
-  }
-  handleFollow() {
-    const followRequest = {
-      follower_id: this.props.currentUser.id,
-      followee_id: this.props.entry.writer_id,
-    };
-    this.props.createFollow(followRequest);
-  }
+  // handleFollow() {
+  //   const followRequest = {
+  //     follower_id: this.props.currentUser.id,
+  //     followee_id: this.props.entry.writer_id,
+  //   };
+  //   this.props.createFollow(followRequest);
+  // }
 
   showUserProfile() {
     const { writer } = this.props;
@@ -108,9 +108,7 @@ class EntryShow extends React.Component {
         </form>
       );
     } else if (isEmpty(reflections)) {
-      return (
-        <div />
-      );
+      return null;
     }
     return (
       <div>
@@ -143,16 +141,20 @@ class EntryShow extends React.Component {
 
   showFollowToggle() {
     const { writer, currentUser, entry, createFollow, destroyFollow } = this.props;
+    
     if (writer && currentUser.id !== writer.id) {
-      const followAction = writer.following ? createFollow : destroyFollow;
+      const followAction = writer.following ? destroyFollow : createFollow;
       return (
         <div>
-        <button onClick={this.handleUnfollow}>
+        <button onClick={this.handleFollow(followAction)}>
+          {writer.following ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
+        </button>
+        {/* <button onClick={this.handleUnfollow}>
           {true ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
         </button>
         <button onClick={this.handleFollow}>
           {true ? 'follow' : 'follow'} {entry.writer_pseudonym}
-        </button>
+        </button> */}
         </div>
       );
     }

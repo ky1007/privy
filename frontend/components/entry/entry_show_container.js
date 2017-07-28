@@ -17,16 +17,21 @@ const mapStateToProps = ({ entries, reflections, session, users }, { match }) =>
   reflections: selectReflections(reflections.allReflections),
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchEntry: entryId => dispatch(fetchEntry(entryId)),
-  fetchReflections: entryId => dispatch(fetchReflections(entryId)),
-  destroyReflection: entryId => dispatch(destroyReflection(entryId)),
-  createReflection: entry => dispatch(createReflection(entry)),
-  clearReflections: () => dispatch(clearReflections()),
-  clearGoals: () => dispatch(clearGoals()),
-  fetchUser: id => dispatch(fetchUser(id)),
-  createFollow: followRequest => dispatch(createFollow(followRequest)),
-  destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
-});
+const mapDispatchToProps = dispatch => {
+  // const followAction = writer.following ? destroyFollow : createFollow;
+
+  return {
+    fetchEntry: entryId => dispatch(fetchEntry(entryId)),
+    fetchReflections: entryId => dispatch(fetchReflections(entryId)),
+    destroyReflection: entryId => dispatch(destroyReflection(entryId)),
+    createReflection: entry => dispatch(createReflection(entry)),
+    clearReflections: () => dispatch(clearReflections()),
+    clearGoals: () => dispatch(clearGoals()),
+    fetchUser: id => dispatch(fetchUser(id)),
+    // followAction: followRequest => dispatch(followAction(followRequest)),
+    createFollow: followRequest => dispatch(createFollow(followRequest)),
+    destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryShow);
