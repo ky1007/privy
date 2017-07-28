@@ -9,17 +9,6 @@ const mapStateToProps = ({ entries, session }, { match, location }) => {
   let followees = session.currentUser.followees;
   let sortEntries = selectEntries(entries.allEntries);
   sortEntries.sort((a, b) => b.id - a.id);
-  
-  // let feedEntries = []; 
-
-  // if (location.pathname === '/feed') {
-  //   for (let i = 0, len = sortEntries.length; i < len; i++) {
-  //     if (followees.indexOf(sortEntries[i].writer_id)) {
-  //       feedEntries.push(sortEntries[i]);
-  //     }
-  //   }
-  //   console.log(feedEntries, 'feed entries');
-  // }
 
   return {
     entries: sortEntries,

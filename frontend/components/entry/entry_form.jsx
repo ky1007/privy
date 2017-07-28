@@ -34,7 +34,7 @@ class EntryForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
+    this.updateEntry = this.updateEntry.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
     this.submitGoals = this.submitGoals.bind(this);
     this.pullEntryId = this.pullEntryId.bind(this);
@@ -47,7 +47,6 @@ class EntryForm extends React.Component {
   pullEntryId(entry) {
     const { goals } = this.state;
 
-    // QUESITON: what's the cost of if statement vs setting state three times anyway?
     for (const goalId of Object.keys(this.state.goals)) {
       if (goals[goalId].body !== '') {
         this.setState(update(
@@ -88,9 +87,9 @@ class EntryForm extends React.Component {
     }
   }
 
-  update(subject, field) {
+  updateEntry(field) {
     return e => (this.setState(update(
-      this.state, { [subject]: { [field]: { $set: e.target.value } } },
+      this.state, { entry: { [field]: { $set: e.target.value } } },
     )));
   }
 
@@ -117,26 +116,26 @@ class EntryForm extends React.Component {
             <textarea ref={(input) => { this.nameInput = input; }}
                       placeholder={`what's on your mind, ${writer}?`}
                       value={general}
-                      onChange={this.update('entry', 'general')}>
+                      onChange={this.updateEntry('general')}>
             </textarea></label>
 
             <label> 
             <textarea placeholder="things you feel thankful for"
                       value={gratitude}
-                      onChange={this.update('entry', 'gratitude')}>
+                      onChange={this.updateEntry('gratitude')}>
             </textarea></label>
 
             <label> 
             <textarea placeholder="things you could have done better today"
                       value={improvements}
-                      onChange={this.update('entry', 'improvements')}>
+                      onChange={this.updateEntry('improvements')}>
             </textarea></label>
 
             <label> 
               <h2>three main things you want to get done tomorrow</h2>
               <input type="text" placeholder="1" value={goal1.body} onChange={this.updateGoals('goal1')} />
-              <input type="text" placeholder="2"  value={goal2.body} onChange={this.updateGoals('goal2')} />
-              <input type="text" placeholder="3"  value={goal3.body} onChange={this.updateGoals('goal3')} />
+              <input type="text" placeholder="2" value={goal2.body} onChange={this.updateGoals('goal2')} />
+              <input type="text" placeholder="3" value={goal3.body} onChange={this.updateGoals('goal3')} />
             </label>
 
             <button onClick={this.handleSubmit} className="entry-submit-button">Submit</button>

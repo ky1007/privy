@@ -1,22 +1,58 @@
 # Privy 
-
 [Privy][live-link] is a single page application that lets users publish an anonymous diary under a pseudonym.  The app has a full-stack implementation: frontend views are handled with React and Redux. The backend utilizes a Rails framework to render and send data from a Postgres database to the frontend.
 
 
 ## Features
-  * secure account authentication
+  * Secure account login authentication and creation via BCrpyt
   * Users can follow and read other people’s diaries
   * Users can read through their old entries and post a reflection entry they’ve written. Other users can read an entry’s reflections, but they cannot write a reflection on entries they haven’t written. 
 
-  ### Writing a post
-  ![Privy entry form](docs/images/privy_entry_form.png)
+ ### Viewing posts
   ![Privy entry index](docs/images/privy_entry_index.png)
+To maintain DRY code, the same React component was used to render three different index views: the personal feed (showing entries based on a user's followers), the others users' entries (all entries writen by one user), the uer's own entries.
 
-Instead of creating a newreact To maintain DRY code, the index page renders different feeds. 
+This was made possible by checking the URL pathname and params passed from the router and dynamically fetching content based on those specific props. 
+```js
+  componentWillReceiveProps(nextProps) {
+    const { username, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
+    window.scrollTo(0, 0);
+
+    if (this.props.pathname !== pathname ) {
+      if (pathname === '/feed') {
+        return fetchFeedEntries(currentUser.id) 
+      } else if (username) {
+        return fetchEntries(username);
+      }
+      return fetchEntries();
+    }
+  }
+
+  typeOfIndexPage() {
+    const { username, pathname } = this.props; 
+    if (username) {
+      return ` ${username}`;
+    } else if (pathname === '/everyone') {
+      return ' everyone';
+    } 
+    return ' people you follow';
+  }
+``` 
+
+## Project Design
+Privy was designed and built in a two week period. View the original [proposal][dev-readme], which includes MVP features, an implementation timeline, and more extensive documentation.
+
+ ### Writing a post
+  ![Privy entry form](docs/images/privy_entry_form.png)
+Utilizing SASS and its ability to create mixins also helped maintain DRY code for visual consistency and styling.  
 
 — link to design docs: dev README, schema, wireframes
 
-— future features: 
-* User profiles to show general demographic information about themselves
-* Ability to search and read diaries from a general demographic, e.g. Korean men in their 40’s living in South Africa
-* The ability to highlight and save specific snippets of text from other’s diaries and refer to them
+## Future Implementations
+### Feature implementations
+  * User profiles to show general demographic information about the writers
+  * Ability to search and read diaries from a general demographic, e.g. Italian women in their 40’s living in South Africa
+  * The ability to highlight and save snippets of text users related to
+
+### Technical Implementations
+  * Adding unit, integration, and end-to-end tests
+  * Utilize more CSS animations to create a smoother user experience

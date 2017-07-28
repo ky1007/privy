@@ -104,7 +104,6 @@ h1 {
 
 h3 { 
   font-family: $base-font, sans-serif;
-  // font-size: 1.2em;
   font-weight: bold; 
   margin-left: 3px;
   @include size(h3);
@@ -133,6 +132,7 @@ a:hover {
   transition: 0.2s;
 }
 
+
 /* -- STYLING the login/signup form -- */
 .session-form input {
   @include size(p);
@@ -147,6 +147,8 @@ a:hover {
   @include size(small);
 }
 
+
+
 /* -- SHOWING an ENTRY -- */
 article {
   @include size(p);
@@ -155,12 +157,8 @@ article {
 @mixin entry-heading {
   font-family: $base-font, sans-serif;
   @include size(h4);
-  margin-bottom: 1em;
-  padding-bottom: 2.4rem;
-  // padding-bottom: .3em;
-  // background-color: $yellow;
+  padding-bottom: 1rem;
   text-align: center;
-  border-bottom: 1px solid $purple;
   font-weight:300;
   color: $purple;
 }
@@ -188,6 +186,9 @@ section h2 {
 
 li { list-style: none; }
 .nav-links li { padding-left: 1rem; }
+
+
+
 
 // --- ENTRY form --- 
 .entry-form h2 {
@@ -219,6 +220,9 @@ li { list-style: none; }
 .entry-form :-ms-input-placeholder { 
   @include form-placeholder;
 }
+
+
+
 
 // -- REFLECTIONS form ---
 .reflections h2 {
@@ -258,6 +262,9 @@ strong {
   font-weight: 700;
 }
 
+
+
+
 // -- ENTRY INDEX 
 .entry-index-header h1 {
   @include size(h2);
@@ -271,15 +278,15 @@ strong {
 
 .entry-index-metadata {
   color: $middle-gray;
+}
+.entry-index
+.entry-index-metadata:first-child {
   border-top: 1px solid #F5EBFF;
 }
 
 .entry-index-metadata h3 {
   @include size(p);
   font-weight: 300;
-  // font-size: 1.5rem;
-  // margin-bottom: -0.55rem;
-
 }
 
 .entry-index-metadata small {

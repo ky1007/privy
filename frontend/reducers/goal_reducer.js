@@ -18,10 +18,6 @@ const goalReducer = (state = initialState, action) => {
     case RECEIVE_GOAL:
       const newState = merge({}, state);
       newState.current = { current: action.current };
-      // if (newState.allGoals[action.current.id]) {
-      //   console.log(newState, 'newstate');
-      //   newState.allGoals[action.current.id] = action.current;
-      // }
       return newState;
 
     default:

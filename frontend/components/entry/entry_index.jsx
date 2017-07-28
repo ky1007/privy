@@ -4,7 +4,7 @@ import EntryIndexItem from './entry_index_item';
 class EntryIndex extends Component {
 
   componentDidMount() {
-    const { username, fetchEntries, pathname, currentUser, fetchFeedEntries } = this.props;
+    const { username, fetchEntries, fetchFeedEntries, currentUser, pathname } = this.props;
     if (username) {
       return fetchEntries(username);
     } else if (pathname === '/feed') {
@@ -17,7 +17,7 @@ class EntryIndex extends Component {
     const { username, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
     window.scrollTo(0, 0);
 
-    if (this.props.pathname !== nextProps.pathname ) {
+    if (this.props.pathname !== pathname ) {
       if (pathname === '/feed') {
         return fetchFeedEntries(currentUser.id) 
       } else if (username) {
@@ -33,7 +33,8 @@ class EntryIndex extends Component {
       return ` ${username}`;
     } else if (pathname === '/everyone') {
       return ' everyone';
-    } return ' people you follow';
+    }
+    return ' people you follow';
   }
 
   render() {
