@@ -63,6 +63,9 @@ $breakpoint-small: 45em;
   }
 }
 
+a {
+  text-decoration: none;
+}
 .nav-logo {
   flex: 1;
   @include size(h2);
@@ -70,8 +73,15 @@ $breakpoint-small: 45em;
   align-items: baseline;
 }
 
-.nav-logo a { color: $light-purple; }
+nav a {
+  @include size(small);
+  color: $darker-gray;
+}
 
+.nav-logo a { 
+  color: $darkest-gray; 
+  @include size(h2);
+}
 
 .title {
   @include size(h1);
@@ -113,13 +123,14 @@ h3 {
   display: block;
 }
 
-a {
+.entry-index-metadata a {
   text-decoration: none;
   color: $light-purple;
 }
 
 a:hover {
   color: $purple;
+  transition: 0.2s;
 }
 
 /* -- STYLING the login/signup form -- */
