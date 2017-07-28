@@ -17,11 +17,19 @@ class EntryIndex extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { username, fetchEntries, fetchFeedEntries, currentUser } = nextProps;
+    const { username, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
     window.scrollTo(0, 0);
 
-    if (nextProps.username !== this.props.username) {
-      username ? fetchEntries(username) : fetchEntries();
+    // if (nextProps.username !== this.props.username) {
+    //   username ? fetchEntries(username) : fetchEntries();
+    // }
+    if (this.props.pathname !== nextProps.pathname ) {
+      if (pathname === '/feed') {
+        return fetchFeedEntries(currentUser.id) 
+      } else if (username) {
+        return fetchEntries(username);
+      }
+      return fetchEntries();
     }
     // if (currentUser) {
     //   console.log('nextprops happened');
