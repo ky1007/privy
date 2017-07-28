@@ -10,14 +10,6 @@ import EntryIndexContainer from './entry/entry_index_container';
 import NavContainer from './nav/nav_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-// THIS IS TEMPORARY -- TESTING
-// import * as APItest from '../util/entry_api_util';
-// import * as APItestGoal from '../util/goal_api_util';
-// import * as ACTIONgoalTEST from '../actions/goal_actions';
-import * as APIref from '../actions/reflection_actions';
-// import * as APIref from '../util/reflection_api_util';
-// END
-
 const App = () => (
   <div className="main-container">
     <div className="nav-bar">
@@ -45,35 +37,3 @@ const App = () => (
 );
 
 export default App;
-
-// TEMP 
-// window.createGoal = ACTIONgoalTEST.createGoal;
-// window.fetchGoals = ACTIONgoalTEST.fetchGoals;
-// window.fetchGoal = ACTIONgoalTEST.fetchGoal;
-// window.destroyGoal = ACTIONgoalTEST.destroyGoal;
-// window.destroyGoal = ACTIONgoalTEST.destroyGoal;
-// window.fetchGoal = ACTIONgoalTEST.fetchGoal;
-
-// const goal = {  
-//   body: "goal body here",
-//   done: true,
-//   entry_id: null,
-// };
-
-window.createReflection = APIref.createReflection;
-window.fetchReflections = APIref.fetchReflections;
-window.fetchReflection = APIref.fetchReflection;
-window.destroyReflection = APIref.destroyReflection;
-
-const reflection = {
-  entry_id: 85,
-  writer_id: 2,
-  body: "made via thunk action creator!"
-};
-
-window.reflection = reflection;
-
-// DONE TESTING
-
-
-// TEMP END
