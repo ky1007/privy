@@ -38,14 +38,12 @@ This was made possible by checking the URL pathname and params passed from the r
   }
 ``` 
 
-## Project Design
-Privy was designed and built in a two week period. View the original [proposal][dev-readme], which includes MVP features, an implementation timeline, and more extensive documentation.
-
- ### Writing a post
-  ![Privy entry form](docs/images/privy_entry_form.png)
+ ### Viewing a post
+  ![Privy entry edit form](docs/images/privy_entry_show.png)
 Utilizing SASS and its ability to create mixins also helped maintain DRY code for visual consistency and styling.  
 
-— link to design docs: dev README, schema, wireframes
+## Project Design
+Privy was designed and built in a two week period. View the original [proposal][dev-readme], which includes MVP features, an implementation timeline, and more extensive documentation.
 
 ## Future Implementations
 ### Feature implementations
@@ -56,3 +54,6 @@ Utilizing SASS and its ability to create mixins also helped maintain DRY code fo
 ### Technical Implementations
   * Adding unit, integration, and end-to-end tests
   * Utilize more CSS animations to create a smoother user experience
+
+  [live-link]: https://privy-journal.herokuapp.com
+  [dev-readme]: docs/README.md
