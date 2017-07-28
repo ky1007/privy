@@ -36,7 +36,7 @@
 | entry_id        | integer    |   not null, indexed   |
 
 
-| COMMENTS     |           |                       |
+| REFLECTIONS     |           |                       |
 |--------------|-----------|-----------------------|
 | column name  | data type | details               |
 | id           | integer   | not null, primary key |

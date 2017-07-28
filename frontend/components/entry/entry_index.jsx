@@ -6,13 +6,10 @@ class EntryIndex extends Component {
   componentDidMount() {
     const { username, fetchEntries, pathname, currentUser, fetchFeedEntries } = this.props;
     if (username) {
-      console.log('fetched by username');
       return fetchEntries(username);
     } else if (pathname === '/feed') {
-      console.log(currentUser, 'fetchedfeed');
       return fetchFeedEntries(currentUser.id);
     }
-    console.log('fetched everything');
     return fetchEntries();
   }
 
@@ -20,9 +17,6 @@ class EntryIndex extends Component {
     const { username, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
     window.scrollTo(0, 0);
 
-    // if (nextProps.username !== this.props.username) {
-    //   username ? fetchEntries(username) : fetchEntries();
-    // }
     if (this.props.pathname !== nextProps.pathname ) {
       if (pathname === '/feed') {
         return fetchFeedEntries(currentUser.id) 
@@ -31,15 +25,7 @@ class EntryIndex extends Component {
       }
       return fetchEntries();
     }
-    // if (currentUser) {
-    //   console.log('nextprops happened');
-    //   // fetchFeedEntries(currentUser.id);
-    // }
   }
-
-  // componentWillMount() {
-  //   this.props.fetchFeedEntries(this.props.currentUser.id);
-  // }
 
   typeOfIndexPage() {
     const { username, pathname } = this.props; 
