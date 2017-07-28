@@ -10,12 +10,12 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.where(
-      followee_id: params[:follow][:followee_id],
-      follower_id: params[:follow][:follower_id]
-    ).first
-    # find the user who was being followed
-    @user = User.find_by(@follow.followee_id)
+    @follow = Follow.find_by(
+      followee_id: (params[:follow][:followee_id]).to_i,
+      follower_id: (params[:follow][:follower_id]).to_i
+    )
+
+    @user = User.find_by(id: @follow.followee_id.to_i)
 
     if @follow.destroy
       render "api/users/show"

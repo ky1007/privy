@@ -19,6 +19,7 @@ class EntryShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -32,16 +33,7 @@ class EntryShow extends React.Component {
 
   componentWillUnmount() {
     this.props.clearReflections();
-    // this.props.clearGoals();
   }
-
-  // componentWillReceiveProps() {
-  //   this.props.fetchGoals(this.props.entryId);
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.match.params. !== nextProps.match.params)
-  // }
 
   waitingToLoad() {
     return (
@@ -63,6 +55,21 @@ class EntryShow extends React.Component {
     return () => this.props.destroyReflection(id);
   }
 
+  // handleFollow(followAction) {
+  //   const followRequest = {
+  //     follower_id: this.props.currentUser.id,
+  //     followee_id: this.props.entry.writer_id,
+  //   };
+  //   return () => followAction(followRequest);
+  // }
+  
+  handleUnfollow() {
+    const followRequest = {
+      follower_id: this.props.currentUser.id,
+      followee_id: this.props.entry.writer_id,
+    };
+    this.props.destroyFollow(followRequest);
+  }
   handleFollow() {
     const followRequest = {
       follower_id: this.props.currentUser.id,
@@ -134,6 +141,23 @@ class EntryShow extends React.Component {
     return null;
   }
 
+  showFollowToggle() {
+    const { writer, currentUser, entry, createFollow, destroyFollow } = this.props;
+    if (writer && currentUser.id !== writer.id) {
+      const followAction = writer.following ? createFollow : destroyFollow;
+      return (
+        <div>
+        <button onClick={this.handleUnfollow}>
+          {true ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
+        </button>
+        <button onClick={this.handleFollow}>
+          {true ? 'follow' : 'follow'} {entry.writer_pseudonym}
+        </button>
+        </div>
+      );
+    }
+  }
+
   showCompleteEntry() {
     const { currentUser } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
@@ -143,18 +167,13 @@ class EntryShow extends React.Component {
       <div className="entry-item-container">
         <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>
         <main className="entry-item">
-          <aside className="entry-item-writer-info">
-             {/* <h2>{writer_pseudonym}</h2>  */}
-          </aside>
           <article className="entry-show">
             <section><h2>thoughts</h2>{this.showUserProfile()}{general}</section>
             { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
             { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
             <GoalIndexContainer entryId={id} />
-            { (currentUser.id === writer_id) ? 
-              <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> 
-              : <button onClick={this.handleFollow}>Follow {writer_pseudonym}</button> 
-            }
+            { (currentUser.id === writer_id) ? <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> : null }
+            {this.showFollowToggle()}
           </article>
         </main>
         {this.showReflectionForm()}
