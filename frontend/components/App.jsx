@@ -33,6 +33,7 @@ const App = () => (
         
     <Switch>
       <ProtectedRoute exact={true} path="/everyone" component={EntryIndexContainer} />
+      <ProtectedRoute exact={true} path="/feed" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
       {/* <ProtectedRoute exact={true} path="/me/entries/" component={EntryIndexContainer} /> */}
       <ProtectedRoute exact={true} path="/:username/entries" component={EntryIndexContainer} />

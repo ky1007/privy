@@ -19,12 +19,15 @@ class EntryIndex extends Component {
 
   render() {
     const { entries, username } = this.props;
-
+    console.log(this.props.pathname, 'pathname');
     if (entries.length > 0) {
       return (
         <div>
           <header className="entry-index-header">
-            <h1>the most recent journal entries from <strong>{username ? `${username}` : 'everyone'}</strong></h1>
+            <h1>the most recent journal entries from
+              <strong>
+                {username ? ` ${username}` : ' everyone'}
+              </strong></h1>
           </header>
             <section className="entry-index">
               {entries.map(entry => <EntryIndexItem key={entry.id} entry={entry} username={username}/>)}

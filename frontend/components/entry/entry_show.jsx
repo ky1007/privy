@@ -62,21 +62,6 @@ class EntryShow extends React.Component {
     };
     return () => followAction(followRequest);
   }
-  
-  // handleUnfollow() {
-  //   const followRequest = {
-  //     follower_id: this.props.currentUser.id,
-  //     followee_id: this.props.entry.writer_id,
-  //   };
-  //   this.props.destroyFollow(followRequest);
-  // }
-  // handleFollow() {
-  //   const followRequest = {
-  //     follower_id: this.props.currentUser.id,
-  //     followee_id: this.props.entry.writer_id,
-  //   };
-  //   this.props.createFollow(followRequest);
-  // }
 
   showUserProfile() {
     const { writer } = this.props;
@@ -145,17 +130,9 @@ class EntryShow extends React.Component {
     if (writer && currentUser.id !== writer.id) {
       const followAction = writer.following ? destroyFollow : createFollow;
       return (
-        <div>
         <button onClick={this.handleFollow(followAction)}>
           {writer.following ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
         </button>
-        {/* <button onClick={this.handleUnfollow}>
-          {true ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
-        </button>
-        <button onClick={this.handleFollow}>
-          {true ? 'follow' : 'follow'} {entry.writer_pseudonym}
-        </button> */}
-        </div>
       );
     }
   }

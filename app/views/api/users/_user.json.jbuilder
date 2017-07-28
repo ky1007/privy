@@ -7,3 +7,11 @@ if current_user
     json.following false
   end
 end
+
+json.followers do 
+  json.array! user.in_follows.pluck :follower_id
+end
+
+json.followees do 
+  json.array! user.out_follows.pluck :followee_id
+end
