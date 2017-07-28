@@ -28,8 +28,8 @@ const App = () => (
       <ProtectedRoute exact={true} path="/feed" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
       {/* <ProtectedRoute exact={true} path="/me/entries/" component={EntryIndexContainer} /> */}
-      <ProtectedRoute exact={true} path="/:username/entries" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/me/entries/:entryId" component={EntryShowContainer} />
+      <ProtectedRoute exact={true} path="/:username/entries" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/me/entries/:entryId/edit" component={EntryEditFormContainer} />
       {/* <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} /> */}
     </Switch>
