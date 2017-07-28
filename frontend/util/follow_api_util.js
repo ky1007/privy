@@ -13,3 +13,4 @@ export const unfollow = unfollowRequest => (
     data: { follow: unfollowRequest },
   })
 );
+

@@ -1,8 +1,14 @@
 import * as APIUtil from '../util/goal_api_util';
 
+export const RECEIVE_UPDATED_GOALS = 'RECEIVE_GOALS';
 export const RECEIVE_GOALS = 'RECEIVE_GOALS';
 export const RECEIVE_GOAL = 'RECEIVE_GOAL';
 export const CLEAR_GOALS = 'CLEAR_GOALS';
+
+export const receiveUpdatedGoals = current => ({
+  type: RECEIVE_UPDATED_GOALS,
+  current,
+});
 
 export const receiveGoals = allGoals => ({
   type: RECEIVE_GOALS,
@@ -50,7 +56,7 @@ export const destroyGoal = id => dispatch => (
 // untested, will test after React components are built
 export const updateGoal = goal => dispatch => (
   APIUtil.updateGoal(goal).then(goal => (
-    dispatch(receiveGoal(goal))
+    dispatch(receiveUpdatedGoals(goal))
   ))
 );
 

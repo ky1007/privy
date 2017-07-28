@@ -40,3 +40,11 @@ export const updateEntry = entry => (
     data: { entry },
   })
 );
+
+export const fetchFeedEntries = id => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/follows',
+    data: { id },
+  })
+);

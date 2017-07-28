@@ -68,7 +68,7 @@ class EntryEditForm extends React.Component {
   submitGoals(goals) {
     for (const id of Object.keys(this.state.goals)) {
       if (goals[id].body !== '') {
-        this.props.updateGoal(goals[id]);
+        this.props.updateGoal(goals[id])
       }
     }
   }

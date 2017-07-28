@@ -35,6 +35,12 @@ export const fetchEntries = entry => dispatch => (
   ))
 );
 
+export const fetchFeedEntries = id => dispatch => (
+  APIUtil.fetchFeedEntries(id).then(entry => (
+    dispatch(receiveEntries(entry))
+  ))
+);
+
 // ajax TESTED TO WORK, same with state! USED: dispatch(fetchEntry(2));
 export const fetchEntry = id => dispatch => (
   APIUtil.fetchEntry(id).then(entry => (

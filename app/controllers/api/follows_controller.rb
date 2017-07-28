@@ -9,6 +9,12 @@ class Api::FollowsController < ApplicationController
     end
   end
 
+  def index
+    @follows = Follow.where(follower_id: params[:id]).pluck(:followee_id)
+    @entries = Entry.where(writer_id: @follows)
+    render "api/entries/index"
+  end
+
   def destroy
     @follow = Follow.find_by(
       followee_id: (params[:follow][:followee_id]).to_i,
