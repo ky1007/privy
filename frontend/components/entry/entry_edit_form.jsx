@@ -28,6 +28,8 @@ class EntryEditForm extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     this.props.fetchEntry(this.props.entryId);
     const entry_id = { entry_id: this.props.entryId }
     this.props.fetchGoals(entry_id);

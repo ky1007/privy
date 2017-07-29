@@ -279,8 +279,11 @@ strong {
 .entry-index-metadata {
   color: $middle-gray;
 }
-.entry-index
-.entry-index-metadata:first-child {
+// .entry-index
+// .entry-index-metadata:first-child {
+// }
+
+.entry-index:nth-of-type(1) {
   border-top: 1px solid #F5EBFF;
 }
 
