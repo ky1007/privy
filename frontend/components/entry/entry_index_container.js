@@ -12,7 +12,7 @@ const mapStateToProps = ({ entries, session }, { match, location }) => {
 
   return {
     entries: sortEntries,
-    username: match.params.username,
+    pathUsername: match.params.username,
     pathname: location.pathname,
     currentUser: session.currentUser,
   };
