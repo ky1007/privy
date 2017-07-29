@@ -82,7 +82,7 @@ class EntryEditForm extends React.Component {
     if (entry.general !== '') {
       updateEntry(entry)
         .then(() => this.submitGoals(goals))
-        .then(() => this.props.history.push(`/me/entries/${entryId}`));
+        .then(() => this.props.history.push(`/entries/${entryId}`));
     }
   }
 

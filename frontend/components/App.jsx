@@ -22,16 +22,15 @@ const App = () => (
       <AuthRoute exact path="/signup" component={GreetingContainer} />
       <ProtectedRoute path="/" component={NavContainer} />
     </Switch>
-        
+    
+    {/* All of the below are single pages that should not render concurrently */}
     <Switch>
       <ProtectedRoute exact={true} path="/everyone" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/feed" component={EntryIndexContainer} />
       <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
-      {/* <ProtectedRoute exact={true} path="/me/entries/" component={EntryIndexContainer} /> */}
-      <ProtectedRoute exact={true} path="/me/entries/:entryId" component={EntryShowContainer} />
+      <ProtectedRoute exact={true} path="/entries/:entryId" component={EntryShowContainer} />
       <ProtectedRoute exact={true} path="/:username/entries" component={EntryIndexContainer} />
-      <ProtectedRoute exact={true} path="/me/entries/:entryId/edit" component={EntryEditFormContainer} />
-      {/* <ProtectedRoute exact path="/me/:entryId/edit" component={EntryEditFormContainer} /> */}
+      <ProtectedRoute exact={true} path="/entries/:entryId/edit" component={EntryEditFormContainer} />
     </Switch>
   </div>
 );

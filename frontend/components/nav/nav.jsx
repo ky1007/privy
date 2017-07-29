@@ -14,6 +14,7 @@ const loggedInLinks = (currentUser, logout) => (
     <header className="nav-logo"><Link to="/everyone">Privy</Link></header>
     <section className="nav-links">
         <li><Link to="/everyone">Everyone's Diary</Link></li>
+        <li><Link to={`/${currentUser.username}/entries`}>Your Diary</Link></li>
         <li><Link to="/feed">Your Feed</Link></li>
         <li><Link to="/new_entry">New Entry</Link></li>
         <li><Link to="/" onClick={logout} className="logout-button">Logout</Link></li>

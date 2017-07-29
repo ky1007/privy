@@ -80,10 +80,10 @@ class EntryForm extends React.Component {
       createEntry(entry)
         .then(entry => this.pullEntryId(entry))
         .then(createdEntry => this.submitGoals(createdEntry))
-        .then(goal => this.props.history.push(`/me/entries/${goal.current.entry_id}`));
+        .then(goal => this.props.history.push(`/entries/${goal.current.entry_id}`));
     } else if (entry.general !== '') {
       createEntry(entry)
-        .then(entry => this.props.history.push(`/me/entries/${entry.current.id}`));
+        .then(entry => this.props.history.push(`/entries/${entry.current.id}`));
     }
   }
 

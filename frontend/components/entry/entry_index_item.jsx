@@ -11,7 +11,7 @@ const EntryIndexItem = ({ entry, username }) => (
       <small>{moment(entry.created_at).fromNow()}</small>
     </aside>
     <main className="entry-list-items">
-      <Link to={`/me/entries/${entry.id}`}>
+      <Link to={`/entries/${entry.id}`}>
         <article key={entry.id}>{entry.general.slice(0, 190) + '...'}</article>
       </Link>
     </main>

@@ -19,7 +19,6 @@ class EntryShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
-    // this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -151,7 +150,7 @@ class EntryShow extends React.Component {
             { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
             { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
             <GoalIndexContainer entryId={id} />
-            { (currentUser.id === writer_id) ? <Link to={`/me/entries/${id}/edit`}>Edit Entry</Link> : null }
+            { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
             {this.showFollowToggle()}
           </article>
         </main>
