@@ -1,6 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update';
 import moment from 'moment';
+import { makeExpandingArea } from '../../util/helpers';
 
 class EntryForm extends React.Component {
   constructor(props) {
@@ -42,6 +43,11 @@ class EntryForm extends React.Component {
 
   componentDidMount() {
     this.nameInput.focus();
+    let areas = document.querySelectorAll('.expandingArea');
+    let l = areas.length;
+    while (l--) {
+      makeExpandingArea(areas[l]);
+    }
   }
 
   pullEntryId(entry) {
@@ -112,24 +118,24 @@ class EntryForm extends React.Component {
         </article>
         <div className="entry-form">
           <form>
-            <label> 
-            <textarea ref={(input) => { this.nameInput = input; }}
-                      placeholder={`what's on your mind, ${writer}?`}
-                      value={general}
-                      onChange={this.updateEntry('general')}>
-            </textarea></label>
+              {/* <div className="expandingArea">   */}
+              {/* <pre><span></span><br /></pre> */}
+              <textarea ref={(input) => { this.nameInput = input; }}
+                        placeholder={`what's on your mind, ${writer}?`}
+                        value={general}
+                        onChange={this.updateEntry('general')}>
+              </textarea>
+            {/* </div> */}
 
-            <label> 
             <textarea placeholder="things you feel thankful for"
                       value={gratitude}
                       onChange={this.updateEntry('gratitude')}>
-            </textarea></label>
+            </textarea>
 
-            <label> 
             <textarea placeholder="things you could have done better today"
                       value={improvements}
                       onChange={this.updateEntry('improvements')}>
-            </textarea></label>
+            </textarea>
 
             <label> 
               <h2>three main things you want to get done tomorrow</h2>

@@ -56,16 +56,58 @@ form {
   font-family: $base-font, sans-serif;
   text-align: center;
 }
-textarea {
+
+@mixin textareas {
   width: 100%;
-  height: 12em;
   margin-bottom: 2rem;
   box-sizing: border-box;
   border: 0px solid #fff;
-  resize: none;
+  // resize: none;
   @include size(h4);
   font-family: $base-font, sans-serif;
   outline: none;
+}
+
+textarea {
+  @include textareas;
+  height: 12em;
+}
+
+.expandingArea > textarea,
+.expandingArea > pre {
+  @include textareas;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.expandingArea > textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 12em;
+}
+
+.expandingArea.active > textarea {
+  /* Hide any scrollbars */
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* Remove WebKit user-resize widget */
+  resize: none;
+}
+
+.expandingArea > pre {
+  display: none;
+}
+
+.expandingArea.active > pre {
+  display: block;
+  /* Hide the text; just using it for sizing */
+  visibility: hidden;
 }
 
 .expandingArea {

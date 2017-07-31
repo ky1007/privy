@@ -41,11 +41,11 @@ class EntryIndex extends Component {
     const { currentUser, pathUsername } = this.props; 
     if (pathUsername === currentUser.username) {
       return (
-        <div><strong>your</strong> journal</div>
+        <div><strong>your</strong> diary</div>
       );
     }
     return (
-      <div>the most recent journal entries from <strong>{this.typeOfIndexPage()}</strong></div>
+      <div>the most recent diary entries from <strong>{this.typeOfIndexPage()}</strong></div>
     );
   }
 
