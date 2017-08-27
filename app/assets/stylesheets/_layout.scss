@@ -102,6 +102,11 @@ main .entry-list-items {
   max-width: 40em;
 }
 
+.entry-list-items:hover article { 
+  background: #eee;
+  color: #000;
+  transition: 0.25s;
+}
 
 // --- REFLECTIONS page ---
 

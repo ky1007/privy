@@ -1,5 +1,3 @@
-// writer_id is written in ruby syntax because that's what
-// the rails controller is expecting
 export const fetchEntries = username => (
   $.ajax({
     method: 'GET',
@@ -32,7 +30,6 @@ export const createEntry = entry => (
   })
 );
 
-// untested, will test after React components are built
 export const updateEntry = entry => (
   $.ajax({
     method: 'PATCH',

@@ -32,7 +32,7 @@ class EntryIndex extends Component {
     if (pathUsername) {
       return ` ${pathUsername}`;
     } else if (pathname === '/everyone') {
-      return 'everyone';
+      return (<span>everyone <span role="img">🎉</span></span>);
     }
     return 'people you follow';
   }
