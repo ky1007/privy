@@ -31,9 +31,10 @@ class EntryIndex extends Component {
     const { pathUsername, currentUser, pathname } = this.props;
     if (pathUsername) {
       return ` ${pathUsername}`;
-    } else if (pathname === '/everyone') {
-      return (<span>everyone <span role="img" aria-label="Tada emoji">🎉</span></span>);
     }
+    // else if (pathname === '/everyone') {
+    //   return (<span>everyone <span role="img" aria-label="Tada emoji">🎉</span></span>);
+    // }
     return (
       <span>
         people you follow <span role="img" aria-label="Pair dancing emoji">👯‍♂️</span>
@@ -57,6 +58,10 @@ class EntryIndex extends Component {
           your personal feed from <strong>{this.typeOfIndexPage()}</strong>
         </div>
         // <span role="img" aria-label="Book emoji">📖</span>
+      );
+    } else if (pathname === '/everyone') {
+      return (
+        <span>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></span>
       );
     }
     // If the feed is a feed of a single writer's diary entries, render the below
