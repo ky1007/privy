@@ -50,7 +50,7 @@ button.session-button {
   outline: none;
 }
 
-/*  -- ENTRY FORM -- */
+/*  --- ENTRY FORM --- */
 form {
   @include size(h4);
   font-family: $base-font, sans-serif;
@@ -66,6 +66,7 @@ form {
   @include size(h4);
   font-family: $base-font, sans-serif;
   outline: none;
+  resize: none;
 }
 
 textarea {

@@ -83,6 +83,22 @@ nav a {
   @include size(h2);
 }
 
+.nav-greeting {
+  @include size(small);
+  font-family: $base-font, sans-serif;
+}
+
+.logout-button {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+}
+.logout-button:hover {
+  background-color: #F5EBFF;
+  cursor: hand;
+  transition: 0.3s;
+}
+
 .title {
   @include size(h1);
 }
@@ -110,7 +126,7 @@ h3 {
 }
 
 .tagline {
-  font-size: 1.4em;
+  // font-size: 1.4em;
   font-family: $base-font, sans-serif;
   line-height: 1.3em;
   font-weight: light;
@@ -159,7 +175,7 @@ article {
   @include size(h4);
   padding-bottom: 1rem;
   text-align: center;
-  font-weight:300;
+  font-weight: 300;
   color: $purple;
 }
 
@@ -198,6 +214,15 @@ li { list-style: none; }
 .country { background-color: #3DB7D7; }
 .race { background-color: #6ED73D; }
 .age { background-color: #FFC300; }
+.pretext-country { color: #3DB6D7; font-size: 1rem; }
+.pretext-race { color: #6ED73D; font-size: 1rem; padding-left: 10px; }
+.pretext-age { color: #FFC300; font-size: 1rem; padding-left: 10px; }
+
+.profile-info .country, .race, .age {
+  // margin: 4px;
+  font-size: 1rem;
+  // @include size(h4);
+}
 
 // --- ENTRY form --- 
 .entry-form h2 {
@@ -293,7 +318,7 @@ strong {
 // }
 
 .entry-index:nth-of-type(1) {
-  border-top: 1px solid #F5EBFF;
+  border-top: 1px solid #f9f9f9;
 }
 
 .entry-index-metadata h3 {

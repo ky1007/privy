@@ -5,7 +5,7 @@ import { fetchEntries, fetchFeedEntries } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
 // import { selectFeedEntries } from '../../reducers/selectors';
 
-const mapStateToProps = ({ entries, session }, { match, location }) => {
+const mapStateToProps = ({ entries, session, users }, { match, location }) => {
   let followees = session.currentUser.followees;
   let sortEntries = selectEntries(entries.allEntries);
   sortEntries.sort((a, b) => b.id - a.id);
@@ -15,6 +15,7 @@ const mapStateToProps = ({ entries, session }, { match, location }) => {
     pathUsername: match.params.username,
     pathname: location.pathname,
     currentUser: session.currentUser,
+    currentWriter: users.current,
   };
 };
 

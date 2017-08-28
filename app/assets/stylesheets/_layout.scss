@@ -95,17 +95,18 @@ main .entry-list-items {
 }
 
 .entry-list-items article {
-  color: #fff;
+  color: #444;
   padding: 2em;
   margin-bottom: 1em;
-  background: #000;
+  background: #F9F9F9;
   max-width: 40em;
 }
 
 .entry-list-items:hover article { 
-  background: #eee;
-  color: #000;
-  transition: 0.25s;
+  background: #F5EBFF;
+  color: #444;
+  transition: 0.3s;
+  cursor: hand;
 }
 
 // --- REFLECTIONS page ---
