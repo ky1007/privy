@@ -29,4 +29,5 @@ class Api::LikesController < ApplicationController
   private
   def like_params
     params.require(:like).permit(:entry_id)
+  end
 end
