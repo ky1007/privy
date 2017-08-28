@@ -6,7 +6,7 @@ import { login, signup, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ session }, { history }) => ({
+const mapStateToProps = ({ session }) => ({
   loggedIn: Boolean(session.currentUser),
   errors: session.errors,
 });

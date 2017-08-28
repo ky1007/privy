@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import { updateGoal, fetchGoals } from '../../actions/goal_actions';
-import { updateEntry, destroyEntry } from '../../actions/entry_actions';
+import { updateGoal, fetchGoals, destroyGoal } from '../../actions/goal_actions';
+import { updateEntry, destroyEntry, fetchEntry } from '../../actions/entry_actions';
 import EntryEditForm from './entry_edit_form';
 import { selectGoals } from '../../reducers/selectors';
 

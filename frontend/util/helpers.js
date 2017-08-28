@@ -35,3 +35,22 @@ export const parseElapsedTime = (minutes) => {
   }
   return years === 1 ? `${years} year` : `${years} years`;
 };
+
+export const makeExpandingArea = (container) => {
+ let area = container.querySelector('textarea');
+ let span = container.querySelector('span');
+ if (area.addEventListener) {
+   area.addEventListener('input', () => {
+     span.textContent = area.value;
+   }, false);
+   span.textContent = area.value;
+ } else if (area.attachEvent) {
+   // IE8 compatibility
+   area.attachEvent('onpropertychange', () => {
+     span.innerText = area.value;
+   });
+   span.innerText = area.value;
+ }
+  // Enable extra CSS
+  // container.className += "active";
+};

@@ -17,7 +17,7 @@ const mapStateToProps = ({ entries, reflections, session, users }, { match }) =>
   reflections: selectReflections(reflections.allReflections),
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   // const followAction = writer.following ? destroyFollow : createFollow;
 
   return {

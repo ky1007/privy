@@ -21,14 +21,13 @@ export const deleteEntry = id => ({
   current: id,
 });
 
-// ajax TESTED TO WORK, state works!
+// --- ENTRY ACTIONS ---
 export const createEntry = entry => dispatch => (
   APIUtil.createEntry(entry).then(entry => (
     dispatch(receiveEntry(entry))
   ))
 );
 
-// ajax TESTED TO WORK (only returns 1?), same with state (only returns 1)!
 export const fetchEntries = entry => dispatch => (
   APIUtil.fetchEntries(entry).then(entry => (
     dispatch(receiveEntries(entry))
@@ -41,7 +40,6 @@ export const fetchFeedEntries = id => dispatch => (
   ))
 );
 
-// ajax TESTED TO WORK, same with state! USED: dispatch(fetchEntry(2));
 export const fetchEntry = id => dispatch => (
   APIUtil.fetchEntry(id).then(entry => (
     dispatch(receiveEntry(entry))
@@ -54,14 +52,27 @@ export const destroyEntry = id => dispatch => (
   ))
 );
 
-// untested, will test after React components are built
 export const updateEntry = entry => dispatch => (
   APIUtil.updateEntry(entry).then(entry => (
     dispatch(receiveEntry(entry))
   ))
 );
 
-// QUESTION: good practice to catch errors here or no?
+
+// --- LIKE ACTIONS ---
+export const createLike = likeRequest => dispatch => (
+  APIUtil.createLike(likeRequest).then(entry => (
+    dispatch(receiveEntry(entry))
+  ))
+);
+
+export const destroyLike = unlikeRequest => dispatch => (
+  APIUtil.destroyLike(unlikeRequest).then(entry => (
+    dispatch(receiveEntry(entry))
+  ))
+);
+
+// TODO: catch errors
 // export const createEntry = entry => dispatch => (
 //   APIUtil.createEntry(entry).then(entry => (
 //     dispatch(receieveEntry(entry))
@@ -71,30 +82,30 @@ export const updateEntry = entry => dispatch => (
 // );
 
 // TEMP - for testing
-window.createEntry = createEntry;
-window.fetchEntry = fetchEntry;
-window.destroyEntry = destroyEntry;
-window.fetchEntries = fetchEntries;
-window.fetchEntry = fetchEntry;
+// window.createEntry = createEntry;
+// window.fetchEntry = fetchEntry;
+// window.destroyEntry = destroyEntry;
+// window.fetchEntries = fetchEntries;
+// window.fetchEntry = fetchEntry;
 
-export const tentry = {
-  title: "hey",
-  general: "hey",
-  gratitude: "hey",
-  improvements: "hey",
-  writer_id: 1,
-  image_url: "hey",
-  public: true,
-};
+// export const tentry = {
+//   title: "hey",
+//   general: "hey",
+//   gratitude: "hey",
+//   improvements: "hey",
+//   writer_id: 1,
+//   image_url: "hey",
+//   public: true,
+// };
 
-export const findrr = {
-  entry: {
-    writer_id: 1,
-  }
-};
+// export const findrr = {
+//   entry: {
+//     writer_id: 1,
+//   }
+// };
 
-window.tentry = tentry;
-window.findrr = findrr;
+// window.tentry = tentry;
+// window.findrr = findrr;
 
 // dispatch(createEntry(tentry));
 // dispatch(fetchEntry(2));
