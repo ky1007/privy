@@ -42,7 +42,7 @@ class EntryIndex extends Component {
   }
 
   showWhoseJournal() {
-    const { currentUser, pathUsername, currentWriter, entries } = this.props; 
+    const { currentUser, pathUsername, currentWriter, entries, pathname } = this.props; 
     const writerInfo = entries[0].writer_info;
 
     if (pathUsername === currentUser.username) {
@@ -51,6 +51,8 @@ class EntryIndex extends Component {
           <span role="img" aria-label="Diary emoji">📓</span> this is your diary, <strong>{pathUsername}</strong>
         </div>
       );
+    } else if (pathname === '/feed') {
+      return null;
     }
     return (
       <div className="profile-info">
