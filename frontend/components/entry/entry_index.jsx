@@ -52,8 +52,14 @@ class EntryIndex extends Component {
         </div>
       );
     } else if (pathname === '/feed') {
-      return null;
+      return (
+        <div>
+          your personal feed from <strong>{this.typeOfIndexPage()}</strong>
+        </div>
+        // <span role="img" aria-label="Book emoji">📖</span>
+      );
     }
+    // If the feed is a feed of a single writer's diary entries, render the below
     return (
       <div className="profile-info">
         recent diary entries from <strong>{this.typeOfIndexPage()}</strong><br />
