@@ -10,10 +10,13 @@ class Entry < ApplicationRecord
     class_name: :Reflection,
     dependent: :destroy
 
-
   belongs_to :writer,
     foreign_key: :writer_id,
     class_name: :User
+  
+  has_many :likes,
+    foreign_key: :user_id,
+    class_name: :Like
 
 
 end

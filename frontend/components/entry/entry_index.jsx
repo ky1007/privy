@@ -60,7 +60,7 @@ class EntryIndex extends Component {
         {writerInfo.age ? <div className="pretext-age"><small className="age">{writerInfo.age}</small></div> : null } */}
         {writerInfo.country ? <span className="pretext-country">living in <small className="country">{writerInfo.country}</small></span> : null }
         {writerInfo.race ? <span className="pretext-race"> is ethnically <small className="race">{writerInfo.race}</small></span> : null }
-        {writerInfo.age ? <span className="pretext-age"> and is <small className="age">{writerInfo.age}</small> years old</span> : null }
+        {writerInfo.age ? <span className="pretext-age"> and is of age <small className="age">{writerInfo.age}</small></span> : null }
         {/* {writerInfo.country ? <div className="pretext-country">living in <small className="country">{writerInfo.country}</small></div> : null }
         {writerInfo.race ? <div className="pretext-race">is ethnically <small className="race">{writerInfo.race}</small></div> : null }
         {writerInfo.age ? <div className="pretext-age">and is of age <small className="age">{writerInfo.age}</small></div> : null } */}
