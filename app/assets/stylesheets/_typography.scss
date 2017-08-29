@@ -98,6 +98,7 @@ nav a {
 .logout-button:hover {
   background-color: #F5EBFF;
   cursor: hand;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -343,7 +344,7 @@ strong {
   @include entry-heading;
   @include size(welcome-prompt);
   color: $gray;
-  padding-bottom: 1.8rem;
+  padding-bottom: 2.4rem;
 }
 
 @mixin welcome-options {
@@ -368,4 +369,14 @@ strong {
 .welcome-option-4 {
   @include welcome-options;
   background-color: $red;
+}
+
+.welcome-option-1:hover, .welcome-option-2:hover, 
+.welcome-option-3:hover, .welcome-option-4:hover {
+  // background-color: $light-purple;
+  background-color: #fff;
+  color: #000;
+  cursor: hand;
+  cursor: pointer;
+  transition: 0.3s;
 }

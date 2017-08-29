@@ -808,7 +808,7 @@ refl9 = Reflection.create({
 })
 refl10 = Reflection.create({
   body: "I'm not sure how much longer I can resist Jack. I need to break things completely off with him.",
-  writer_id: usr30.id,
+  writer_id: usr3.id,
   entry_id: entry3.id
 })
 # refl11 = Reflection.create({

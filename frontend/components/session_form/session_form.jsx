@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.state = {
-      username: "Felicia May",
+      username: "Demo User",
       password: "asdfasdf",
     };
     const user = this.state;
