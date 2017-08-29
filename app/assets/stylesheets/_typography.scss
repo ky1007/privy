@@ -8,6 +8,7 @@ $type-scale-large: (
   // small: 1.3rem,
   small: 1rem,
   welcome-heading: 4.3rem,
+  welcome-prompt: 2.4rem,
 );
 
 // $type-scale-large: (
@@ -332,10 +333,39 @@ strong {
 // --- WELCOME page ---
 
 .welcome-heading {
-  font-family: $base-font, sans-serif;
+  @include entry-heading;
   @include size(welcome-heading);
-  padding-bottom: 1rem;
+  padding-bottom: 0;
+}
+
+// delete this block if prompt is unused
+.welcome-prompt {
+  @include entry-heading;
+  @include size(welcome-prompt);
+  color: $gray;
+  padding-bottom: 1.8rem;
+}
+
+@mixin welcome-options {
+  @include entry-heading;
   text-align: left;
-  font-weight: 300;
-  color: $purple;
+  padding: 2rem 0 2rem 2rem;
+  color: white;
+}
+
+.welcome-option-1 {
+  @include welcome-options;
+  background-color: $blue;
+}
+.welcome-option-2 {
+  @include welcome-options;
+  background-color: $green;
+}
+.welcome-option-3 {
+  @include welcome-options;
+  background-color: $darker-yellow;
+}
+.welcome-option-4 {
+  @include welcome-options;
+  background-color: $red;
 }

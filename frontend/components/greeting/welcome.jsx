@@ -16,9 +16,11 @@ const Welcome = () => (
       Welcome, <strong>Username</strong>
     </header>
     <section>
-      <h3>What would you like to do?</h3>
-      <h4>I'd like to see what others are posting</h4>
-      <h4><Link to="/new_entry">I&apos;d like write a post</Link></h4>
+      <h3 className="welcome-prompt">What would you like to do?</h3>
+      <section className="welcome-option-1">write a diary entry</section>
+      <section className="welcome-option-2">browse recently published diary entries</section>
+      <section className="welcome-option-3">read recent diary entries from people I follow</section>
+      <section className="welcome-option-4">read my own diary</section>
     </section>
   </div>
 );
