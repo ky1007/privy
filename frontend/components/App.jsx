@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
+import Welcome from './greeting/welcome';
 import EntryFormContainer from './entry/entry_form_container';
 import EntryEditFormContainer from './entry/entry_edit_form_container';
 import EntryShowContainer from './entry/entry_show_container';
@@ -12,8 +13,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="main-container">
-    <div className="nav-bar">
-    </div>
+    {/* <div className="nav-bar">
+    </div> */}
 
     {/* Homepage (when someone is signed out) */}
     <Switch>
@@ -25,12 +26,13 @@ const App = () => (
     
     {/* All of the below are single pages that should not render concurrently */}
     <Switch>
-      <ProtectedRoute exact={true} path="/everyone" component={EntryIndexContainer} />
-      <ProtectedRoute exact={true} path="/feed" component={EntryIndexContainer} />
-      <ProtectedRoute exact={true} path="/new_entry" component={EntryFormContainer} />
-      <ProtectedRoute exact={true} path="/entries/:entryId" component={EntryShowContainer} />
-      <ProtectedRoute exact={true} path="/:username/entries" component={EntryIndexContainer} />
-      <ProtectedRoute exact={true} path="/entries/:entryId/edit" component={EntryEditFormContainer} />
+      <ProtectedRoute exact path="/welcome" component={Welcome} />
+      <ProtectedRoute exact path="/everyone" component={EntryIndexContainer} />
+      <ProtectedRoute exact path="/feed" component={EntryIndexContainer} />
+      <ProtectedRoute exact path="/new_entry" component={EntryFormContainer} />
+      <ProtectedRoute exact path="/entries/:entryId" component={EntryShowContainer} />
+      <ProtectedRoute exact path="/:username/entries" component={EntryIndexContainer} />
+      <ProtectedRoute exact path="/entries/:entryId/edit" component={EntryEditFormContainer} />
     </Switch>
   </div>
 );

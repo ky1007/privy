@@ -7,6 +7,7 @@ $type-scale-large: (
   p: 1.663rem,
   // small: 1.3rem,
   small: 1rem,
+  welcome-heading: 4.3rem,
 );
 
 // $type-scale-large: (
@@ -149,7 +150,7 @@ a:hover {
 }
 
 
-/* -- STYLING the login/signup form -- */
+/* -- LOGIN / SIGNUP form -- */
 .session-form input {
   @include size(p);
 }
@@ -326,4 +327,15 @@ strong {
 
 .entry-index-metadata small {
   @include size(small);
+}
+
+// --- WELCOME page ---
+
+.welcome-heading {
+  font-family: $base-font, sans-serif;
+  @include size(welcome-heading);
+  padding-bottom: 1rem;
+  text-align: left;
+  font-weight: 300;
+  color: $purple;
 }

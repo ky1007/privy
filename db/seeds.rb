@@ -9,12 +9,12 @@
 #### --- USERS --- usrX
 User.delete_all
 usr1 = User.create({
-  username: "Felicia May",
+  username: "Demo User",
   password: "asdfasdf",
   email: "fmay@gmail.com",
   biography: "Horses are kinda my thing.",
   image_url: "",
-  country: "UK",
+  country: "Uzbekistan",
   age: "53",
   race: "Caucasian",
 })
@@ -24,74 +24,74 @@ usr2 = User.create({
   email: "JaquanIsAwesome@gmail.com",
   biography: "I would live in Barcelona and have all my hobbies there.",
   image_url: "",
-  country: "",
-  age: "",
-  race: "",
+  country: "Taiwan",
+  age: "39",
+  race: "Chinese",
 })
 usr3 = User.create({
-  username: "T. Y. Wine",
+  username: "Osiris Amon",
   password: "asdfasdf",
   email: "vyanje43@gmail.com",
   biography: "",
   image_url: "",
-  country: "",
-  age: "",
-  race: "",
+  country: "Sudan",
+  age: "42",
+  race: "Nubian",
 })
 usr4 = User.create({
-  username: "Amon Fean",
+  username: "Dajao Catig",
   password: "asdfasdf",
   email: "jaquanlangpqf@teleosaurs.xyz",
   biography: "",
   image_url: "",
-  country: "",
-  age: "",
-  race: "",
+  country: "Philippines",
+  age: "18",
+  race: "Visayan",
 })
 usr5 = User.create({
   username: "Marie Claire",
   password: "asdfasdf",
   email: "ilovescience@gmail.com",
   biography: "I would travel the world",
-  country: "South Africa",
-  age: "28",
-  race: "Korean",
+  country: "Canada",
+  age: "33",
+  race: "Caucasian",
 })
 usr6 = User.create({
-  username: "Amal Jones",
+  username: "Mekere Marauta",
   password: "asdfasdf",
   email: "pa632ie@gmail.com",
   biography: "I would travel the world",
-  country: "South Africa",
-  age: "28",
-  race: "Korean",
+  country: "New Guinea",
+  age: "30",
+  race: "Papuan",
 })
 usr7 = User.create({
   username: "Claire Bean",
   password: "asdfasdf",
   email: "pa632ie@gmail.com",
   biography: "I would travel the world",
-  country: "South Africa",
-  age: "28",
-  race: "Korean",
+  country: "France",
+  age: "25",
+  race: "Latino",
 })
 usr8 = User.create({
   username: "D. N. Lane",
   password: "asdfasdf",
   email: "pa632ie@gmail.com",
   biography: "I would travel the world",
-  country: "South Africa",
-  age: "28",
-  race: "Korean",
+  country: "Portugal",
+  age: "25",
+  race: "Native American",
 })
 usr9 = User.create({
   username: "R. L. Stein",
   password: "asdfasdf",
   email: "pa632ie@gmail.com",
   biography: "I would travel the world",
-  country: "South Africa",
-  age: "28",
-  race: "Korean",
+  country: "Taiwan",
+  age: "19",
+  race: "Chinese",
 })
 
 
@@ -571,13 +571,13 @@ I’ve been doing ballet for years, I haven’t really gone far with it, but I d
 
 I got out of the studio and was in the changing room when my phone went off.  
 
-“Have you thought about my offer more? I’m being serious, I have enough money to book out the entire place for you.” The text from Jack read. 
+\“Have you thought about my offer more? I’m being serious, I have enough money to book out the entire place for you.\” The text from Jack read. 
 
-“I have, and it’s still a solid no.” I begin to type back, but I decide it’s easier to agree to let him do it, then to have constantly badgering me about it. 
+\“I have, and it’s still a solid no.\” I begin to type back, but I decide it’s easier to agree to let him do it, then to have constantly badgering me about it. 
 
-“Fine, Jack. You can pay for it. Nobody can know though.” I hit send and turn my phone off. 
+\“Fine, Jack. You can pay for it. Nobody can know though.\” I hit send and turn my phone off. 
 
-Once I return back to my hotel, I receive a notification saying that 350$ had been transferred into my account from Jack. 
+Once I return back to my hotel, I receive a notification saying that $350 had been transferred into my account from Jack. 
 
 My niece and I ended up having a great time. It came to less then what he gave me, so I was able to take her shopping afterwards. 
 
@@ -585,7 +585,7 @@ When I told Jack that I took her shopping he looked really happy. I think that a
 
 He asked me out to dinner one more time before I leave for Arizona and he leaves for L.A. I said yes and he smiled his wonderful smile. He then kissed me on the cheek again and held my hand as he walked me to the door. 
 
-I’m starting to fall for him, even though I promised myself I wouldn’t. However, I’m not going to let anything happen, because I know how much pain that can brong upon a family. ", 
+I’m starting to fall for him, even though I promised myself I wouldn’t. However, I’m not going to let anything happen, because I know how much pain that can brong upon a family.", 
   improvements: "",
   gratitude: "",
   public: true,
@@ -593,7 +593,17 @@ I’m starting to fall for him, even though I promised myself I wouldn’t. Howe
 }) 
 
 entry31 = Entry.create({
-  general: "I was hoping to not do this tonight. Drinking to dull the pain, but it only made it worse. You’ve loved me unconditionally, and yet I’ve managed to push you Away because I’m too ashamed to tell you why I’ve been in a “bad mood” today. Like I always do, I resort to shutting myself down, putting up a wall that not even the most determined could knock Down. I lash out at you, manage to take the blame off myself. You try to compromise with what you think the problem is I told you, but in realist it has nothing to do with you. How do you tell the one person who has been and continues to be by your side no matter what, that you have lied to him every year on this date about why you’re in “bad mood”. The sick part is? I know him well enough to say that I know he wouldn’t judge me for it, if anything he’d be understanding and do anything in his power to console me. Every girls dream come true right? So then why can I not give him what he needs from me? Why can I not tell him why this day literally changes my entire persona? How I walk around in a haze as I relive the words, the smell of cheap beer and cigarettes, music coming thru some shitty old speakers, being called her “friend”. For some reason I’d rather hide the truth and convince the one person in the world who loves me more than life itself to leave me alone and “I’ll be fine”. Which translates to buying a bottle and drinking to try to numb the pain. About 2 am you come out to tell me you love me and you’re sorry for upsetting me, when in reality you did nothing wrong. I accept as if I was expecting it and reply I love you too with such a sadness in my voice. You know why I got drunk tonight but you don’t want to call me out since you know deep down I’m fighting my own demons. You gently ask me when I’ll be to bed?, and I shrug and say “Soon, I guess”. Now almost 3 hours later here I sit, with an almost empty bottle, feeling even worse than before, hating myself for pushing you to the side when all you want is to be there for me, something I’ve always wanted but now I don’t know how to engage with. Instead I’ll drink until I think the pain is gone, just as I got the point I’ll stop. I’ll stumble to our bedroom where you lay stretched across our bed, holding my pillows close to your chest, and I’ll see this causing me to stop dead in my tracks. I see you laying there so peacefully, or Atleast appearing so, clinging to my pillow since I clearly fell short on my end of the “coming to bed scenario”. I look at you and begin to cry, I can’t give you one simple bit of my memory to eliminate the shit I caused tonight. I’ll try to slip into bed as gentle as possible without waking you, but it’s like you can sense me and you immediately wraps your arms around me, tucking your body as close to mine as you can possibly get, as if nothing even happened. If I had one wish, I’d be as strong as you are. Maybe tomorrow will be my day, but not today. It’s getting time for the walk of shame down the hall tripping over your own feet and holding the walls as I stumble in. I want this to be the last time. She cannot keep this hold on me any longer.", 
+  general: "I was hoping to not do this tonight. Drinking to dull the pain, but it only made it worse. You’ve loved me unconditionally, and yet I’ve managed to push you away because I’m too ashamed to tell you why I’ve been in a \“bad mood\” today. Like I always do, I resort to shutting myself down, putting up a wall that not even the most determined could knock down.
+    
+I lash out at you, manage to take the blame off myself. You try to compromise with what you think the problem is I told you, but I'm realizing it has nothing to do with you. How do you tell the one person who has been and continues to be by your side no matter what, that you have lied to him every year on this date about why you’re in \“bad mood\”. The sick part is? I know him well enough to say that I know he wouldn’t judge me for it, if anything he’d be understanding and do anything in his power to console me. 
+      
+Every girls dream come true right? So then why can I not give him what he needs from me? Why can I not tell him why this day literally changes my entire persona? How I walk around in a haze as I relive the words, the smell of cheap beer and cigarettes, music coming thru some shitty old speakers, being called her \“friend\”. For some reason I’d rather hide the truth and convince the one person in the world who loves me more than life itself to leave me alone and \“I’ll be fine\”. Which translates to buying a bottle and drinking to try to numb the pain. 
+
+About 2am you come out to tell me you love me and you’re sorry for upsetting me, when in reality you did nothing wrong. I accept as if I was expecting it and reply I love you too with such a sadness in my voice. You know why I got drunk tonight but you don’t want to call me out since you know deep down I’m fighting my own demons. You gently ask me when I’ll be to bed?, and I shrug and say “Soon, I guess”. Now almost 3 hours later here I sit, with an almost empty bottle, feeling even worse than before, hating myself for pushing you to the side when all you want is to be there for me, something I’ve always wanted but now I don’t know how to engage with. Instead I’ll drink until I think the pain is gone, just as I got the point I’ll stop. I’ll stumble to our bedroom where you lay stretched across our bed, holding my pillows close to your chest, and I’ll see this causing me to stop dead in my tracks. 
+
+I see you laying there so peacefully, or at least appearing so, clinging to my pillow since I clearly fell short on my end of the \“coming to bed scenario\”. I look at you and begin to cry, I can’t give you one simple bit of my memory to eliminate the shit I caused tonight. I’ll try to slip into bed as gentle as possible without waking you, but it’s like you can sense me and you immediately wraps your arms around me, tucking your body as close to mine as you can possibly get, as if nothing even happened.
+
+If I had one wish, I’d be as strong as you are. Maybe tomorrow will be my day, but not today. It’s getting time for the walk of shame down the hall tripping over your own feet and holding the walls as I stumble in. I want this to be the last time. She cannot keep this hold on me any longer.", 
   improvements: "",
   gratitude: "",
   public: true,
@@ -601,7 +611,9 @@ entry31 = Entry.create({
 }) 
 
 entry32 = Entry.create({
-  general: "I spent some time reflecting about everything in general. I’m going to try to be more positive, even if I have to fake it until It becomes real and true positive thoughts.For some reason it feels like my emotional wounds have been reopened after a fight with a family member. All I think about is how angry they were, enough to take a swing at me and nail me in the back with their nails. It wasn’t pleasant, and I guess I don’t feel too trusting of them anymore to be honest. I forgive them but I don’t trust someone like that at all. I don’t believe they did wrong even if they tried to hit me, but I just don’t feel at all trusting of them. I just see their angry expression and feel their nails on my back whenever I think of them. I’m not sure if I’m a bad person for thinking of them this way even if they apologized.", 
+  general: "I spent some time reflecting about everything in general. I’m going to try to be more positive, even if I have to fake it until It becomes real and true positive thoughts. For some reason it feels like my emotional wounds have been reopened after a fight with a family member. All I think about is how angry they were, enough to take a swing at me and nail me in the back with their nails. It wasn’t pleasant, and I guess I don’t feel too trusting of them anymore to be honest. I forgive them but I don’t trust someone like that at all. 
+  
+I don’t believe they did wrong even if they tried to hit me, but I just don’t feel at all trusting of them. I just see their angry expression and feel their nails on my back whenever I think of them. I’m not sure if I’m a bad person for thinking of them this way even if they apologized.", 
   improvements: "",
   gratitude: "",
   public: true,
@@ -731,6 +743,17 @@ I may not have been vocal for the past few years, but I am very proud of your ac
 }) 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #### -------------------------------------- REFLECTIONS -------------------------------------- reflX
 # refl = Reflection.create({
 #   body: "",
@@ -768,26 +791,26 @@ refl6 = Reflection.create({
   writer_id: usr8.id,
   entry_id: entry34.id
 })
-# refl7 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
-# refl8 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
-# refl9 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
-# refl10 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
+refl7 = Reflection.create({
+  body: "The more I think about it, the more I believe that I really need to get out. I can't just be alone and be a recluse and just assume I'm boring. Perhaps being around other people will inspire me to be more interesteing.",
+  writer_id: usr7.id,
+  entry_id: entry33.id
+})
+refl8 = Reflection.create({
+  body: "Maybe with time I learn to fully trust them again. In the meantime perhaps I should't think beat myself up for not trusting them completely.",
+  writer_id: usr6.id,
+  entry_id: entry32.id
+})
+refl9 = Reflection.create({
+  body: "I hope one day I can truly tell him what I need to express. I want to find a way to let me know that it's not just me in a bad mood. It's something else.",
+  writer_id: usr5.id,
+  entry_id: entry31.id
+})
+refl10 = Reflection.create({
+  body: "I'm not sure how much longer I can resist Jack. I need to break things completely off with him.",
+  writer_id: usr30.id,
+  entry_id: entry3.id
+})
 # refl11 = Reflection.create({
 #   body: "",
 #   writer_id: usr.id,
@@ -838,6 +861,18 @@ refl6 = Reflection.create({
 #   writer_id: usr.id,
 #   entry_id: entry.id
 # })
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### -------------------------------------- FOLLOWS -------------------------------------- followX
 Follow.delete_all

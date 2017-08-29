@@ -19,7 +19,7 @@ class EntryIndex extends Component {
 
     if (this.props.pathname !== pathname) {
       if (pathname === '/feed') {
-        return fetchFeedEntries(currentUser.id) 
+        return fetchFeedEntries(currentUser.id);
       } else if (pathUsername) {
         return fetchEntries(pathUsername);
       }
