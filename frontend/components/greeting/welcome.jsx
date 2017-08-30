@@ -7,7 +7,7 @@ class Welcome extends Component {
     return (
       <div>
         <header className="welcome-heading">
-          Welcome, <strong>{this.props.currentUser.username}</strong>
+          Welcome, <strong>{currentUser.username}</strong>
         </header>
         <section>
           <h3 className="welcome-prompt">What would you like to do?</h3>

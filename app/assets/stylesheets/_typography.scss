@@ -343,7 +343,7 @@ strong {
 .welcome-prompt {
   @include entry-heading;
   @include size(welcome-prompt);
-  color: $gray;
+  color: #bbb;
   padding-bottom: 2.4rem;
 }
 
@@ -373,8 +373,7 @@ strong {
 
 .welcome-option-1:hover, .welcome-option-2:hover, 
 .welcome-option-3:hover, .welcome-option-4:hover {
-  // background-color: $light-purple;
-  background-color: #fff;
+  background-color: #F9F9F9;
   color: #000;
   cursor: hand;
   cursor: pointer;

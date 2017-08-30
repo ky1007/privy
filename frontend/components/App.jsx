@@ -1,7 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
-import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import WelcomeContainer from './greeting/welcome_container';
 import EntryFormContainer from './entry/entry_form_container';
@@ -13,8 +12,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="main-container">
-    {/* <div className="nav-bar">
-    </div> */}
 
     {/* Homepage (when someone is signed out) */}
     <Switch>
