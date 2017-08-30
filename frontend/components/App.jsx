@@ -12,7 +12,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-
     {/* Homepage (when someone is signed out) */}
     <Switch>
       <AuthRoute exact path="/" component={GreetingContainer} />

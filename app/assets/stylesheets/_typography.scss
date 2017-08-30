@@ -9,6 +9,7 @@ $type-scale-large: (
   small: 1rem,
   welcome-heading: 4.3rem,
   welcome-prompt: 2.4rem,
+  session-button: 1rem,
 );
 
 // $type-scale-large: (
@@ -170,7 +171,10 @@ a:hover {
   @include size(small);
 }
 
+.session-form a { color: $light-purple; }
+.session-form a:hover { color: $purple; }
 
+.session-form { font-size: 1.1rem; }
 
 /* -- SHOWING an ENTRY -- */
 article {
@@ -184,11 +188,12 @@ article {
   text-align: center;
   font-weight: 300;
   color: $purple;
+  padding-top: 2rem;
 }
 
 article h1 {
   @include entry-heading;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 }
 
 article h2 {
@@ -351,6 +356,7 @@ strong {
   @include size(welcome-prompt);
   color: #bbb;
   padding-bottom: 2.4rem;
+  padding-top: 0;
 }
 
 @mixin welcome-options {

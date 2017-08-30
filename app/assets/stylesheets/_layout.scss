@@ -41,7 +41,7 @@ nav {
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
-  max-width: 750px;
+  max-width: 1000px;
 }
 
 .intro {
@@ -51,15 +51,34 @@ nav {
   margin: 0 auto;
 }
 
+.behind-bg-image {
+  width: 100%;
+  height: 100vh;
+  // height: 830px;
+}
+
+.bg-image {
+  display: block;
+  padding-top: 1px;
+  height: 100%;
+  margin-top: -1px;
+  background-position: center;
+  background: url(https://res.cloudinary.com/dtxfmomdh/image/upload/v1500522720/map_gp66el.svg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 // --- LOGIN / LOGOUT form --- 
 .session-form-container {
   flex: 1;
-  padding: 30px 12px 0 0;
+  padding: 30px 0 0 0;
   text-align: center;
 }
 
 .session-form {
-  max-width: 150px;
+  max-width: 200px;
   text-align: center;
   margin: 0 auto;
 }

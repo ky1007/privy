@@ -4,7 +4,7 @@ form {
 }
 
 input {
-  margin-left: 4px;
+  // margin-left: 4px;
   border: 0;
   -webkit-appearance: none;
   border-bottom: 1px solid #ccc;
@@ -12,28 +12,17 @@ input {
   margin-bottom: 4px;
 }
 
-button.session-button {
-  background-color: $yellow;
-  border: 0px solid #333;
-  padding: 8px;
-  margin: 2px;
-  text-decoration: none;
-  text-transform: capitalize;
-  width: 100%;
-  cursor: hand;
-  cursor: pointer;
-}
-
 .session-button {
   background-color: $yellow;
   border: 0px solid #333;
   padding: 8px;
-  margin: 2px;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: lowercase;
   width: 100%;
   cursor: hand;
   cursor: pointer;
+  @include size(session-button);
+  font-weight: 300;
 }
 
 .session-button:hover {
