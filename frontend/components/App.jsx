@@ -11,7 +11,7 @@ import NavContainer from './nav/nav_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div className="main-container">
+  <div>
 
     {/* Homepage (when someone is signed out) */}
     <Switch>

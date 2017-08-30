@@ -36,7 +36,7 @@ class EntryShow extends React.Component {
 
   waitingToLoad() {
     return (
-      <div>Loading screen!</div>
+      <div className="main-container">Loading screen!</div>
     );
   }
 
@@ -142,20 +142,22 @@ class EntryShow extends React.Component {
     const entryDate = moment(created_at).fromNow();
 
     return (
-      <div className="entry-item-container">
-        <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>
-        <main className="entry-item">
-          <article className="entry-show">
-            <section><h2>thoughts</h2>{this.showUserProfile()}{general}</section>
-            { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
-            { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
-            <GoalIndexContainer entryId={id} />
-            { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
-            {this.showFollowToggle()}
-          </article>
-        </main>
-        {this.showReflectionForm()}
-        {this.showReflections(created_at)}
+      <div className="main-container">
+        <div className="entry-item-container">
+          <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>
+          <main className="entry-item">
+            <article className="entry-show">
+              <section><h2>thoughts</h2>{this.showUserProfile()}{general}</section>
+              { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
+              { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
+              <GoalIndexContainer entryId={id} />
+              { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
+              {this.showFollowToggle()}
+            </article>
+          </main>
+          {this.showReflectionForm()}
+          {this.showReflections(created_at)}
+        </div>
       </div>
     );
   }

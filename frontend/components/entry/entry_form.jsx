@@ -112,7 +112,7 @@ class EntryForm extends React.Component {
     const date = moment().format("MMM Do");
 
     return (
-      <div>
+      <div className="main-container">
         <article>
           <h1>{date}</h1>
         </article>

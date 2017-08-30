@@ -5,7 +5,7 @@ class Welcome extends Component {
   render() {
     const { currentUser } = this.props; 
     return (
-      <div>
+      <div className="main-container">
         <header className="welcome-heading">
           Welcome, <strong>{currentUser.username}</strong>
         </header>

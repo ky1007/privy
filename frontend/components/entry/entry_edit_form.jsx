@@ -113,7 +113,7 @@ class EntryEditForm extends React.Component {
 
   waitingToLoad() {
     return (
-      <div>Loading screen!</div>
+      <div className="main-container">Loading screen!</div>
     );
   }
 
@@ -124,7 +124,7 @@ class EntryEditForm extends React.Component {
 
     if (this.props.entry && this.props.goals) {
       return (
-        <div>
+        <div className="main-container">
           <article><h1>{date}</h1></article>
           <div className="edit-entry-form">
             <form action="">

@@ -19,7 +19,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0px solid #eee;
   margin-bottom: 2.4rem;
 }
 
@@ -27,6 +27,10 @@ nav {
   display: flex;
   align-items: baseline;
   justify-content: space-around;
+}
+
+.nav-flow {
+  background-color: #222;
 }
 
 /* -- HOME PAGE ---  */

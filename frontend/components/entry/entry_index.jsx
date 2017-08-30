@@ -85,7 +85,7 @@ class EntryIndex extends Component {
     const { entries, pathUsername, currentUser } = this.props;
     if (entries.length > 0) {
       return (
-        <div>
+        <div className="main-container">
           <header className="entry-index-header">
             <h1>
               {this.showWhoseJournal()}

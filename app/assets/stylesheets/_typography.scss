@@ -77,11 +77,13 @@ a {
 
 nav a {
   @include size(small);
-  color: $darker-gray;
+  color: white;
+  // color: $darker-gray;
 }
 
 .nav-logo a { 
-  color: $darkest-gray; 
+  color: white; 
+  // color: $darkest-gray; 
   @include size(h2);
 }
 
@@ -91,12 +93,13 @@ nav a {
 }
 
 .logout-button {
-  background-color: #f9f9f9;
+  background-color: #333;
+  // background-color: #f9f9f9;
   padding: 10px;
   border-radius: 6px;
 }
 .logout-button:hover {
-  background-color: #F5EBFF;
+  background-color: #111;
   cursor: hand;
   cursor: pointer;
   transition: 0.3s;
@@ -147,7 +150,8 @@ h3 {
 }
 
 a:hover {
-  color: $purple;
+  color: #bbb;
+  // color: $purple;
   transition: 0.2s;
 }
 
@@ -184,6 +188,7 @@ article {
 
 article h1 {
   @include entry-heading;
+  padding-top: 2rem;
 }
 
 article h2 {
@@ -308,7 +313,7 @@ strong {
   color: $darker-gray;
   font-weight: 300;
   color: $purple;
-  padding: 1rem 0 4.4rem;
+  padding: 3.65rem 0 4.4rem;
 }
 
 .entry-index-metadata {
