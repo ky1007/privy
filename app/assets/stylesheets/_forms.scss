@@ -23,7 +23,7 @@ input {
   @include size(session-button);
   font-weight: 300;
   margin-bottom: 3px;
-  // border: 1px solid #333;
+  border: none;
 }
 
 .session-button:hover {
