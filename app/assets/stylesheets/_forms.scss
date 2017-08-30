@@ -4,7 +4,6 @@ form {
 }
 
 input {
-  // margin-left: 4px;
   border: 0;
   -webkit-appearance: none;
   border-bottom: 1px solid #ccc;
@@ -13,9 +12,9 @@ input {
 }
 
 .session-button {
-  background-color: $yellow;
-  border: 0px solid #333;
-  padding: 8px;
+  background-color: $purple;
+  color: white;
+  padding: 12px 0;
   text-decoration: none;
   text-transform: lowercase;
   width: 100%;
@@ -24,10 +23,11 @@ input {
   @include size(session-button);
   font-weight: 300;
   margin-bottom: 3px;
+  // border: 1px solid #333;
 }
 
 .session-button:hover {
-  background-color: $dark-yellow;
+  background-color: $light-purple;
 }
 
 // --- GOALS INPUT on entry edit/create page --
