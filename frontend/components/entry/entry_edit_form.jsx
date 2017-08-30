@@ -31,7 +31,7 @@ class EntryEditForm extends React.Component {
     window.scrollTo(0, 0);
 
     this.props.fetchEntry(this.props.entryId);
-    const entry_id = { entry_id: this.props.entryId }
+    const entry_id = { entry_id: this.props.entryId };
     this.props.fetchGoals(entry_id);
   }
 
@@ -70,7 +70,7 @@ class EntryEditForm extends React.Component {
   submitGoals(goals) {
     for (const id of Object.keys(this.state.goals)) {
       if (goals[id].body !== '') {
-        this.props.updateGoal(goals[id])
+        this.props.updateGoal(goals[id]);
       }
     }
   }
@@ -93,7 +93,7 @@ class EntryEditForm extends React.Component {
 
     const entryId = e.target.value;
     this.props.destroyEntry(entryId);
-    this.props.history.push(`/me/entries/`);
+    this.props.history.push(`/${this.props.currentUser.username}/entries/`);
   }
 
   showGoals() {

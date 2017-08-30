@@ -5,10 +5,11 @@ import { updateEntry, destroyEntry, fetchEntry } from '../../actions/entry_actio
 import EntryEditForm from './entry_edit_form';
 import { selectGoals } from '../../reducers/selectors';
 
-const mapStateToProps = ({ entries, goals }, { match }) => ({
+const mapStateToProps = ({ entries, goals, session }, { match }) => ({
   entry: entries.current,
   entryId: parseInt(match.params.entryId),
   goals: goals.allGoals,
+  currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
