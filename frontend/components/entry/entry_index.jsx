@@ -37,7 +37,7 @@ class EntryIndex extends Component {
     // }
     return (
       <span>
-        people you follow <span role="img" aria-label="Pair dancing emoji">👯‍♂</span>
+        people you follow <span role="img" aria-label="Pair dancing emoji">👯‍</span>
       </span>
     );
   }
