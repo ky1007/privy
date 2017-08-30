@@ -341,6 +341,7 @@ strong {
 .welcome-heading {
   @include entry-heading;
   @include size(welcome-heading);
+  padding-top: 2.8rem;
   padding-bottom: 0;
 }
 
