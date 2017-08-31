@@ -18,7 +18,7 @@ class Api::ReflectionsController < ApplicationController
   end
 
   def destroy
-    @reflection = Reflection.find_by(id: params[:id])
+    @reflection = current_user.reflections.find_by(id: params[:id])
     if @reflection.destroy
       render :show
     else

@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :entries,
     foreign_key: :writer_id,
     class_name: :Entry
+
+  has_many :reflections,
+    foreign_key: :writer_id,
+    class_name: :Reflection
  
   has_many :likes,
     foreign_key: :user_id,

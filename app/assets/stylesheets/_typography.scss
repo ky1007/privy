@@ -301,6 +301,7 @@ li { list-style: none; }
 
 .entry-item-container h1 {
   @include entry-heading;
+  padding-top: 2.4rem;
 }
 
 strong {

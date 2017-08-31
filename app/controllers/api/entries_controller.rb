@@ -5,11 +5,9 @@ class Api::EntriesController < ApplicationController
       @entries = user.entries.limit(10)
       render :index
     else
-      @entries = Entry.all.order(created_at: :desc)
+      @entries = Entry.all.order(created_at: :desc).limit(10)
       render :index
     end
-
-    # note: don't forget to write error messages 
   end
 
   def show
@@ -31,7 +29,7 @@ class Api::EntriesController < ApplicationController
   end
 
   def update
-    @entry = Entry.find_by(id: params[:id])
+    @entry = current_user.entries.find_by(id: params[:id])
     if @entry.update_attributes(entry_params)
       render :show
     elsif @entry
@@ -43,7 +41,7 @@ class Api::EntriesController < ApplicationController
   end
 
   def destroy
-    @entry = Entry.find_by(id: params[:id])
+    @entry = current_user.entries.find_by(id: params[:id])
     if @entry.destroy 
       render :show
     elsif @entry
