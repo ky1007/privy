@@ -8,7 +8,7 @@
   * Users can read through their old entries and post a reflection entry they’ve written. Other users can read an entry’s reflections, but they cannot write a reflection on entries they haven’t written. 
 
  ### Viewing posts
-  ![Privy entry index](docs/images/privy_entry_index.png)
+  ![Privy entry index](docs/images/privy.png)
 To maintain DRY code, the same React component was used to render three different index views: the personal feed (showing entries based on a user's followers), the others users' entries (all entries writen by one user), the uer's own entries.
 
 This was made possible by checking the URL pathname and params passed from the router and dynamically fetching content based on those specific props. 
