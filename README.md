@@ -7,6 +7,9 @@
   * Users can follow and read other people’s diaries
   * Users can read through their old entries and post a reflection entry they’ve written. Other users can read an entry’s reflections, but they cannot write a reflection on entries they haven’t written. 
 
+ ### Login and Greeting page
+  ![Privy login and greeting page](docs/images/privy-previews.png)
+
  ### Viewing posts
   ![Privy entry index](docs/images/privy.png)
 To maintain DRY code, the same React component was used to render three different index views: the personal feed (showing entries based on a user's followers), the others users' entries (all entries writen by one user), the uer's own entries.
@@ -39,7 +42,7 @@ This was made possible by checking the URL pathname and params passed from the r
 ``` 
 
  ### Viewing a post
-  ![Privy entry edit form](docs/images/privy_entry_show.png)
+  ![Privy entry edit form](docs/images/privy-entry-show.png)
 Utilizing SASS and its ability to create mixins also helped maintain DRY code for visual consistency and styling.  
 
 ## Project Design
