@@ -1,34 +1,34 @@
-var path = require("path");
-var webpack = require("webpack");
+let path = require("path");
+let webpack = require("webpack");
 
-var plugins = []; 
-var devPlugins = []; 
+let plugins = [];
+let devPlugins = [];
 
-var prodPlugins = [
+let prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      'NODE_ENV': JSON.stringify('production')
-    }
+      'NODE_ENV': JSON.stringify('production'),
+    },
   }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
-      warnings: true
-    }
-  })
+      warnings: true,
+    },
+  }),
 ];
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-) 
+);
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/privy.jsx",
+  entry: './frontend/privy.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: 'bundle.js',
   },
-  plugins: plugins,
+  plugins,
   module: {
     loaders: [
       {
@@ -36,13 +36,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
+          presets: ['es2015', 'react'],
+        },
+      },
+    ],
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
+    extensions: [".js", ".jsx", "*"],
+  },
 };
