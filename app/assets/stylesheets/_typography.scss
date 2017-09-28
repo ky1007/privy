@@ -19,8 +19,8 @@ $type-scale-medium: (
   h4:	1.46344rem,
   p:	1.46344rem,
   small:	0.88rem,
-  welcome-heading: 4.3rem,
-  welcome-prompt: 2.4rem,
+  welcome-heading: 3.78rem,
+  welcome-prompt: 2.11rem,
 );
 
 $type-scale-small: (
@@ -30,7 +30,7 @@ $type-scale-small: (
   h4: 1.2878272rem,
   p: 1.2878272rem,
   small: 0.7744rem,
-  welcome-heading: 4.3rem,
+  welcome-heading: 3.33rem,
   welcome-prompt: 2.4rem,
 );
 
@@ -174,7 +174,6 @@ article {
 
 article h1 {
   @include entry-heading;
-  // padding-top: 2rem;
 }
 
 article h2 {
@@ -199,7 +198,6 @@ li { list-style: none; }
 
 /* -- SHOWING an ENTRY's AUTHOR -- */
 .country, .age, .race {
-  // font-weight: bold;
   color: white;
   display: inline-block;
   padding: 8px;
@@ -306,9 +304,6 @@ strong {
 .entry-index-metadata {
   color: $middle-gray;
 }
-// .entry-index
-// .entry-index-metadata:first-child {
-// }
 
 .entry-index:nth-of-type(1) {
   border-top: 1px solid #f9f9f9;
