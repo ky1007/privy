@@ -1,5 +1,3 @@
-// Because you might want to grab reflections based on writer_id or entry_id
-// TEST status: works
 export const fetchReflections = reflection => (
   $.ajax({
     method: 'GET',
@@ -8,7 +6,6 @@ export const fetchReflections = reflection => (
   })
 );
 
-// TEST status: works 
 export const createReflection = reflection => (
   $.ajax({
     method: 'POST',
@@ -17,7 +14,6 @@ export const createReflection = reflection => (
   })
 );
 
-// TEST status: works
 export const destroyReflection = id => (
   $.ajax({
     method: 'DELETE',
@@ -25,13 +21,3 @@ export const destroyReflection = id => (
     data: ({ id }),
   })
 );
-
-// WON'T NEED THIS
-// // TEST status:
-// export const fetchReflection = id => (
-//   $.ajax({
-//     method: 'GET',
-//     url: 'api/reflections',
-//     data: { id },
-//   })
-// );
