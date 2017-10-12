@@ -36,7 +36,8 @@ class EntryShow extends React.Component {
 
   waitingToLoad() {
     return (
-      <div className="main-container">Loading screen!</div>
+      <div className="animated-background" />
+      // <div className="main-container">Loading screen!</div>
     );
   }
 
@@ -164,7 +165,8 @@ class EntryShow extends React.Component {
 
   render() {
     if (this.props.entry) {
-      return (this.showCompleteEntry());
+      return (this.waitingToLoad());
+      // return (this.showCompleteEntry());
     } else {
       return (this.waitingToLoad());
     }

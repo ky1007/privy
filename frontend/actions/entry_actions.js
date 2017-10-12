@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as APIUtil from '../util/entry_api_util';
 
 export const RECEIVE_ENTRIES = 'RECEIVE_ENTRIES';
@@ -71,46 +69,3 @@ export const destroyLike = unlikeRequest => dispatch => (
     dispatch(receiveEntry(entry))
   ))
 );
-
-// TODO: catch errors
-// export const createEntry = entry => dispatch => (
-//   APIUtil.createEntry(entry).then(entry => (
-//     dispatch(receieveEntry(entry))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-
-// TEMP - for testing
-// window.createEntry = createEntry;
-// window.fetchEntry = fetchEntry;
-// window.destroyEntry = destroyEntry;
-// window.fetchEntries = fetchEntries;
-// window.fetchEntry = fetchEntry;
-
-// export const tentry = {
-//   title: "hey",
-//   general: "hey",
-//   gratitude: "hey",
-//   improvements: "hey",
-//   writer_id: 1,
-//   image_url: "hey",
-//   public: true,
-// };
-
-// export const findrr = {
-//   entry: {
-//     writer_id: 1,
-//   }
-// };
-
-// window.tentry = tentry;
-// window.findrr = findrr;
-
-// dispatch(createEntry(tentry));
-// dispatch(fetchEntry(2));
-// dispatch(fetchEntries());
-// dispatch(fetchEntries({writer_id: 1}));
-// dispatch(destroyEntry(3));
-
-// TEMP END

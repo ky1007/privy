@@ -108,15 +108,7 @@ nav {
 
 
 main .entry-list-items {
-  // color: #fff;
-  // border: 1px solid #000;
-  // background: #000;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: flex-start;
   flex: 8;
-  // flex-grow: 3;
-  // width: 80%;
 }
 
 .entry-list-items article {
@@ -158,6 +150,26 @@ main .entry-list-items {
 .reflection-item-action {
   flex: 1;
   text-align: right;
+}
+
+// --- Loading animation ---
+@keyframes placeHolderShimmering{
+  0%{
+      background-position: -430px 0;
+  }
+  100%{
+      background-position: 430px 0;
+  }
+}
+
+.animated-background {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmering;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, rgb(159, 62, 255) 8%, $purple 18%, rgb(159, 62, 255) 33%);
+  height: 6px;
 }
 
 // --- ENTRY SHOW page ---
