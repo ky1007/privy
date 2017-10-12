@@ -9,5 +9,4 @@ class Bookmark < ApplicationRecord
   belongs_to :entries,
     foreign_key: :entry_id,
     class_name: :Entry
-
 end
