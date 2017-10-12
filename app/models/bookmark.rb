@@ -1,4 +1,4 @@
-class Like < ApplicationRecord
+class Bookmark < ApplicationRecord
   validates :entry_id, :user_id, presence: true
   validates :user_id, uniqueness: { scope: :entry_id }
 

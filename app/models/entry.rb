@@ -14,9 +14,9 @@ class Entry < ApplicationRecord
     foreign_key: :writer_id,
     class_name: :User
   
-  has_many :likes,
+  has_many :bookmarks,
     foreign_key: :user_id,
-    class_name: :Like
+    class_name: :Bookmark
 
 
 end

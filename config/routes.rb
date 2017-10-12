@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :goals, only: [:index, :show, :create, :update, :destroy]
     resources :reflections, only: [:index, :create, :destroy]
     resources :follows, only: [:create, :index]
-    resources :likes, only: [:create, :destroy]
+    resources :bookmarks, only: [:create, :destroy, :index, :show]
     delete 'follows', to: 'follows#destroy' 
     resource :session, only: [:create, :destroy]
   end

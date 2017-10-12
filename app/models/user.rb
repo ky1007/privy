@@ -11,9 +11,9 @@ class User < ApplicationRecord
     foreign_key: :writer_id,
     class_name: :Reflection
  
-  has_many :likes,
+  has_many :bookmarks,
     foreign_key: :user_id,
-    class_name: :Like
+    class_name: :Bookmark
 
   has_many :out_follows,
     foreign_key: :follower_id,
