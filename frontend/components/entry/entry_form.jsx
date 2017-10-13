@@ -43,11 +43,6 @@ class EntryForm extends React.Component {
 
   componentDidMount() {
     this.nameInput.focus();
-    let areas = document.querySelectorAll('.expandingArea');
-    let l = areas.length;
-    while (l--) {
-      makeExpandingArea(areas[l]);
-    }
   }
 
   pullEntryId(entry) {
@@ -118,14 +113,11 @@ class EntryForm extends React.Component {
         </article>
         <div className="entry-form">
           <form>
-              {/* <div className="expandingArea">   */}
-              {/* <pre><span></span><br /></pre> */}
-              <textarea ref={(input) => { this.nameInput = input; }}
-                        placeholder={`what's on your mind, ${writer}?`}
-                        value={general}
-                        onChange={this.updateEntry('general')}>
-              </textarea>
-            {/* </div> */}
+            <textarea ref={(input) => { this.nameInput = input; }}
+                      placeholder={`what's on your mind, ${writer}?`}
+                      value={general}
+                      onChange={this.updateEntry('general')}>
+            </textarea>
 
             <textarea placeholder="things you feel thankful for"
                       value={gratitude}

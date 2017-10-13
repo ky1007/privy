@@ -169,7 +169,7 @@ main .entry-list-items {
   animation-name: placeHolderShimmering;
   animation-timing-function: linear;
   background: linear-gradient(to right, rgb(159, 62, 255) 8%, $purple 18%, rgb(159, 62, 255) 33%);
-  height: 2px;
+  height: 6px;
 }
 
 // --- ENTRY SHOW page ---

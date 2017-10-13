@@ -4,6 +4,7 @@ import entryReducer from './entry_reducer';
 import goalReducer from './goal_reducer';
 import reflectionReducer from './reflection_reducer';
 import userReducer from './user_reducer';
+import bookmarkReducer from './bookmark_reducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   goals: goalReducer,
   reflections: reflectionReducer,
   users: userReducer,
+  bookmarks: bookmarkReducer,
 });
 
 // STATE SHAPE: 

@@ -1,8 +1,8 @@
-export const createBookmark = entryId => (
+export const createBookmark = bookmark => (
   $.ajax({
     method: 'POST',
     url: '/api/bookmarks',
-    data: { entryId },
+    data: { bookmark },
   })
 );
 
@@ -12,3 +12,5 @@ export const destroyBookmark = bookmarkId => (
     url: `/api/bookmarks/${bookmarkId}`,
   })
 );
+
+window.createBookmark = createBookmark;

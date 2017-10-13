@@ -165,11 +165,9 @@ class EntryShow extends React.Component {
 
   render() {
     if (this.props.entry) {
-      return (this.waitingToLoad());
-      // return (this.showCompleteEntry());
-    } else {
-      return (this.waitingToLoad());
+      return (this.showCompleteEntry());
     }
+    return (this.waitingToLoad());
   }
 }
 

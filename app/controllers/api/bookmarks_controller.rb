@@ -1,8 +1,8 @@
 class Api::BookmarksController < ApplicationController
   def create
-    @bookmark = bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user_id = current_user.id
-    @entry = @bookmark.entry
+    @entry = @bookmark.entries
 
     if @bookmark.save
       render 'api/entries/show'
