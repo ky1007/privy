@@ -12,5 +12,3 @@ export const destroyBookmark = bookmarkId => (
     url: `/api/bookmarks/${bookmarkId}`,
   })
 );
-
-window.createBookmark = createBookmark;
