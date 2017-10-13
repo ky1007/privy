@@ -153,7 +153,7 @@ main .entry-list-items {
 }
 
 // --- Loading animation ---
-@keyframes placeHolderShimmering{
+@keyframes placeholderShimmering{
   0%{
       background-position: -430px 0;
   }
@@ -162,11 +162,11 @@ main .entry-list-items {
   }
 }
 
-.animated-background {
+.loading-bar {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-name: placeHolderShimmering;
+  animation-name: placeholderShimmering;
   animation-timing-function: linear;
   background: linear-gradient(to right, rgb(159, 62, 255) 8%, $purple 18%, rgb(159, 62, 255) 33%);
   height: 2px;

@@ -317,6 +317,20 @@ strong {
   @include size(small);
 }
 
+.fa-bookmark-o {
+  color: $light-purple;
+  padding-left: 1rem;
+}
+
+.follows {
+  background-color: $light-purple;
+  display: inline-block;
+  padding: .4rem 0.8rem;
+  color: white;
+  border-radius: 8px;
+  margin-top: 1rem;  
+}
+
 // --- WELCOME page ---
 
 .welcome-heading {

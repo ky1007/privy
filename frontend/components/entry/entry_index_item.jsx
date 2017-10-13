@@ -7,6 +7,7 @@ const writerInfo = entry => (
     {entry.writer_info.country ? <div><small className="country">{entry.writer_info.country}</small><br /></div> : null }
     {entry.writer_info.race ? <div><small className="race">{entry.writer_info.race}</small><br /></div> : null }
     {entry.writer_info.age ? <div><small className="age">{entry.writer_info.age}</small><br /></div> : null }
+    <div className="follows"><i className="fa fa-user-plus" aria-hidden="true"></i> follow</div>
   </div>
 );
 
@@ -22,6 +23,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser }) => (
         <article key={entry.id}>{entry.general.slice(0, 190) + '...'}</article>
       </Link>
     </main>
+    <i className="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>
   </div>
 );
 

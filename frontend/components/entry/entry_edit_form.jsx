@@ -113,7 +113,7 @@ class EntryEditForm extends React.Component {
 
   waitingToLoad() {
     return (
-      <div className="main-container">Loading screen!</div>
+      <div className="loading-bar" />
     );
   }
 

@@ -36,8 +36,7 @@ class EntryShow extends React.Component {
 
   waitingToLoad() {
     return (
-      <div className="animated-background" />
-      // <div className="main-container">Loading screen!</div>
+      <div className="loading-bar" />
     );
   }
 
