@@ -320,6 +320,12 @@ strong {
 .fa-bookmark-o {
   color: $light-purple;
   padding-left: 1rem;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.entry-index-container:hover .fa-bookmark-o {
+  opacity: 1;
 }
 
 .follows {
@@ -328,7 +334,13 @@ strong {
   padding: .4rem 0.8rem;
   color: white;
   border-radius: 8px;
-  margin-top: 1rem;  
+  margin-top: 1rem;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.entry-index-metadata:hover .follows {
+  opacity: 1;
 }
 
 // --- WELCOME page ---

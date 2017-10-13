@@ -20,7 +20,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser }) => (
     </aside>
     <main className="entry-list-items">
       <Link to={`/entries/${entry.id}`}>
-        <article key={entry.id}>{entry.general.slice(0, 190) + '...'}</article>
+        <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
       </Link>
     </main>
     <i className="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>
