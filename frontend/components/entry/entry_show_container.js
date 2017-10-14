@@ -28,7 +28,6 @@ const mapDispatchToProps = (dispatch) => {
     clearReflections: () => dispatch(clearReflections()),
     clearGoals: () => dispatch(clearGoals()),
     fetchUser: id => dispatch(fetchUser(id)),
-    // followAction: followRequest => dispatch(followAction(followRequest)),
     createFollow: followRequest => dispatch(createFollow(followRequest)),
     destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
   };

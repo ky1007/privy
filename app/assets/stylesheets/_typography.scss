@@ -321,12 +321,12 @@ strong {
   color: $light-purple;
   padding-left: 1rem;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.65s ease;
 }
 
-.entry-index-container:hover .fa-bookmark-o {
-  opacity: 1;
-}
+.entry-index-container:hover .fa-bookmark-o { opacity: 1; }
+
+.fa-bookmark-o:hover { transform: scale(1.14); color: $purple; }
 
 .follows {
   background-color: $light-purple;
@@ -336,10 +336,16 @@ strong {
   border-radius: 8px;
   margin-top: 1rem;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.65s ease;
 }
 
-.entry-index-metadata:hover .follows {
+.follows:hover { 
+  background-color: $purple; 
+  transform: scale(1.07);
+  cursor: hand;  
+}
+
+.entry-index-container:hover .follows {
   opacity: 1;
 }
 

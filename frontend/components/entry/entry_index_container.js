@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import EntryIndex from './entry_index';
 import { fetchEntries, fetchFeedEntries } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
+import { createFollow, destroyFollow } from '../../actions/follow_actions';
 // import { selectFeedEntries } from '../../reducers/selectors';
 
 const mapStateToProps = ({ entries, session, users }, { match, location }) => {
@@ -22,6 +23,8 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
 const mapDispatchToProps = dispatch => ({
   fetchEntries: username => dispatch(fetchEntries(username)),
   fetchFeedEntries: id => dispatch(fetchFeedEntries(id)),
+  createFollow: followRequest => dispatch(createFollow(followRequest)),
+  destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryIndex);

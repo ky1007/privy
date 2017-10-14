@@ -76,7 +76,7 @@ class EntryIndex extends Component {
   }
 
   render() {
-    const { entries, pathUsername, currentUser } = this.props;
+    const { entries, pathUsername, currentUser, createFollow, destroyFollow } = this.props;
     if (entries.length > 0) {
       return (
         <div className="main-container">
@@ -89,7 +89,9 @@ class EntryIndex extends Component {
               {entries.map(entry => <EntryIndexItem key={entry.id} 
                                                     entry={entry} 
                                                     pathUsername={pathUsername} 
-                                                    currentUser={currentUser} 
+                                                    currentUser={currentUser}
+                                                    createFollow={this.createFollow}
+                                                    destroyFollow={this.destroyFollow} 
                                     />
               )}
             </section>
