@@ -326,7 +326,12 @@ strong {
 
 .entry-index-container:hover .fa-bookmark-o { opacity: 1; }
 
-.fa-bookmark-o:hover { transform: scale(1.14); color: $purple; }
+.fa-bookmark-o:hover { 
+  transform: scale(1.14); 
+  color: $purple; 
+  cursor: hand;
+  cursor: pointer;
+}
 
 .follows {
   background-color: $light-purple;
@@ -342,7 +347,8 @@ strong {
 .follows:hover { 
   background-color: $purple; 
   transform: scale(1.07);
-  cursor: hand;  
+  cursor: hand;
+  cursor: pointer;
 }
 
 .entry-index-container:hover .follows {

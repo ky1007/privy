@@ -90,15 +90,15 @@ class EntryIndex extends Component {
                                                     entry={entry} 
                                                     pathUsername={pathUsername} 
                                                     currentUser={currentUser}
-                                                    createFollow={this.createFollow}
-                                                    destroyFollow={this.destroyFollow} 
+                                                    createFollow={createFollow}
+                                                    destroyFollow={destroyFollow} 
                                     />
               )}
             </section>
         </div>
       );
     }
-    return (<div />);
+    return null;
   }
 }
 
