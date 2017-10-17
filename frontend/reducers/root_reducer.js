@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   bookmarks: bookmarkReducer,
 });
 
-// STATE SHAPE: 
+// STATE SHAPE:
 // {
 //   session: {
 //     currentUser: {

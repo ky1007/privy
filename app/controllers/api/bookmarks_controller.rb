@@ -5,7 +5,7 @@ class Api::BookmarksController < ApplicationController
     @entry = @bookmark.entries
 
     if @bookmark.save
-      render 'api/entries/show'
+      render 'api/bookmarks/show'
     else 
       render json: @bookmark.errors.full_messages, status: 422
     end
@@ -20,7 +20,7 @@ class Api::BookmarksController < ApplicationController
     @entry = @bookmark.entry
 
     if @bookmark.destroy
-      render 'api/entries/show'
+      render 'api/bookmarks/show'
     else
       render json: ["Couldn't find the bookmark you're trying to dstroy"], status: 404
     end

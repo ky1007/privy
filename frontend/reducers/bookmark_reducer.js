@@ -6,6 +6,12 @@ const bookmarkReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
+    // case TOGGLE_BOOKMARK:
+    //   const bookmarks = action.allBookmarks;
+    //   for (const key in bookmarks) {
+    //     if (!validation_messages)
+    //   }
+
     case RECEIVE_BOOKMARKS:
       return merge({}, state, { allBookmarks: action.current });
     
