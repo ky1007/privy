@@ -1,1 +1,0 @@
-json.extract! follow, :in_follows, :out_follows

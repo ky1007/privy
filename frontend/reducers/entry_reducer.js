@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_ENTRIES, RECEIVE_ENTRY, DELETE_ENTRY } from '../actions/entry_actions';
+import { RECEIVE_FOLLOW } from '../actions/follow_actions';
 
 // WHAT ACTION LOOKS LIKE COMING IN
 // {
@@ -30,6 +31,17 @@ const entryReducer = (state = {}, action) => {
       delete newState.current;
       delete newState.allEntries[action.current.id];
       return newState;
+
+    case RECEIVE_FOLLOW:
+      const followState = state;
+      followState.allEntries[action.following.entry_id].writer_info.following = action.follow.following;
+      return followState;
+
+    // case TOGGLE_BOOKMARK:
+    //   const bookmarks = action.allBookmarks;
+    //   for (const key in bookmarks) {
+    //     if (!validation_messages)
+    //   }
 
     default:
       return state;

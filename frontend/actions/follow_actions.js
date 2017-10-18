@@ -2,9 +2,9 @@ import * as APIUtil from '../util/follow_api_util';
 
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 
-export const receiveFollow = following => ({
+export const receiveFollow = follow => ({
   type: RECEIVE_FOLLOW,
-  following,
+  follow,
 });
 
 export const createFollow = followRequest => dispatch => (

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const writerInfo = (entry, destroyFollow, createFollow) => {
-  console.log(destroyFollow);
   const handleFollow = (followAction) => {
     const followRequest = {
       followee_id: entry.writer_id,
@@ -11,7 +10,7 @@ const writerInfo = (entry, destroyFollow, createFollow) => {
     return () => followAction(followRequest);
   };
 
-  const { following } = entry.writer_info;
+  const { following } = entry.writer_info;  
   const followAction = following ? destroyFollow : createFollow;
 
   return (

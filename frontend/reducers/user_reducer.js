@@ -16,7 +16,7 @@ const userReducer = (state = {}, action) => {
 
     case RECEIVE_FOLLOW:
       const newState = merge({}, state);
-      newState.current = action.following;
+      newState.current.following = action.follow.following;
       return newState;
 
     default:
