@@ -11,14 +11,19 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
   };
 
   const { following } = writers[entry.writer_id];
-  const followAction = following ? destroyFollow : createFollow;
+  const followAction = following ? createFollow : destroyFollow;
+  const followIcon = () => (
+    following ? <i className="fa fa-user-times" aria-hidden="true" /> : <i className="fa fa-user-plus" aria-hidden="true" />
+  );
+  // const followAction = following ? destroyFollow : createFollow;
+  // console.log('following:', following, 'followACtion:', followAction);
 
   return (
     <div>
       {writers[entry.writer_id].country ? <div><small className="country">{writers[entry.writer_id].country}</small><br /></div> : null }
       {writers[entry.writer_id].race ? <div><small className="race">{writers[entry.writer_id].race}</small><br /></div> : null }
       {writers[entry.writer_id].age ? <div><small className="age">{writers[entry.writer_id].age}</small><br /></div> : null }
-      <div className="follows" onClick={handleFollow(followAction)}><i className="fa fa-user-plus" aria-hidden="true" /> {following ? 'unfollow' : 'follow' }</div>
+      <div className="follows" onClick={handleFollow(followAction)}>{followIcon()} {following ? 'unfollow' : 'follow' }</div>
     </div>
   );
 };

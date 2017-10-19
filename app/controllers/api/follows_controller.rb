@@ -22,7 +22,9 @@ class Api::FollowsController < ApplicationController
       followee_id: params[:follow][:followee_id],
       follower_id: current_user.id
     )
-
+    p "----------------------"
+    p @follow
+    p "----------------------"
     @user = User.find_by(id: @follow.followee_id)
 
     if @follow.destroy
