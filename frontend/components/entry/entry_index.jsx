@@ -15,7 +15,6 @@ class EntryIndex extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { pathUsername, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
-    window.scrollTo(0, 0);
 
     if (this.props.pathname !== pathname) {
       if (pathname === '/feed') {
@@ -72,7 +71,8 @@ class EntryIndex extends Component {
   }
 
   render() {
-    const { entries, pathUsername, currentUser, createFollow, destroyFollow, writers } = this.props;
+    const { entries, pathUsername, currentUser, createFollow, destroyFollow, writers, pathname } = this.props;
+
     if (entries.length > 0) {
       return (
         <div className="main-container">
