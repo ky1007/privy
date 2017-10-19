@@ -327,7 +327,7 @@ strong {
 .entry-index-container:hover .fa-bookmark-o { opacity: 1; }
 
 .fa-bookmark-o:hover { 
-  transform: scale(1.14); 
+  // transform: scale(1.14); 
   color: $purple; 
   cursor: hand;
   cursor: pointer;
@@ -336,7 +336,7 @@ strong {
 .follows {
   background-color: $light-purple;
   display: inline-block;
-  padding: .4rem 0.8rem;
+  padding: .4rem 0.8rem .4rem .9rem;
   color: white;
   border-radius: 8px;
   margin-top: 1rem;

@@ -23,7 +23,9 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
       {writers[entry.writer_id].country ? <div><small className="country">{writers[entry.writer_id].country}</small><br /></div> : null }
       {writers[entry.writer_id].race ? <div><small className="race">{writers[entry.writer_id].race}</small><br /></div> : null }
       {writers[entry.writer_id].age ? <div><small className="age">{writers[entry.writer_id].age}</small><br /></div> : null }
-      <div className="follows" onClick={handleFollow(followAction)}>{followIcon()} {following ? 'unfollow' : 'follow' }</div>
+      <div className="follows" onClick={handleFollow(followAction)} role="button" tabIndex={0}>
+        <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
+      </div>
     </div>
   );
 };
