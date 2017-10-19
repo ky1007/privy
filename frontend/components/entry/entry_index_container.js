@@ -7,8 +7,7 @@ import { createFollow, destroyFollow } from '../../actions/follow_actions';
 // import { selectFeedEntries } from '../../reducers/selectors';
 
 const mapStateToProps = ({ entries, session, users }, { match, location }) => {
-  let followees = session.currentUser[Object.keys(session.currentUser)[0]].followees;
-  let sortEntries = selectEntries(entries.allEntries).slice(0, -1);
+  const sortEntries = selectEntries(entries.allEntries).slice(0, -1);
   sortEntries.sort((a, b) => b.id - a.id);
 
   return {

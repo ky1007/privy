@@ -9,7 +9,7 @@ const mapStateToProps = ({ entries, goals, session }, { match }) => ({
   entry: entries.current,
   entryId: parseInt(match.params.entryId),
   goals: goals.allGoals,
-  currentUser: session.currentUser,
+  currentUser: session.currentUser[Object.keys(session.currentUser)[0]],
 });
 
 const mapDispatchToProps = dispatch => ({

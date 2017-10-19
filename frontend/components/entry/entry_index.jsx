@@ -32,9 +32,6 @@ class EntryIndex extends Component {
     if (pathUsername) {
       return ` ${pathUsername}`;
     }
-    // else if (pathname === '/everyone') {
-    //   return (<span>everyone <span role="img" aria-label="Tada emoji">🎉</span></span>);
-    // }
     return (
       <span>
         people you follow <span role="img" aria-label="Pair dancing emoji">👯‍</span>
@@ -57,7 +54,6 @@ class EntryIndex extends Component {
         <div>
           your personal feed from <strong>{this.typeOfIndexPage()}</strong>
         </div>
-        // <span role="img" aria-label="Book emoji">📖</span>
       );
     } else if (pathname === '/everyone') {
       return (
