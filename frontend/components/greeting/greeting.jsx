@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
 
 import SessionFormContainer from '../session_form/session_form_container';
-import NavContainer from '../nav/nav_container';
 
 const loggedOutGreeting = () => (
   <div className="behind-bg-image">

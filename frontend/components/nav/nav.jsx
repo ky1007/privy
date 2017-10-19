@@ -12,7 +12,6 @@ const createSessionLinks = () => (
 const loggedInLinks = (currentUser, logout) => (
   <div className="nav-flow">
     <nav className="main-container">
-      {/* <span className="nav-greeting">Welcome, username</span> */}
       <header className="nav-logo"><Link to="/welcome">Privy</Link></header>
       <section className="nav-links">
           <li><Link to="/everyone">Everyone&apos;s Diary</Link></li>
