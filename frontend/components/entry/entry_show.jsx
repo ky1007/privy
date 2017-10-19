@@ -120,8 +120,8 @@ class EntryShow extends React.Component {
 
   showFollowToggle() {
     const { writers, currentUser, entry, createFollow, destroyFollow } = this.props;
-    
-    if (writers && currentUser.id !== entry.writers_id) {
+
+    if (writers && currentUser.id !== entry.writer_id) {
       const followAction = writers[entry.writer_id].following ? destroyFollow : createFollow;
       return (
         <button onClick={this.handleFollow(followAction)}>

@@ -18,7 +18,7 @@ const userReducer = (state = {}, action) => {
 
     case RECEIVE_USER:
       const userState = { allUsers: action.allUsers };
-      return userState;
+      return merge({}, state, userState);
 
     case RECEIVE_FOLLOW:
       const newState = merge({}, state);

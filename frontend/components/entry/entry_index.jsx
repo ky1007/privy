@@ -43,8 +43,8 @@ class EntryIndex extends Component {
   }
 
   showWhoseJournal() {
-    const { currentUser, pathUsername, currentWriter, entries, pathname } = this.props; 
-    const writerInfo = entries[0].writer_info;
+    const { currentUser, pathUsername, currentWriter, entries, pathname, writers } = this.props; 
+    const writerInfo = writers[Object.keys(writers)[0]];
 
     if (pathUsername === currentUser.username) {
       return (
