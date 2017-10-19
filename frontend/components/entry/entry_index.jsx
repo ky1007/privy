@@ -86,7 +86,6 @@ class EntryIndex extends Component {
             </h1>
           </header>
           <section className="entry-index">
-            {console.log(entries, "entries")}
             {entries.map(entry => <EntryIndexItem key={entry.id} 
                                                   entry={entry} 
                                                   writers={writers}

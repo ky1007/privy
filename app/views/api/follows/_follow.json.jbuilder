@@ -7,3 +7,5 @@ if current_user
     json.following false
   end
 end
+
+json.user_id user.id

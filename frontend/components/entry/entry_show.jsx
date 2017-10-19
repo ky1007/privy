@@ -62,23 +62,18 @@ class EntryShow extends React.Component {
     return () => followAction(followRequest);
   }
 
-  showUserProfile() {
-    const { writer } = this.props;
-    if (writer) {
+  showAuthor() {
+    const { writers, entry } = this.props;
+    if (writers && entry) {
       return (
-        <div>
-          {/* {writer.biography}<br />
-          {writer.age}<br />
-          {writer.race}<br />
-          {writer.country}<br /> */}
-        </div>
+        <span>{writers[entry.writer_id].username}</span>
       );
     }
     return null;
   }
 
   showReflectionForm() {
-    const { currentUser, entry, reflections } = this.props;
+    const { currentUser, entry, reflections, writers } = this.props;
 
     if (currentUser.id === entry.writer_id) {
       return (
@@ -97,7 +92,7 @@ class EntryShow extends React.Component {
     return (
       <div>
         <header className="reflection">
-          <h2><strong>{entry.writer_pseudonym}</strong> reflecting on this entry</h2>
+          <h2><strong>{this.showAuthor()}</strong> reflecting on this entry</h2>
         </header>
       </div>
     );
@@ -124,32 +119,32 @@ class EntryShow extends React.Component {
   }
 
   showFollowToggle() {
-    const { writer, currentUser, entry, createFollow, destroyFollow } = this.props;
+    const { writers, currentUser, entry, createFollow, destroyFollow } = this.props;
     
-    if (writer && currentUser.id !== writer.id) {
-      const followAction = writer.following ? destroyFollow : createFollow;
+    if (writers && currentUser.id !== entry.writers_id) {
+      const followAction = writers[entry.writer_id].following ? destroyFollow : createFollow;
       return (
         <button onClick={this.handleFollow(followAction)}>
-          {writer.following ? 'unfollow' : 'follow'} {entry.writer_pseudonym}
+          {writers[entry.writer_id].following ? 'unfollow' : 'follow'} {this.showAuthor()}
         </button>
       );
     }
   }
 
   showCompleteEntry() {
-    const { currentUser } = this.props;
-    const { general, gratitude, improvements, id, created_at, writer_pseudonym, writer_id } = this.props.entry;
+    const { currentUser, writers } = this.props;
+    const { general, gratitude, improvements, id, created_at, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
 
     return (
       <div className="main-container">
         <div className="entry-item-container">
-          <h1><strong>{writer_pseudonym}'s</strong> life {entryDate}</h1>
+          <h1><strong>{this.showAuthor()}'s</strong> life {entryDate}</h1>
           <main className="entry-item">
             <article className="entry-show">
-              <section><h2>thoughts</h2>{this.showUserProfile()}{general}</section>
-              { isEmpty(improvements) ? <div /> : <section><h2>things {writer_pseudonym} wished to improve</h2>{improvements}</section> }
-              { isEmpty(gratitude) ? <div /> : <section><h2>things {writer_pseudonym} felt grateful for</h2>{gratitude}</section> }
+              <section><h2>thoughts</h2>{general}</section>
+              { isEmpty(improvements) ? <div /> : <section><h2>things {this.showAuthor()} wished to improve</h2>{improvements}</section> }
+              { isEmpty(gratitude) ? <div /> : <section><h2>things {this.showAuthor()} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
               { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
               {this.showFollowToggle()}

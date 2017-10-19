@@ -6,7 +6,7 @@
   json.writers do
     json.set! entry.writer.id do
       json.id entry.writer.id
-      json.writer_pseudonym entry.writer.username
+      json.username entry.writer.username
       json.country entry.writer.country
       json.race entry.writer.race
       json.age entry.writer.age

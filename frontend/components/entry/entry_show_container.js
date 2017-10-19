@@ -10,16 +10,14 @@ import { selectReflections } from '../../reducers/selectors';
 import EntryShow from './entry_show';
 
 const mapStateToProps = ({ entries, reflections, session, users }, { match }) => ({
-  currentUser: session.currentUser,
+  currentUser: session.currentUser[Object.keys(session.currentUser)[0]],
   entry: entries.current,
-  writer: users.current,
+  writers: users.allUsers,
   entryId: match.params.entryId,
   reflections: selectReflections(reflections.allReflections),
 });
 
 const mapDispatchToProps = (dispatch) => {
-  // const followAction = writer.following ? destroyFollow : createFollow;
-
   return {
     fetchEntry: entryId => dispatch(fetchEntry(entryId)),
     fetchReflections: entryId => dispatch(fetchReflections(entryId)),

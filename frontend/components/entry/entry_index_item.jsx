@@ -26,8 +26,7 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
 const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers }) => (
   <div className="entry-index-container">
     <aside className="entry-index-metadata">
-      {console.log("entry:", entry)}
-      {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].writer_pseudonym}/entries`}>{writers[entry.writer_id].writer_pseudonym}</Link></h3> }
+      {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
       <small>{moment(entry.created_at).fromNow()}</small><br /><br />
       {pathUsername ? null : writerInfo(entry, createFollow, destroyFollow, writers)}
     </aside>

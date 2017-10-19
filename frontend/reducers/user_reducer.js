@@ -17,11 +17,13 @@ const userReducer = (state = {}, action) => {
       return users;
 
     case RECEIVE_USER:
-      return merge({}, state, { current: action.current });
+      const userState = { allUsers: action.allUsers };
+      return userState;
 
     case RECEIVE_FOLLOW:
       const newState = merge({}, state);
-      newState.current.following = action.follow.following;
+      console.log(newState, 'ACTION');
+      newState.allUsers[action.follow.user_id].following = action.follow.following;
       return newState;
 
     default:
