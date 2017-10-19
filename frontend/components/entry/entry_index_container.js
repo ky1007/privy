@@ -8,7 +8,7 @@ import { createFollow, destroyFollow } from '../../actions/follow_actions';
 
 const mapStateToProps = ({ entries, session, users }, { match, location }) => {
   let followees = session.currentUser.followees;
-  let sortEntries = selectEntries(entries.allEntries);
+  let sortEntries = selectEntries(entries.allEntries).slice(0, -1);
   sortEntries.sort((a, b) => b.id - a.id);
 
   return {
@@ -17,6 +17,7 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
     pathname: location.pathname,
     currentUser: session.currentUser,
     currentWriter: users.current,
+    writers: users.allUsers,
   };
 };
 

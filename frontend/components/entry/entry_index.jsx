@@ -76,7 +76,7 @@ class EntryIndex extends Component {
   }
 
   render() {
-    const { entries, pathUsername, currentUser, createFollow, destroyFollow } = this.props;
+    const { entries, pathUsername, currentUser, createFollow, destroyFollow, writers } = this.props;
     if (entries.length > 0) {
       return (
         <div className="main-container">
@@ -85,16 +85,18 @@ class EntryIndex extends Component {
               {this.showWhoseJournal()}
             </h1>
           </header>
-            <section className="entry-index">
-              {entries.map(entry => <EntryIndexItem key={entry.id} 
-                                                    entry={entry} 
-                                                    pathUsername={pathUsername} 
-                                                    currentUser={currentUser}
-                                                    createFollow={createFollow}
-                                                    destroyFollow={destroyFollow} 
-                                    />
-              )}
-            </section>
+          <section className="entry-index">
+            {console.log(entries, "entries")}
+            {entries.map(entry => <EntryIndexItem key={entry.id} 
+                                                  entry={entry} 
+                                                  writers={writers}
+                                                  pathUsername={pathUsername} 
+                                                  currentUser={currentUser}
+                                                  createFollow={createFollow}
+                                                  destroyFollow={destroyFollow} 
+                                  />
+            )}
+          </section>
         </div>
       );
     }

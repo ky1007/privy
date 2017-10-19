@@ -58,14 +58,14 @@ export const updateEntry = entry => dispatch => (
 
 
 // --- LIKE ACTIONS ---
-export const createLike = likeRequest => dispatch => (
-  APIUtil.createLike(likeRequest).then(entry => (
-    dispatch(receiveEntry(entry))
-  ))
-);
+// export const createLike = likeRequest => dispatch => (
+//   APIUtil.createLike(likeRequest).then(entry => (
+//     dispatch(receiveEntry(entry))
+//   ))
+// );
 
-export const destroyLike = unlikeRequest => dispatch => (
-  APIUtil.destroyLike(unlikeRequest).then(entry => (
-    dispatch(receiveEntry(entry))
-  ))
-);
+// export const destroyLike = unlikeRequest => dispatch => (
+//   APIUtil.destroyLike(unlikeRequest).then(entry => (
+//     dispatch(receiveEntry(entry))
+//   ))
+// );
