@@ -22,7 +22,6 @@ const userReducer = (state = {}, action) => {
 
     case RECEIVE_FOLLOW:
       const newState = merge({}, state);
-      console.log(newState, 'ACTION');
       newState.allUsers[action.follow.user_id].following = action.follow.following;
       return newState;
 
