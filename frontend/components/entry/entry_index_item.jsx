@@ -12,11 +12,6 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
 
   const { following } = writers[entry.writer_id];
   const followAction = following ? createFollow : destroyFollow;
-  const followIcon = () => (
-    following ? <i className="fa fa-user-times" aria-hidden="true" /> : <i className="fa fa-user-plus" aria-hidden="true" />
-  );
-  // const followAction = following ? destroyFollow : createFollow;
-  // console.log('following:', following, 'followACtion:', followAction);
 
   return (
     <div>
@@ -42,7 +37,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
         <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
       </Link>
     </main>
-    <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
+    {<i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />}
   </div>
 );
 

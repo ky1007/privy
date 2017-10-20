@@ -7,7 +7,30 @@ import { createFollow, destroyFollow } from '../../actions/follow_actions';
 // import { selectFeedEntries } from '../../reducers/selectors';
 
 const mapStateToProps = ({ entries, session, users }, { match, location }) => {
-  const sortEntries = selectEntries(entries.allEntries).slice(0, -1);
+  let sortEntries = entries.allEntries;
+  const writers = users.allUsers;
+
+  // If user is viewing their feed, check to make sure entries are only from writers they follow
+  if (location.pathname === '/feed' && writers) {
+    const followWriters = [];
+    const followEntries = {};
+
+    // Collect the list of writer's the user is following
+    for (let id in writers) {
+      writers[id].following ? followWriters.push(id) : null;
+    }
+
+    // Select entries from writers the author is following
+    for (let id in sortEntries) {
+      let entryWriterId = String(sortEntries[id].writer_id);
+      if (followWriters.includes(entryWriterId)) {
+        followEntries[id] = sortEntries[id];
+      }
+    }
+    sortEntries = followEntries;
+  }
+
+  sortEntries = selectEntries(sortEntries).slice(0, -1);
   sortEntries.sort((a, b) => b.id - a.id);
 
   return {
