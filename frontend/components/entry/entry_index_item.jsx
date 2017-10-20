@@ -37,7 +37,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
         <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
       </Link>
     </main>
-    {<i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />}
+    {/* {<i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />} */}
   </div>
 );
 
