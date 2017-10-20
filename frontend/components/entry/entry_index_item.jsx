@@ -25,20 +25,36 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
   );
 };
 
-const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers }) => (
-  <div className="entry-index-container">
-    <aside className="entry-index-metadata">
-      {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
-      <small>{moment(entry.created_at).fromNow()}</small><br /><br />
-      {pathUsername ? null : writerInfo(entry, createFollow, destroyFollow, writers)}
-    </aside>
-    <main className="entry-list-items">
-      <Link to={`/entries/${entry.id}`}>
-        <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
-      </Link>
-    </main>
-    {/* {<i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />} */}
-  </div>
-);
+const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers, createBookmark, destroyBookmark }) => {
+  // console.log(destroyBookmark, 'destroyBook');
+  const bookmarkAction = entry.bookmarked ? destroyBookmark : createBookmark;
+  const handleBookmark = () => {
+    const bookmark = {
+      entry_id: entry.id,
+    };
+    return () => bookmarkAction(bookmark);
+  };
+  // console.log('bookmarkAction:', bookmarkAction, 'entryId:', entry.id);
+
+  return (
+    <div className="entry-index-container">
+      <aside className="entry-index-metadata">
+        {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
+        <small>{moment(entry.created_at).fromNow()}</small><br /><br />
+        {pathUsername ? null : writerInfo(entry, createFollow, destroyFollow, writers)}
+      </aside>
+      <main className="entry-list-items">
+        <Link to={`/entries/${entry.id}`}>
+          <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
+        </Link>
+      </main>
+      <i
+        className={entry.bookmarked ? 'fa fa-bookmark fa-2x' : 'fa fa-bookmark-o fa-2x'}
+        aria-hidden="true"
+        onClick={handleBookmark(bookmarkAction)}
+      />
+    </div>
+  );
+};
 
 export default EntryIndexItem;

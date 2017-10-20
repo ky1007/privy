@@ -317,20 +317,23 @@ strong {
   @include size(small);
 }
 
+.fa-bookmark-o, .fa-bookmark { padding-left: 1rem; }
+
 .fa-bookmark-o {
   color: $light-purple;
-  padding-left: 1rem;
   opacity: 0;
   transition: 0.65s ease;
 }
 
+.fa-bookmark { color: $light-purple; }
+
 .entry-index-container:hover .fa-bookmark-o { opacity: 1; }
 
-.fa-bookmark-o:hover { 
-  // transform: scale(1.14); 
-  color: $purple; 
+.fa-bookmark-o:hover, .fa-bookmark:hover {
+  color: $purple;
   cursor: hand;
   cursor: pointer;
+  transition: 0.65s ease;
 }
 
 .follows {

@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_ENTRIES, RECEIVE_ENTRY, DELETE_ENTRY } from '../actions/entry_actions';
+import { TOGGLE_BOOKMARK } from '../actions/bookmark_actions';
 
 // WHAT ACTION LOOKS LIKE COMING IN
 // {
@@ -31,11 +32,10 @@ const entryReducer = (state = {}, action) => {
       delete newState.allEntries[action.current.id];
       return newState;
 
-    // case TOGGLE_BOOKMARK:
-    //   const bookmarks = action.allBookmarks;
-    //   for (const key in bookmarks) {
-    //     if (!validation_messages)
-    //   }
+    case TOGGLE_BOOKMARK:
+      const bookmarkState = merge({}, state);
+      bookmarkState.allEntries[action.bookmark.entry_id].bookmarked = action.bookmark.bookmarked;
+      return bookmarkState;
 
     default:
       return state;

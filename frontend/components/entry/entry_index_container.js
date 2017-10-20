@@ -4,7 +4,7 @@ import EntryIndex from './entry_index';
 import { fetchEntries, fetchFeedEntries } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
 import { createFollow, destroyFollow } from '../../actions/follow_actions';
-// import { selectFeedEntries } from '../../reducers/selectors';
+import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
 
 const mapStateToProps = ({ entries, session, users }, { match, location }) => {
   let sortEntries = entries.allEntries;
@@ -48,6 +48,8 @@ const mapDispatchToProps = dispatch => ({
   fetchFeedEntries: id => dispatch(fetchFeedEntries(id)),
   createFollow: followRequest => dispatch(createFollow(followRequest)),
   destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
+  createBookmark: bookmark => dispatch(createBookmark(bookmark)),
+  destroyBookmark: bookmark => dispatch(destroyBookmark(bookmark)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryIndex);

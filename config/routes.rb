@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :goals, only: [:index, :show, :create, :update, :destroy]
     resources :reflections, only: [:index, :create, :destroy]
     resources :follows, only: [:create, :index]
-    resources :bookmarks, only: [:create, :destroy, :index, :show]
     delete 'follows', to: 'follows#destroy' 
+    resources :bookmarks, only: [:create, :index, :show]
+    delete 'bookmarks', to: 'bookmarks#destroy' 
     resource :session, only: [:create, :destroy]
   end
 

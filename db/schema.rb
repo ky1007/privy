@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012004248) do
+ActiveRecord::Schema.define(version: 20171020190911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "entry_id", null: false
-    t.string "integer"
+    t.integer "entry_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entry_id"], name: "index_bookmarks_on_entry_id"

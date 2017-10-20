@@ -19,21 +19,20 @@ export const deleteBookmark = id => ({
   current: id,
 });
 
-
 export const createBookmark = bookmark => dispatch => (
   APIUtil.createBookmark(bookmark).then(bookmark => (
     dispatch(toggleBookmark(bookmark))
   ))
 );
 
-export const fetchBookmarks = writerId => dispatch => (
-  APIUtil.fetchBookmarks(writerId).then(bookmarks => (
+export const fetchBookmarks = userId => dispatch => (
+  APIUtil.fetchBookmarks(userId).then(bookmarks => (
     dispatch(receiveBookmarks(bookmarks))
   ))
 );
 
-export const destroyBookmark = id => dispatch => (
-  APIUtil.createBookmark(id).then(bookmark => (
-    dispatch(deleteBookmark(bookmark))
+export const destroyBookmark = bookmark => dispatch => (
+  APIUtil.destroyBookmark(bookmark).then(bookmark => (
+    dispatch(toggleBookmark(bookmark))
   ))
 );

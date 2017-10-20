@@ -2,7 +2,8 @@ class Api::BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user_id = current_user.id
-    @entry = @bookmark.entries
+    @entry = Entry.find_by(id: params[:bookmark][:entry_id])
+    # @bookmark.entry_id = params[:bookmark][:entry_id]
 
     if @bookmark.save
       render 'api/bookmarks/show'
@@ -12,17 +13,17 @@ class Api::BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = bookmark.find_by(
-      entry_id: params[entry_id],
+    @bookmark = Bookmark.find_by(
+      entry_id: params[:bookmark][:entry_id],
       user_id: current_user.id,
     )
     
-    @entry = @bookmark.entry
+    @entry = @bookmark.entries
 
     if @bookmark.destroy
       render 'api/bookmarks/show'
     else
-      render json: ["Couldn't find the bookmark you're trying to dstroy"], status: 404
+      render json: ["Couldn't find the bookmark you're trying to destroy"], status: 404
     end
   end
 

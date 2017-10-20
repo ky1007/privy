@@ -6,9 +6,10 @@ export const createBookmark = bookmark => (
   })
 );
 
-export const destroyBookmark = bookmarkId => (
+export const destroyBookmark = bookmark => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/bookmarks/${bookmarkId}`,
+    url: '/api/bookmarks',
+    data: { bookmark },
   })
 );

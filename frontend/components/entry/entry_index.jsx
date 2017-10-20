@@ -71,7 +71,8 @@ class EntryIndex extends Component {
   }
 
   render() {
-    const { entries, pathUsername, currentUser, createFollow, destroyFollow, writers, pathname } = this.props;
+    const { entries, pathUsername, currentUser, writers, pathname } = this.props;
+    const { createFollow, destroyFollow, createBookmark, destroyBookmark } = this.props;
 
     if (entries.length > 0) {
       return (
@@ -89,6 +90,8 @@ class EntryIndex extends Component {
                                                   currentUser={currentUser}
                                                   createFollow={createFollow}
                                                   destroyFollow={destroyFollow} 
+                                                  createBookmark={createBookmark}
+                                                  destroyBookmark={destroyBookmark} 
                                   />
             )}
           </section>
