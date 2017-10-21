@@ -26,7 +26,6 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
 };
 
 const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers, createBookmark, destroyBookmark }) => {
-  // console.log(destroyBookmark, 'destroyBook');
   const bookmarkAction = entry.bookmarked ? destroyBookmark : createBookmark;
   const handleBookmark = () => {
     const bookmark = {
@@ -34,7 +33,6 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
     };
     return () => bookmarkAction(bookmark);
   };
-  // console.log('bookmarkAction:', bookmarkAction, 'entryId:', entry.id);
 
   return (
     <div className="entry-index-container">
