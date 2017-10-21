@@ -27,14 +27,17 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
         followEntries[id] = sortEntries[id];
       }
     }
+    followEntries.z = 'cut';
     sortEntries = followEntries;
   }
   
+  // If user is viewing their bookmarks, check to make sure entries ones that have been bookmarked
   if (location.pathname === '/bookmarks') {
     const bookmarkEntries = {};
     for (let id in sortEntries) {
       sortEntries[id].bookmarked ? bookmarkEntries[id] = sortEntries[id] : null;
     }
+    bookmarkEntries.z = 'cut';
     sortEntries = bookmarkEntries;
   }
 
