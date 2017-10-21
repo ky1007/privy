@@ -4,21 +4,28 @@ import EntryIndexItem from './entry_index_item';
 class EntryIndex extends Component {
 
   componentDidMount() {
-    const { pathUsername, fetchEntries, fetchFeedEntries, currentUser, pathname } = this.props;
+    const { pathUsername, currentUser, pathname } = this.props;
+    const { fetchEntries, fetchFeedEntries, fetchBookmarkedEntries } = this.props;
+    
     if (pathUsername) {
       return fetchEntries(pathUsername);
     } else if (pathname === '/feed') {
       return fetchFeedEntries(currentUser.id);
+    } else if (pathname === '/bookmarks') {
+      return fetchBookmarkedEntries(currentUser.id);
     }
     return fetchEntries();
   }
 
   componentWillReceiveProps(nextProps) {
-    const { pathUsername, fetchEntries, fetchFeedEntries, currentUser, pathname } = nextProps;
+    const { pathUsername, currentUser, pathname } = nextProps;
+    const { fetchEntries, fetchFeedEntries, fetchBookmarkedEntries } = nextProps;
 
     if (this.props.pathname !== pathname) {
       if (pathname === '/feed') {
         return fetchFeedEntries(currentUser.id);
+      } else if (pathname === '/bookmarks') {
+        return fetchBookmarkedEntries(currentUser.id);
       } else if (pathUsername) {
         return fetchEntries(pathUsername);
       }
@@ -45,7 +52,7 @@ class EntryIndex extends Component {
     if (pathUsername === currentUser.username) {
       return (
         <div>
-          <span role="img" aria-label="Diary emoji">📓</span> this is your diary, <strong>{pathUsername}</strong>
+          <span role="img" aria-label="Diary emoji">📝</span> this is your diary, <strong>{pathUsername}</strong>
         </div>
       );
     } else if (pathname === '/feed') {
@@ -57,6 +64,10 @@ class EntryIndex extends Component {
     } else if (pathname === '/everyone') {
       return (
         <span>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></span>
+      );
+    } else if (pathname === '/bookmarks') {
+      return (
+        <span><span role="img" aria-label="Bookmark emoji">📍</span> your saved <strong>bookmarks</strong></span>
       );
     }
     // If the feed is a feed of a single writer's diary entries, render the below

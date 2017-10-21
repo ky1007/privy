@@ -17,6 +17,7 @@ const loggedInLinks = (currentUser, logout) => (
           <li><Link to="/everyone">Everyone&apos;s Diary</Link></li>
           <li><Link to={`/${currentUser.username}/entries`}>Your Diary</Link></li>
           <li><Link to="/feed">Your Feed</Link></li>
+          <li><Link to="/bookmarks">Your Bookmarks</Link></li>
           <li><Link to="/new_entry">New Entry</Link></li>
           <li><Link to="/" onClick={logout} className="logout-button">
                 Logout, {currentUser.username}

@@ -25,6 +25,7 @@ const App = () => (
       <ProtectedRoute exact path="/welcome" component={WelcomeContainer} />
       <ProtectedRoute exact path="/everyone" component={EntryIndexContainer} />
       <ProtectedRoute exact path="/feed" component={EntryIndexContainer} />
+      <ProtectedRoute exact path="/bookmarks" component={EntryIndexContainer} />
       <ProtectedRoute exact path="/new_entry" component={EntryFormContainer} />
       <ProtectedRoute exact path="/entries/:entryId" component={EntryShowContainer} />
       <ProtectedRoute exact path="/:username/entries" component={EntryIndexContainer} />

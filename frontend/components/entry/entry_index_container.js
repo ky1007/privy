@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import EntryIndex from './entry_index';
-import { fetchEntries, fetchFeedEntries } from '../../actions/entry_actions';
+import { fetchEntries, fetchFeedEntries, fetchBookmarkedEntries } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
 import { createFollow, destroyFollow } from '../../actions/follow_actions';
 import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
@@ -29,6 +29,14 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
     }
     sortEntries = followEntries;
   }
+  
+  if (location.pathname === '/bookmarks') {
+    const bookmarkEntries = {};
+    for (let id in sortEntries) {
+      sortEntries[id].bookmarked ? bookmarkEntries[id] = sortEntries[id] : null;
+    }
+    sortEntries = bookmarkEntries;
+  }
 
   sortEntries = selectEntries(sortEntries).slice(0, -1);
   sortEntries.sort((a, b) => b.id - a.id);
@@ -46,6 +54,7 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
 const mapDispatchToProps = dispatch => ({
   fetchEntries: username => dispatch(fetchEntries(username)),
   fetchFeedEntries: id => dispatch(fetchFeedEntries(id)),
+  fetchBookmarkedEntries: userId => dispatch(fetchBookmarkedEntries(userId)),
   createFollow: followRequest => dispatch(createFollow(followRequest)),
   destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
   createBookmark: bookmark => dispatch(createBookmark(bookmark)),

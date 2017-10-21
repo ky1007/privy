@@ -2,8 +2,6 @@ class Api::BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user_id = current_user.id
-    @entry = Entry.find_by(id: params[:bookmark][:entry_id])
-    # @bookmark.entry_id = params[:bookmark][:entry_id]
 
     if @bookmark.save
       render 'api/bookmarks/show'

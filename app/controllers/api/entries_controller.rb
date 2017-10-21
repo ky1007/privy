@@ -4,6 +4,10 @@ class Api::EntriesController < ApplicationController
       user = User.find_by(username: params[:username])
       @entries = user.entries.limit(10)
       render :index
+    elsif params[:user_id] 
+      @bookmarks = Bookmark.where(user_id: params[:user_id]).pluck(:entry_id)
+      @entries = Entry.where(id: @bookmarks).limit(10)
+      render :index
     else
       @entries = Entry.all.order(created_at: :desc).limit(10)
       render :index

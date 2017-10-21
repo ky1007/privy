@@ -6,6 +6,14 @@ export const fetchEntries = username => (
   })
 );
 
+export const fetchBookmarkedEntries = user_id => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/entries',
+    data: { user_id },
+  })
+);
+
 export const fetchEntry = id => (
   $.ajax({
     method: 'GET',

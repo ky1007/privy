@@ -38,6 +38,12 @@ export const fetchFeedEntries = id => dispatch => (
   ))
 );
 
+export const fetchBookmarkedEntries = id => dispatch => (
+  APIUtil.fetchBookmarkedEntries(id).then(entry => (
+    dispatch(receiveEntries(entry))
+  ))
+);
+
 export const fetchEntry = id => dispatch => (
   APIUtil.fetchEntry(id).then(entry => (
     dispatch(receiveEntry(entry))
