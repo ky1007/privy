@@ -129,6 +129,24 @@ main .entry-list-items {
   cursor: pointer;
 }
 
+.entry-enter {
+  opacity: 0.01;
+}
+
+.entry-enter.entry-enter-active {
+  opacity: 1;
+  transition: opacity 700ms ease-in;
+}
+
+.entry-leave {
+  opacity: 1;
+}
+
+.entry-leave.entry-leave-active {
+  opacity: 0.01;
+  transition: opacity 700ms ease-in;
+}
+
 // --- REFLECTIONS page ---
 
 .reflections article {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import EntryIndexItem from './entry_index_item';
 
 class EntryIndex extends Component {
@@ -102,6 +103,10 @@ class EntryIndex extends Component {
             </h1>
           </header>
           <section className="entry-index">
+            <CSSTransitionGroup
+            transitionName="entry"
+            transitionEnterTimeout={700}
+            transitionLeaveTimeout={700}>
             {entries.map(entry => <EntryIndexItem key={entry.id} 
                                                   entry={entry} 
                                                   writers={writers}
@@ -113,6 +118,7 @@ class EntryIndex extends Component {
                                                   destroyBookmark={destroyBookmark} 
                                   />
             )}
+            </CSSTransitionGroup>
           </section>
         </div>
       );
