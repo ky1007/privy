@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 import GoalIndexContainer from './goal_index_container';
 import ReflectionIndexItem from '../reflection/reflection_index_item';
@@ -104,6 +105,10 @@ class EntryShow extends React.Component {
       return (
         <div className="reflections">
           <section>
+          <CSSTransitionGroup
+            transitionName="entry"
+            transitionEnterTimeout={700}
+            transitionLeaveTimeout={700}>
             {reflections.map(reflection =>
               (<ReflectionIndexItem key={reflection.id}
                                     entryCreatedAt={created_at}
@@ -111,6 +116,7 @@ class EntryShow extends React.Component {
                                     currentUser={currentUser}
                                     handleDelete={this.handleDelete}
               />))}
+            </CSSTransitionGroup>
           </section>
         </div>
       );
