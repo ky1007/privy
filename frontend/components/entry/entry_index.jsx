@@ -88,10 +88,12 @@ class EntryIndex extends Component {
   }
 
   render() {
-    const { entries, pathUsername, currentUser, writers, pathname } = this.props;
+    const { entries, pathUsername, currentUser, writers, pathname, loading } = this.props;
     const { createFollow, destroyFollow, createBookmark, destroyBookmark } = this.props;
-
-    if (entries.length > 0) {
+    
+    if (loading) {
+      return (this.waitingToLoad());
+    } else if (entries.length > 0) {
       return (
         <div className="main-container">
           <header className="entry-index-header">
@@ -114,8 +116,9 @@ class EntryIndex extends Component {
           </section>
         </div>
       );
+    } else {
+      return (this.waitingToLoad());
     }
-    return (this.waitingToLoad());
   }
 }
 

@@ -6,7 +6,7 @@ import { selectEntries } from '../../reducers/selectors';
 import { createFollow, destroyFollow } from '../../actions/follow_actions';
 import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
 
-const mapStateToProps = ({ entries, session, users }, { match, location }) => {
+const mapStateToProps = ({ entries, session, users, loading }, { match, location }) => {
   let sortEntries = entries.allEntries;
   const writers = users.allUsers;
 
@@ -51,6 +51,7 @@ const mapStateToProps = ({ entries, session, users }, { match, location }) => {
     currentUser: session.currentUser[Object.keys(session.currentUser)[0]],
     currentWriter: users.current,
     writers: users.allUsers,
+    loading: loading.loadingEntries,
   };
 };
 
