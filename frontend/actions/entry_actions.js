@@ -1,8 +1,14 @@
 import * as APIUtil from '../util/entry_api_util';
 
+export const START_LOADING_ENTRIES = 'START_LOADING_ENTRIES';
 export const RECEIVE_ENTRIES = 'RECEIVE_ENTRIES';
 export const RECEIVE_ENTRY = 'RECEIVE_ENTRY';
 export const DELETE_ENTRY = 'DELETE_ENTRY';
+
+export const startLoadingEntries = () => ({
+  type: START_LOADING_ENTRIES,
+  loadingEntries: true,
+});
 
 export const receiveEntries = allEntries => ({
   type: RECEIVE_ENTRIES,
@@ -26,23 +32,26 @@ export const createEntry = entry => dispatch => (
   ))
 );
 
-export const fetchEntries = entry => dispatch => (
-  APIUtil.fetchEntries(entry).then(entry => (
+export const fetchEntries = id => (dispatch) => {
+  dispatch(startLoadingEntries());
+  return APIUtil.fetchEntries(id).then(entry => (
     dispatch(receiveEntries(entry))
-  ))
-);
+  ));
+};
 
-export const fetchFeedEntries = id => dispatch => (
-  APIUtil.fetchFeedEntries(id).then(entry => (
+export const fetchFeedEntries = id => dispatch => {
+  dispatch(startLoadingEntries());
+  return APIUtil.fetchFeedEntries(id).then(entry => (
     dispatch(receiveEntries(entry))
-  ))
-);
+  ));
+};
 
-export const fetchBookmarkedEntries = id => dispatch => (
-  APIUtil.fetchBookmarkedEntries(id).then(entry => (
+export const fetchBookmarkedEntries = id => dispatch => {
+  dispatch(startLoadingEntries());
+  return APIUtil.fetchBookmarkedEntries(id).then(entry => (
     dispatch(receiveEntries(entry))
-  ))
-);
+  ));
+};
 
 export const fetchEntry = id => dispatch => (
   APIUtil.fetchEntry(id).then(entry => (
@@ -56,8 +65,8 @@ export const destroyEntry = id => dispatch => (
   ))
 );
 
-export const updateEntry = entry => dispatch => (
-  APIUtil.updateEntry(entry).then(entry => (
+export const updateEntry = id => dispatch => (
+  APIUtil.updateEntry(id).then(entry => (
     dispatch(receiveEntry(entry))
   ))
 );

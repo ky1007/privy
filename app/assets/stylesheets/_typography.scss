@@ -329,11 +329,20 @@ strong {
 
 .entry-index-container:hover .fa-bookmark-o { opacity: 1; }
 
-.fa-bookmark-o:hover, .fa-bookmark:hover {
+.fa-bookmark-o:hover, 
+.fa-bookmark:hover {
   color: $purple;
   cursor: hand;
   cursor: pointer;
   transition: 0.65s ease;
+}
+
+.fa-bookmark:active,
+.fa-bookmark-o:active {
+  cursor: hand;
+  cursor: pointer;
+  transition: 0.65s ease;
+  transform: scale(1.10);
 }
 
 .follows {
@@ -345,13 +354,13 @@ strong {
   margin-top: 1rem;
   opacity: 0;
   transition: 0.65s ease;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .follows:hover { 
   background-color: $purple; 
   transform: scale(1.07);
-  cursor: hand;
-  cursor: pointer;
 }
 
 .entry-index-container:hover .follows {

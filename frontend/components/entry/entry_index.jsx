@@ -33,6 +33,12 @@ class EntryIndex extends Component {
     }
   }
 
+  waitingToLoad() {
+    return (
+      <div className="loading-bar" />
+    );
+  }
+
   typeOfIndexPage() {
     const { pathUsername, currentUser, pathname } = this.props;
     if (pathUsername) {
@@ -67,7 +73,7 @@ class EntryIndex extends Component {
       );
     } else if (pathname === '/bookmarks') {
       return (
-        <span><span role="img" aria-label="Bookmark emoji">📍</span> your saved <strong>bookmarks</strong></span>
+        <span>your saved <strong>bookmarks</strong></span>
       );
     }
     // If the feed is a feed of a single writer's diary entries, render the below
@@ -109,7 +115,7 @@ class EntryIndex extends Component {
         </div>
       );
     }
-    return null;
+    return (this.waitingToLoad());
   }
 }
 
