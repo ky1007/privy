@@ -49,6 +49,7 @@ $breakpoint-small: 45em;
 a {
   text-decoration: none;
 }
+
 .nav-logo {
   flex: 1;
   @include size(h2);
@@ -58,14 +59,23 @@ a {
 
 nav a {
   @include size(small);
-  color: white;
-  // color: $darker-gray;
+  // color: white;
+  color: $darker-gray;
+  padding-bottom: 1.5rem;
 }
 
 .nav-logo a { 
-  color: white; 
+  // color: white; 
   // color: $darkest-gray; 
+  color: #000; 
   @include size(h2);
+  padding-bottom: 1.5rem;
+}
+
+.nav-active-link {
+  // border-bottom: 4px solid;
+  font-weight: 700;
+  color: $purple;
 }
 
 .nav-greeting {
@@ -74,16 +84,19 @@ nav a {
 }
 
 .logout-button {
-  background-color: #333;
-  // background-color: #f9f9f9;
+  // background-color: #333;
+  background-color: #f9f9f9;
   padding: 10px;
   border-radius: 6px;
+  border-bottom: 0px;
 }
+
 .logout-button:hover {
   background-color: #111;
+  color: #fff;
   cursor: hand;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.65s;
 }
 
 .title {
@@ -131,9 +144,9 @@ h3 {
 }
 
 a:hover {
-  color: #bbb;
-  // color: $purple;
-  transition: 0.2s;
+  // color: #bbb;
+  color: $purple;
+  transition: 0.65s;
 }
 
 
@@ -411,9 +424,9 @@ strong {
 
 .welcome-option-1:hover, .welcome-option-2:hover, 
 .welcome-option-3:hover, .welcome-option-4:hover {
-  background-color: #F9F9F9;
-  color: #000;
+  background-color: #fff;
+  color: #222;
   cursor: hand;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.65s;
 }

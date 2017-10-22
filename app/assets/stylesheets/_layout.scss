@@ -30,7 +30,9 @@ nav {
 }
 
 .nav-flow {
-  background-color: #222;
+  // background-color: #222;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 /* -- HOME PAGE ---  */
@@ -168,8 +170,10 @@ main .entry-list-items {
   animation-iteration-count: infinite;
   animation-name: placeholderShimmering;
   animation-timing-function: linear;
-  background: linear-gradient(to right, rgb(196, 136, 255) 8%, $purple 18%, rgb(196, 136, 255) 33%);
-  height: 4px;
+  background: linear-gradient(to right, #eee 8%, #000 18%, #eee 33%);
+  // background: linear-gradient(to right, rgb(196, 136, 255) 8%, $purple 18%, rgb(196, 136, 255) 33%);
+  height: 3px;
+  position: relative;
 }
 
 // --- ENTRY SHOW page ---

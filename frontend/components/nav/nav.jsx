@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const createSessionLinks = () => (
   <nav className="login-signup">
@@ -14,14 +14,14 @@ const loggedInLinks = (currentUser, logout) => (
     <nav className="main-container">
       <header className="nav-logo"><Link to="/welcome">Privy</Link></header>
       <section className="nav-links">
-          <li><Link to="/everyone">Everyone&apos;s Diary</Link></li>
-          <li><Link to={`/${currentUser.username}/entries`}>Your Diary</Link></li>
-          <li><Link to="/feed">Your Feed</Link></li>
-          <li><Link to="/bookmarks">Your Bookmarks</Link></li>
-          <li><Link to="/new_entry">New Entry</Link></li>
-          <li><Link to="/" onClick={logout} className="logout-button">
+          <li><NavLink to="/everyone" activeClassName="nav-active-link">Everyone&apos;s Diary</NavLink></li>
+          <li><NavLink to={`/${currentUser.username}/entries`} activeClassName="nav-active-link">Your Diary</NavLink></li>
+          <li><NavLink to="/feed" activeClassName="nav-active-link">Your Feed</NavLink></li>
+          <li><NavLink to="/bookmarks" activeClassName="nav-active-link">Your Bookmarks</NavLink></li>
+          <li><NavLink to="/new_entry" activeClassName="nav-active-link">New Entry</NavLink></li>
+          <li><NavLink to="/" onClick={logout} className="logout-button">
                 Logout, {currentUser.username}
-              </Link>
+              </NavLink>
           </li>
       </section>
     </nav>
