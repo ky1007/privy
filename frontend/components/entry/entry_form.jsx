@@ -119,12 +119,12 @@ class EntryForm extends React.Component {
                       onChange={this.updateEntry('general')}>
             </textarea>
 
-            <textarea placeholder="things you feel thankful for"
+            <textarea placeholder="what are some things you feel grateful and thankful for?"
                       value={gratitude}
                       onChange={this.updateEntry('gratitude')}>
             </textarea>
 
-            <textarea placeholder="things you could have done better today"
+            <textarea placeholder="is there anything you wished you had done better or differently today?"
                       value={improvements}
                       onChange={this.updateEntry('improvements')}>
             </textarea>

@@ -76,6 +76,7 @@ nav a {
   // border-bottom: 4px solid;
   font-weight: 700;
   color: $purple;
+  color: #222;
 }
 
 .nav-greeting {
@@ -241,7 +242,7 @@ li { list-style: none; }
 @mixin form-placeholder {
   @include size(h3);
   color: $darker-gray;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .entry-form ::-webkit-input-placeholder {
