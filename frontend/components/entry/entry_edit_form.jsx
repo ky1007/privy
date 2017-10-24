@@ -100,7 +100,7 @@ class EntryEditForm extends React.Component {
     const { goals } = this.state;
 
     if (isEmpty(goals)) {
-      return (<div />);
+      return (null);
     } else {
       return (
         Object.keys(goals).map(id => <input type="text" key={id} 

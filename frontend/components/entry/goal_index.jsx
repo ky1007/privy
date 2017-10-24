@@ -19,7 +19,7 @@ class GoalIndex extends React.Component {
     
     return (
       <section>
-        { isEmpty(goals) ? <div /> : <h2>three main goals</h2> }
+        { isEmpty(goals) ? null : <h2>three main goals</h2> }
         {goals.map(goal => <GoalIndexItem key={goal.id} goal={goal} />)}
       </section>
     );

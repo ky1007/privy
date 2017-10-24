@@ -215,13 +215,16 @@ li { list-style: none; }
   display: inline-block;
   padding: 8px;
 }
-
+.profile-text { margin: 0.3rem; padding: 0.6rem; font-size: 1rem; }
+.pretext-country { border-bottom: 1px solid #3DB6D7; color: #3DB6D7; }
+.pretext-race { border-bottom: 1px solid #6ED73D; color: #6ED73D; padding: 0.6rem; }
+.pretext-age { border-bottom: 1px solid #FFC300; color: #FFC300; padding: 0.6rem; }
 .country { background-color: #3DB7D7; }
 .race { background-color: #6ED73D; }
 .age { background-color: #FFC300; }
-.pretext-country { color: #3DB6D7; font-size: 1rem; }
-.pretext-race { color: #6ED73D; font-size: 1rem; padding-left: 10px; }
-.pretext-age { color: #FFC300; font-size: 1rem; padding-left: 10px; }
+// .pretext-country { color: #3DB6D7; font-size: 1rem; }
+// .pretext-race { color: #6ED73D; font-size: 1rem; padding-left: 10px; }
+// .pretext-age { color: #FFC300; font-size: 1rem; padding-left: 10px; }
 
 .profile-info .country, .race, .age {
   font-size: 1rem;

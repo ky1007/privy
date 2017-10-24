@@ -82,9 +82,12 @@ class EntryIndex extends Component {
     return (
       <div className="profile-info">
         recent diary entries from <strong>{this.typeOfIndexPage()}</strong><br />
-        {writerInfo.country ? <span className="pretext-country">living in <small className="country">{writerInfo.country}</small></span> : null }
+        {writerInfo.country ? <span className="profile-text pretext-country">living in <strong>{writerInfo.country}</strong></span> : null }
+        {writerInfo.race ? <span className="profile-text pretext-race"> ethnically <strong>{writerInfo.race}</strong></span> : null }
+        {writerInfo.age ? <span className="profile-text pretext-age">is the age <strong>{writerInfo.age}</strong></span> : null }
+        {/* {writerInfo.country ? <span className="pretext-country">living in <small className="country">{writerInfo.country}</small></span> : null }
         {writerInfo.race ? <span className="pretext-race"> is ethnically <small className="race">{writerInfo.race}</small></span> : null }
-        {writerInfo.age ? <span className="pretext-age"> and is of age <small className="age">{writerInfo.age}</small></span> : null }
+        {writerInfo.age ? <span className="pretext-age"> and is of age <small className="age">{writerInfo.age}</small></span> : null } */}
       </div>
     );
   }
