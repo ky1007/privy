@@ -25,19 +25,19 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
   );
 };
 
-const entryOptions = (pathUsername, currentUser, entry) => {
+const entryOptions = (pathUsername, currentUser, entry, destroyEntry) => {
   if (pathUsername === currentUser.username) {
     return (
       <span>
-        <i className='fa fa-entry-options fa-pencil-square-o fa-2x'/><br />
-        <i className='fa fa-entry-options fa-trash-o fa-2x'/>
+        <Link to={`/entries/${entry.id}/edit`}><i className='fa fa-entry-options fa-pencil-square-o fa-2x'/></Link><br />
+        <i className='fa fa-entry-options fa-trash-o fa-2x' onClick={() => destroyEntry(entry.id)}/>
       </span>
     );
   }
   return null;
 }
 
-const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers, createBookmark, destroyBookmark }) => {
+const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers, createBookmark, destroyBookmark, destroyEntry }) => {
   const bookmarkAction = entry.bookmarked ? destroyBookmark : createBookmark;
   const handleBookmark = () => {
     const bookmark = {
@@ -51,7 +51,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
       <aside className="entry-index-metadata">
         {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
         <small>{moment(entry.created_at).fromNow()}</small><br /><br />
-        {pathUsername ? entryOptions(pathUsername, currentUser, entry) : writerInfo(entry, createFollow, destroyFollow, writers)}
+        {pathUsername ? entryOptions(pathUsername, currentUser, entry, destroyEntry) : writerInfo(entry, createFollow, destroyFollow, writers)}
       </aside>
       <main className="entry-list-items">
         <Link to={`/entries/${entry.id}`}>

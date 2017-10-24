@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 import EntryIndexItem from './entry_index_item';
 
@@ -88,9 +89,24 @@ class EntryIndex extends Component {
     );
   }
 
+  showEmptyActions() {
+    const { pathname, pathUsername, currentUser } = this.props;
+    switch (pathname) {
+      case '/feed':
+        return (<span><strong>Looks like you aren't following anyone yet.</strong><br />
+                Find and explore people to follow on the <Link to="/everyone">Everyone page</Link>.</span>);
+      case '/bookmarks':
+        return (<span><strong>Looks like you haven't bookmarked any entries yet.</strong><br />
+                Find and explore diary entries to bookmark on the <Link to="/everyone">Everyone page</Link>.</span>);
+      default:
+        return (<span><strong>Looks like you haven't written anything yet.</strong><br />
+                <Link to="/new_entry">Write an diary entry</Link> and it will appear here.</span>);
+    }
+  }
+
   render() {
     const { entries, pathUsername, currentUser, writers, pathname, loading } = this.props;
-    const { createFollow, destroyFollow, createBookmark, destroyBookmark } = this.props;
+    const { createFollow, destroyFollow, createBookmark, destroyBookmark, destroyEntry } = this.props;
     
     if (loading) {
       return (this.waitingToLoad());
@@ -115,7 +131,8 @@ class EntryIndex extends Component {
                                                     createFollow={createFollow}
                                                     destroyFollow={destroyFollow} 
                                                     createBookmark={createBookmark}
-                                                    destroyBookmark={destroyBookmark} 
+                                                    destroyBookmark={destroyBookmark}
+                                                    destroyEntry={destroyEntry}
                                     />
               )}
             </CSSTransitionGroup>
@@ -123,7 +140,10 @@ class EntryIndex extends Component {
         </div>
       );
     } else {
-      return (this.waitingToLoad());
+      return (
+        <section className="user-content-prompt">
+          {this.showEmptyActions()}
+        </section>);
     }
   }
 }

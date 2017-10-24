@@ -300,9 +300,6 @@ strong {
   font-weight: 700;
 }
 
-
-
-
 // -- ENTRY INDEX 
 .entry-index-header h1 {
   @include size(h2);
@@ -313,6 +310,15 @@ strong {
   color: $purple;
   padding: 3.65rem 0 4.4rem;
 }
+
+.user-content-prompt {
+  @include size(h2);
+  font-family: $base-font;
+  color: #777;  
+}
+
+.user-content-prompt a { color: $light-purple; }
+.user-content-prompt a:hover { color: $purple; }
 
 .entry-index-metadata {
   color: $middle-gray;

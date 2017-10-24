@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import EntryIndex from './entry_index';
-import { fetchEntries, fetchFeedEntries, fetchBookmarkedEntries } from '../../actions/entry_actions';
+import { fetchEntries, fetchFeedEntries, fetchBookmarkedEntries, destroyEntry } from '../../actions/entry_actions';
 import { selectEntries } from '../../reducers/selectors';
 import { createFollow, destroyFollow } from '../../actions/follow_actions';
 import { createBookmark, destroyBookmark } from '../../actions/bookmark_actions';
@@ -59,6 +59,7 @@ const mapDispatchToProps = dispatch => ({
   fetchEntries: username => dispatch(fetchEntries(username)),
   fetchFeedEntries: id => dispatch(fetchFeedEntries(id)),
   fetchBookmarkedEntries: userId => dispatch(fetchBookmarkedEntries(userId)),
+  destroyEntry: id => dispatch(destroyEntry(id)),
   createFollow: followRequest => dispatch(createFollow(followRequest)),
   destroyFollow: unfollowRequest => dispatch(destroyFollow(unfollowRequest)),
   createBookmark: bookmark => dispatch(createBookmark(bookmark)),
