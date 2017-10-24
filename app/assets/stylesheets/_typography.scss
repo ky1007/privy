@@ -4,6 +4,7 @@ $type-scale-large: (
   h3: 1.8rem,
   h4: 1.663rem,
   h5: 1.5rem,
+  h6: 1.2rem,
   p: 1.46344rem,
   small: 1rem,
   welcome-heading: 4.3rem,
@@ -262,8 +263,6 @@ li { list-style: none; }
 }
 
 
-
-
 // -- REFLECTIONS form ---
 .reflections h2 {
   @include size(h3);
@@ -406,6 +405,20 @@ strong {
   @include size(welcome-heading);
   padding-top: 2.8rem;
   padding-bottom: 0;
+}
+
+.feature h2 {
+  @include size(h3);
+  color: $purple;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.feature h3 {
+  @include size(h6);
+  padding-bottom: 0.1rem;
+  margin: 0;
 }
 
 // delete this block if prompt is unused

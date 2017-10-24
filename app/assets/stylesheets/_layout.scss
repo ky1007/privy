@@ -73,6 +73,12 @@ nav {
   background-size: cover;
 }
 
+.feature { 
+  flex: 1; 
+  padding: 4rem 2rem 0.3rem 1rem;
+  min-width: 240px;
+}
+
 // --- LOGIN / LOGOUT form --- 
 .session-form-container {
   flex: 1;
@@ -89,7 +95,6 @@ nav {
 
 
 // -- ENTRY INDEX page --- 
-
 .entry-index {
   display: flex;
   flex-direction: column;
@@ -153,7 +158,6 @@ main .entry-list-items {
 }
 
 // --- REFLECTIONS page ---
-
 .reflections article {
   background: #444;
   padding: 1.7em 2em 1.7em 2em;
@@ -194,7 +198,6 @@ main .entry-list-items {
   animation-name: placeholderShimmering;
   animation-timing-function: linear;
   background: linear-gradient(to right, #eee 8%, #000 18%, #eee 33%);
-  // background: linear-gradient(to right, rgb(196, 136, 255) 8%, $purple 18%, rgb(196, 136, 255) 33%);
   height: 3px;
   position: relative;
 }
