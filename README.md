@@ -3,8 +3,9 @@
 
 
 ## Features
-  * Secure account login authentication and creation via BCrpyt
+  * Secure account login authentication and creation: passwords are hashed and salted via BCrypt on the backend, additional protection reinforced on the frontend via protected auth routes
   * Users can follow and read other people’s diaries
+  * Users can save and bookmarks diary entries they find meaningful
   * Users can read through their old entries and post a reflection entry they’ve written. Other users can read an entry’s reflections, but they cannot write a reflection on entries they haven’t written. 
 
  ### Login and Greeting page

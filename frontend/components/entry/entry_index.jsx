@@ -107,17 +107,17 @@ class EntryIndex extends Component {
             transitionName="entry"
             transitionEnterTimeout={700}
             transitionLeaveTimeout={700}>
-            {entries.map(entry => <EntryIndexItem key={entry.id} 
-                                                  entry={entry} 
-                                                  writers={writers}
-                                                  pathUsername={pathUsername} 
-                                                  currentUser={currentUser}
-                                                  createFollow={createFollow}
-                                                  destroyFollow={destroyFollow} 
-                                                  createBookmark={createBookmark}
-                                                  destroyBookmark={destroyBookmark} 
-                                  />
-            )}
+              {entries.map(entry => <EntryIndexItem key={entry.id} 
+                                                    entry={entry} 
+                                                    writers={writers}
+                                                    pathUsername={pathUsername} 
+                                                    currentUser={currentUser}
+                                                    createFollow={createFollow}
+                                                    destroyFollow={destroyFollow} 
+                                                    createBookmark={createBookmark}
+                                                    destroyBookmark={destroyBookmark} 
+                                    />
+              )}
             </CSSTransitionGroup>
           </section>
         </div>

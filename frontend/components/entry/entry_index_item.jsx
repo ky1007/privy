@@ -18,12 +18,24 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
       {writers[entry.writer_id].country ? <div><small className="country">{writers[entry.writer_id].country}</small><br /></div> : null }
       {writers[entry.writer_id].race ? <div><small className="race">{writers[entry.writer_id].race}</small><br /></div> : null }
       {writers[entry.writer_id].age ? <div><small className="age">{writers[entry.writer_id].age}</small><br /></div> : null }
-      <div className="follows" onClick={handleFollow(followAction)} role="button" tabIndex={0}>
+      <div className="follows" onClick={handleFollow(followAction)}role="button">
         <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
       </div>
     </div>
   );
 };
+
+const entryOptions = (pathUsername, currentUser, entry) => {
+  if (pathUsername === currentUser.username) {
+    return (
+      <span>
+        <i className='fa fa-entry-options fa-pencil-square-o fa-2x'/><br />
+        <i className='fa fa-entry-options fa-trash-o fa-2x'/>
+      </span>
+    );
+  }
+  return null;
+}
 
 const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destroyFollow, writers, createBookmark, destroyBookmark }) => {
   const bookmarkAction = entry.bookmarked ? destroyBookmark : createBookmark;
@@ -39,7 +51,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
       <aside className="entry-index-metadata">
         {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
         <small>{moment(entry.created_at).fromNow()}</small><br /><br />
-        {pathUsername ? null : writerInfo(entry, createFollow, destroyFollow, writers)}
+        {pathUsername ? entryOptions(pathUsername, currentUser, entry) : writerInfo(entry, createFollow, destroyFollow, writers)}
       </aside>
       <main className="entry-list-items">
         <Link to={`/entries/${entry.id}`}>

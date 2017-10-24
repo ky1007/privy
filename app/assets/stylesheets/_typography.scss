@@ -333,7 +333,8 @@ strong {
 
 .fa-bookmark-o, .fa-bookmark { padding-left: 1rem; }
 
-.fa-bookmark-o {
+.fa-bookmark-o,
+.fa-entry-options {
   color: $light-purple;
   opacity: 0;
   transition: 0.65s ease;
@@ -341,10 +342,17 @@ strong {
 
 .fa-bookmark { color: $light-purple; }
 
+.entry-index-container:hover .fa-entry-options { opacity: 1; }
 .entry-index-container:hover .fa-bookmark-o { opacity: 1; }
 
+.fa-trash-o { 
+  padding-right: .34rem;
+  padding-top: .5rem;
+}
+
 .fa-bookmark-o:hover, 
-.fa-bookmark:hover {
+.fa-bookmark:hover, 
+.fa-entry-options:hover {
   color: $purple;
   cursor: hand;
   cursor: pointer;
@@ -352,7 +360,8 @@ strong {
 }
 
 .fa-bookmark:active,
-.fa-bookmark-o:active {
+.fa-bookmark-o:active,
+.fa-entry-options:active {
   cursor: hand;
   cursor: pointer;
   transition: 0.65s ease;
