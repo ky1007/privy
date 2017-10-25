@@ -93,5 +93,5 @@ Privy was designed and built in a two week period. View the original [proposal][
   * The ability to highlight and save snippets of text users resonate with and like.
   * Adding unit, integration, and end-to-end tests.
 
-  [live-link]: http://wwww.privy.site/
+  [live-link]: http://www.privy.site/
   [dev-readme]: docs/README.md
