@@ -7,6 +7,8 @@ React is responsible for rendering the Views based off of HTTP JSON response gen
 
 Privy is passion project born out of my own curiosity about how other people think and experience life, and out of a desire publish my own experiences for others to read.
 
+[Check out Privy live ->][live-link]
+
 
 ## Features
   * Secure account login authentication and creation: passwords are hashed and salted via BCrypt on the backend, additional reinforced protection is provided on the frontend via protected routes in React.
