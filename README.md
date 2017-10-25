@@ -1,5 +1,9 @@
 # Privy 
-[Privy][live-link] is a single page, full-stack application that lets users publish an anonymous diary under a pseudonym. The application is implemented via an MVC architecture where Ruby on Rails acts as the Model and Controller and React is responsible for rendering the Views. The React frontend is also paired with a Redux flux architecture to manage state and ensure unidirectional data flow.
+[Privy][live-link] is a single page, full-stack application that lets users publish an anonymous diary under a pseudonym.
+
+The application is implemented via an MVC design pattern where Ruby on Rails is responsible for the model to retrieve data from a PostgreSQL database and responsible for the controller to construct a RESTful JSON API response.
+
+React is responsible for rendering the Views. The React frontend is also paired with a Redux flux architecture to manage state and ensure unidirectional data flow.
 
 Privy is passion project born out of my own curiosity about how other people think and experience life, and out of a desire publish my own experiences for others to read.
 
