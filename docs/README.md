@@ -1,5 +1,5 @@
 ## Privy
-Privy: an app to for users to anonymously write and publish a private diary under a pseudonym. This app is inspired by Medium but encourages anonymity so writers feel free to express themselves more candidly. [Link to Heroku][https://privy-journal.herokuapp.com]
+Privy: an app to for users to anonymously write and publish a private diary under a pseudonym. This app is inspired by Medium but encourages anonymity so writers feel free to express themselves more candidly. [Link to live Heroku](https://privy-journal.herokuapp.com)
 
 
 ## Minimum Viable Product
