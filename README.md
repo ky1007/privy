@@ -31,7 +31,7 @@ Privy is passion project born out of my own curiosity about how other people thi
 To maintain DRY code, the same React component was used to render three different index views: the personal feed (showing entries based on a user's followers), others users' entries (all entries writen by one user), the user's own entries.
 
 This was made possible by checking the URL pathname and using conditional case statements to render specific content for specific index cases.
-```js
+```
   showEmptyActions() {
     const { pathname } = this.props;
     switch (pathname) {
