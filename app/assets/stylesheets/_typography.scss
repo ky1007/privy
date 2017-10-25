@@ -246,9 +246,7 @@ li { list-style: none; }
 @mixin form-placeholder {
   @include size(h3);
   color: $darker-gray;
-  // font-weight: bold;
 }
-
 .entry-form ::-webkit-input-placeholder {
   @include form-placeholder;
 }
@@ -414,7 +412,6 @@ strong {
 
 .feature h2 {
   @include size(h2);
-  // @include size(h3);
   color: $purple;
   text-align: left;
   margin: 0;
