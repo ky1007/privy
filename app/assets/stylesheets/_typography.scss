@@ -407,8 +407,14 @@ strong {
   padding-bottom: 0;
 }
 
+.feature { 
+  color: #fff; 
+  @include size(p);
+}
+
 .feature h2 {
-  @include size(h3);
+  @include size(h2);
+  // @include size(h3);
   color: $purple;
   text-align: left;
   margin: 0;
@@ -416,9 +422,11 @@ strong {
 }
 
 .feature h3 {
-  @include size(h6);
+  @include size(h3);
+  // @include size(h6);
   padding-bottom: 0.1rem;
   margin: 0;
+  color: #fff;
 }
 
 // delete this block if prompt is unused

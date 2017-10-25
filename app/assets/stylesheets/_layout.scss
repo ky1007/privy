@@ -13,6 +13,80 @@ body {
   padding-right: 1.5rem;
 }
 
+// --- COLUMN structuring ---
+.row, 
+.column {
+    box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.column + .column {
+  margin-left: 1.6%;
+}
+
+.column-1 {
+  width: 6.86666666667%;
+}
+
+.column-2 {
+  width: 15.3333333333%;
+}
+
+.column-3 {
+  width: 23.8%;
+}
+
+.column-4 {
+  width: 32.2666666667%;
+}
+
+.column-5 {
+  width: 40.7333333333%;
+}
+
+.column-6 {
+  width: 49.2%;
+}
+
+.column-7 {
+  width: 57.6666666667%;
+}
+
+.column-8 {
+  width: 66.1333333333%;
+}
+
+.column-9 {
+  width: 74.6%;
+}
+
+.column-10 {
+  width: 83.0666666667%;
+}
+
+.column-11 {
+  width: 91.5333333333%;
+}
+
+.column-12 {
+  width: 100%;
+}
+
 // --- NAV styling ---
 nav {
   padding: .6rem 0.2rem 0;
@@ -47,6 +121,17 @@ nav {
   padding-left: 1rem;
 }
 
+.feature-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 1000px;
+  padding-left: 1rem;
+}
+
 .intro {
   flex: 2;
   // border: 1px solid black;
@@ -73,22 +158,37 @@ nav {
   background-size: cover;
 }
 
-.feature { 
-  flex: 1; 
-  padding: 4rem 2rem 0.3rem 1rem;
-  min-width: 240px;
+.feature-section {
+  background-color: #222;
+  padding: 4rem 0rem;
 }
+
+// ---- DEPRECATED FLEX APPROACH - GRID IS PREFERRED
+// .feature { 
+//   flex: 1; 
+//   padding: 3rem 0.8rem;
+//   min-width: 240px;
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .feature-image {
+//   flex: 1;
+// }
+// .feature-description {
+//   flex: 3;
+// }
 
 // --- LOGIN / LOGOUT form --- 
 .session-form-container {
   flex: 1;
-  padding: 0 1rem 0 0;
+  padding: 0 1rem 6rem 0;
   text-align: center;
   min-width: 180px;
 }
 
 .session-form {
-  max-width: 200px;
+  max-width: 220px;
   text-align: center;
   margin: 0 auto;
 }
