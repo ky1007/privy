@@ -25,7 +25,7 @@ const loggedOutGreeting = () => (
 
             <div className="row">
               <div className="column column-4">
-                <img src="https://i.imgur.com/higmKvN.png" />
+              <i className="fa fa-book fa-5x" aria-hidden="true"></i>
                 {/* Quisque vel mollis sem. Fusce nunc ante, vulputate id scelerisque sed, pretium vitae leo. Ut pellentesque, eros a venenatis pretium, urna mi commodo mauris, et fermentum dolor nunc eu orci. Mauris efficitur vel orci non fermentum. Pellentesque consectetur, dolor vel ullamcorper scelerisque, est leo suscipit orci, et ultrices eros nisl a sem. Nunc augue libero, feugiat a odio vitae, iaculis rhoncus libero. Donec eros augue, suscipit nec condimentum eget, elementum in lorem. Proin tempus ornare magna quis mattis. Curabitur at interdum magna, at tincidunt lacus. Integer porttitor vitae libero ac auctor. Duis in enim fermentum, pretium mauris at, porta sapien. Praesent elementum sem massa, sit amet placerat diam posuere gravida. Integer vel scelerisque lorem. Proin lobortis tortor non leo faucibus, ac tincidunt orci molestie. */}
               </div>
               <div className="column column-8 feature">
