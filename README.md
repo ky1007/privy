@@ -17,9 +17,6 @@ Privy is passion project born out of my own curiosity about how other people thi
   * Users can post a reflection on an old entry they've written. (Note: Privy is intentionally designed so that users cannot post reflections for entries that aren't theirs.)
 
 ## Previews of Privy in action
-### Browsing Entries
-![Browsing Entries](docs/images/privy-browse.gif)
-
 ### Following Users
 ![Following Users](docs/images/privy-follow.gif)
 
