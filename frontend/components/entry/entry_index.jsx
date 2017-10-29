@@ -127,33 +127,33 @@ class EntryIndex extends Component {
       return (this.waitingToLoad());
     } else if (entries.length > 0) {
       return (
-        (this.waitingToLoad())
-        // <div className="main-container">
-        //   <header className="entry-index-header">
-        //     <h1>
-        //       {this.showWhoseJournal()}
-        //     </h1>
-        //   </header>
-        //   <section className="entry-index">
-        //     <CSSTransitionGroup
-        //     transitionName="entry"
-        //     transitionEnterTimeout={700}
-        //     transitionLeaveTimeout={700}>
-        //       {entries.map(entry => <EntryIndexItem key={entry.id} 
-        //                                             entry={entry} 
-        //                                             writers={writers}
-        //                                             pathUsername={pathUsername} 
-        //                                             currentUser={currentUser}
-        //                                             createFollow={createFollow}
-        //                                             destroyFollow={destroyFollow} 
-        //                                             createBookmark={createBookmark}
-        //                                             destroyBookmark={destroyBookmark}
-        //                                             destroyEntry={destroyEntry}
-        //                             />
-        //       )}
-        //     </CSSTransitionGroup>
-        //   </section>
-        // </div>
+        // (this.waitingToLoad())
+        <div className="main-container">
+          <header className="entry-index-header">
+            <h1>
+              {this.showWhoseJournal()}
+            </h1>
+          </header>
+          <section className="entry-index">
+            <CSSTransitionGroup
+            transitionName="entry"
+            transitionEnterTimeout={700}
+            transitionLeaveTimeout={700}>
+              {entries.map(entry => <EntryIndexItem key={entry.id} 
+                                                    entry={entry} 
+                                                    writers={writers}
+                                                    pathUsername={pathUsername} 
+                                                    currentUser={currentUser}
+                                                    createFollow={createFollow}
+                                                    destroyFollow={destroyFollow} 
+                                                    createBookmark={createBookmark}
+                                                    destroyBookmark={destroyBookmark}
+                                                    destroyEntry={destroyEntry}
+                                    />
+              )}
+            </CSSTransitionGroup>
+          </section>
+        </div>
       );
     } else {
       return (
