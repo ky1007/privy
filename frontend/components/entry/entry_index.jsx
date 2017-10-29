@@ -57,27 +57,32 @@ class EntryIndex extends Component {
     const { currentUser, pathUsername, currentWriter, entries, pathname, writers } = this.props; 
     const writerInfo = writers[Object.keys(writers)[0]];
 
+    switch (pathname) {
+      case '/feed':
+        return (
+          <span>
+            your personal feed from <strong>{this.typeOfIndexPage()}</strong>
+          </span>
+        );
+      case '/everyone':
+        return (
+          <span>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></span>          
+        );
+      case '/bookmarks':
+        return (
+          <span>your saved <strong>bookmarks</strong></span>          
+        );
+    };
+
+    // If the current user is viewing their own diary, show them their entries
     if (pathUsername === currentUser.username) {
       return (
         <div>
           <span role="img" aria-label="Diary emoji">📝</span> this is your diary, <strong>{pathUsername}</strong>
         </div>
       );
-    } else if (pathname === '/feed') {
-      return (
-        <div>
-          your personal feed from <strong>{this.typeOfIndexPage()}</strong>
-        </div>
-      );
-    } else if (pathname === '/everyone') {
-      return (
-        <span>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></span>
-      );
-    } else if (pathname === '/bookmarks') {
-      return (
-        <span>your saved <strong>bookmarks</strong></span>
-      );
-    }
+    } 
+
     // If the feed is a feed of a single writer's diary entries, render the below
     return (
       <div className="profile-info">
