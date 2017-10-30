@@ -10,6 +10,8 @@ $type-scale-large: (
   welcome-heading: 4.3rem,
   welcome-prompt: 2.4rem,
   session-button: 1rem,
+  author-heading: 4.3rem,
+  author-subtitle: 3.2rem,
 );
 
 $type-scale-medium: (
@@ -60,21 +62,17 @@ a {
 
 nav a {
   @include size(small);
-  // color: white;
   color: $darker-gray;
   padding-bottom: 1.5rem;
 }
 
 .nav-logo a { 
-  // color: white; 
-  // color: $darkest-gray; 
   color: #000; 
   @include size(h2);
   padding-bottom: 1.5rem;
 }
 
 .nav-active-link {
-  // border-bottom: 4px solid;
   font-weight: 700;
   color: $purple;
   color: #222;
@@ -86,7 +84,6 @@ nav a {
 }
 
 .logout-button {
-  // background-color: #333;
   background-color: #f9f9f9;
   padding: 10px;
   border-radius: 6px;
@@ -128,7 +125,6 @@ h3 {
 }
 
 .tagline {
-  // font-size: 1.4em;
   font-family: $base-font, sans-serif;
   line-height: 1.3em;
   font-weight: light;
@@ -146,7 +142,6 @@ h3 {
 }
 
 a:hover {
-  // color: #bbb;
   color: $purple;
   transition: 0.65s;
 }
@@ -216,10 +211,16 @@ li { list-style: none; }
   display: inline-block;
   padding: 8px;
 }
-.profile-text { margin: 0.3rem; padding: 0.6rem; font-size: 1rem; }
-.pretext-country { border-bottom: 1px solid #3DB6D7; color: #3DB6D7; }
-.pretext-race { border-bottom: 1px solid #6ED73D; color: #6ED73D; padding: 0.6rem; }
-.pretext-age { border-bottom: 1px solid #FFC300; color: #FFC300; padding: 0.6rem; }
+.profile-text { 
+  display: inline-block; 
+  padding: 0.6rem; 
+  margin: 0.9rem 0.3rem 0 0.3rem; 
+  font-size: 1rem; 
+  color: #fff; 
+}
+.pretext-country {  background-color: #3DB6D7; }
+.pretext-race {  background-color: #6ED73D; }
+.pretext-age {  background-color: #FFC300; }
 .country { background-color: #3DB7D7; }
 .race { background-color: #6ED73D; }
 .age { background-color: #FFC300; }
@@ -308,7 +309,6 @@ strong {
   color: $darker-gray;
   font-weight: 300;
   color: $purple;
-  padding: 3.65rem 0 4.4rem;
 }
 
 .user-content-prompt {
@@ -328,6 +328,17 @@ strong {
   border-top: 1px solid #f9f9f9;
 }
 
+// ENTRY INDEX: author info
+.profile-info h1 {
+  @include size(author-heading);
+}
+
+// .profile-info h2 {
+//   @include size(author-subtitle);
+//   color: $purple;
+// }
+
+// ENTRY INDEX: author info
 .entry-index-metadata h3 {
   @include size(p);
   font-weight: 300;
@@ -337,6 +348,7 @@ strong {
   @include size(small);
 }
 
+// ENTRY INDEX: icons
 .fa-bookmark-o, .fa-bookmark { padding-left: 1rem; }
 
 .fa-bookmark-o,
@@ -397,7 +409,6 @@ strong {
 }
 
 // --- WELCOME page ---
-
 .welcome-heading {
   @include entry-heading;
   @include size(welcome-heading);
@@ -426,7 +437,6 @@ strong {
   color: #fff;
 }
 
-// delete this block if prompt is unused
 .welcome-prompt {
   @include entry-heading;
   @include size(welcome-prompt);

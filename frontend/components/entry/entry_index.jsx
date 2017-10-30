@@ -41,18 +41,7 @@ class EntryIndex extends Component {
     );
   }
 
-  typeOfIndexPage() {
-    const { pathUsername, currentUser, pathname } = this.props;
-    if (pathUsername) {
-      return ` ${pathUsername}`;
-    }
-    return (
-      <span>
-        people you follow <span role="img" aria-label="Pair dancing emoji">👯‍</span>
-      </span>
-    );
-  }
-
+  // Display specific headings depending on what the index page is for
   showWhoseJournal() {
     const { currentUser, pathUsername, currentWriter, entries, pathname, writers } = this.props; 
     const writerInfo = writers[Object.keys(writers)[0]];
@@ -60,37 +49,31 @@ class EntryIndex extends Component {
     switch (pathname) {
       case '/feed':
         return (
-          <span>
-            your personal feed from <strong>{this.typeOfIndexPage()}</strong>
-          </span>
+          <h1>your personal feed from <strong>people you follow</strong></h1>
         );
       case '/everyone':
         return (
-          <span>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></span>          
+          <h1>recent diary entries from <strong>everyone</strong> <span role="img" aria-label="Tada emoji">🎉</span></h1>          
         );
       case '/bookmarks':
         return (
-          <span>your saved <strong>bookmarks</strong></span>          
+          <h1>your saved <strong>bookmarks</strong></h1>          
         );
     };
 
-    // If the current user is viewing their own diary, show them their entries
-    if (pathUsername === currentUser.username) {
-      return (
-        <div>
-          <span role="img" aria-label="Diary emoji">📝</span> this is your diary, <strong>{pathUsername}</strong>
-        </div>
-      );
-    } 
-
-    // If the feed is a feed of a single writer's diary entries, render the below
+    // If the feed is a feed of a single writer's diary entries, create this author heading
     return (
-      <div className="profile-info">
-        recent diary entries from <strong>{this.typeOfIndexPage()}</strong><br />
-        {writerInfo.country ? <span className="profile-text pretext-country">living in <strong>{writerInfo.country}</strong></span> : null }
-        {writerInfo.race ? <span className="profile-text pretext-race"> ethnically <strong>{writerInfo.race}</strong></span> : null }
-        {writerInfo.age ? <span className="profile-text pretext-age">is the age <strong>{writerInfo.age}</strong></span> : null }
-      </div>
+      <section className="profile-info">
+        <div className="author">
+          <h1><strong>{pathUsername}'s</strong> Diary</h1>
+        </div>
+
+        <div className="author-metadata">
+          {writerInfo.country ? <span className="profile-text pretext-country">living in {writerInfo.country}</span> : null }
+          {writerInfo.race ? <span className="profile-text pretext-race">ethnically {writerInfo.race}</span> : null }
+          {writerInfo.age ? <span className="profile-text pretext-age">is the age {writerInfo.age}</span> : null }
+        </div>
+      </section>
     );
   }
 
@@ -131,9 +114,7 @@ class EntryIndex extends Component {
       return (
         <div className="main-container">
           <header className="entry-index-header">
-            <h1>
-              {this.showWhoseJournal()}
-            </h1>
+            {this.showWhoseJournal()}
           </header>
           <section className="entry-index">
             <CSSTransitionGroup

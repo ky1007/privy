@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const writerInfo = (entry, destroyFollow, createFollow, writers) => {
+const writerInfo = (entry, createFollow, destroyFollow, writers) => {
   const handleFollow = (followAction) => {
     const followRequest = {
       followee_id: entry.writer_id,
@@ -11,7 +11,7 @@ const writerInfo = (entry, destroyFollow, createFollow, writers) => {
   };
 
   const { following } = writers[entry.writer_id];
-  const followAction = following ? createFollow : destroyFollow;
+  const followAction = following ? destroyFollow : createFollow;
 
   return (
     <div>
@@ -47,23 +47,29 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
   };
 
   return (
-    <div className="entry-index-container">
+    <section className="entry-index-container">
+
+      {/* -- Entry item's author info and follow toggle --  */}
       <aside className="entry-index-metadata">
         {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
         <small>{moment(entry.created_at).fromNow()}</small><br /><br />
         {pathUsername ? entryOptions(pathUsername, currentUser, entry, destroyEntry) : writerInfo(entry, createFollow, destroyFollow, writers)}
       </aside>
+
+      {/* -- Entry item's preview --  */}
       <main className="entry-list-items">
         <Link to={`/entries/${entry.id}`}>
           <article key={entry.id}>{entry.general.slice(0, 290) + '...'}</article>
         </Link>
       </main>
+
+      {/* -- Bookmark toggle --  */}
       <i
         className={entry.bookmarked ? 'fa fa-bookmark fa-2x' : 'fa fa-bookmark-o fa-2x'}
         aria-hidden="true"
         onClick={handleBookmark(bookmarkAction)}
       />
-    </div>
+    </section>
   );
 };
 

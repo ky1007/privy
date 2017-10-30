@@ -204,7 +204,10 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+}
 
+.entry-index-header {
+  padding: 3.65rem 0 4.4rem;
 }
 
 .entry-index-metadata {
@@ -213,7 +216,27 @@ nav {
   padding: 1.2em 2em 1.2em 0;
 }
 
+// -- ENTRY INDEX: profile feed indexes --- 
+.profile-info {
+    text-align: center;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: flex-start;
+}
 
+// .author { 
+//   flex: 1.6; 
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+// }
+// .author-metadata { 
+//   flex: 1; 
+//   padding: 1.9rem 0 0 1rem;
+// }
+
+// -- ENTRY INDEX: entry items --- 
 main .entry-list-items {
   flex: 8;
 }
@@ -226,14 +249,17 @@ main .entry-list-items {
   max-width: 40em;
 }
 
-.entry-list-items:hover article { 
-  background: #F5EBFF;
-  color: #444;
-  transition: 0.3s;
+.entry-index-container:hover article { 
+  background: #fff;
+  transition: 0.65s;
+  -webkit-box-shadow: 0px 0px 27px -7px $light-purple;
+  -moz-box-shadow: 0px 0px 27px -7px $light-purple;
+  box-shadow: 0px 0px 27px -7px $light-purple;
   cursor: hand;
   cursor: pointer;
 }
 
+// -- ENTRY INDEX: action animations --- 
 .entry-enter {
   opacity: 0.01;
 }
