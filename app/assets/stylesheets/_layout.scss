@@ -259,6 +259,9 @@ main .entry-list-items {
   cursor: pointer;
 }
 
+.entry-index-container:hover a { color: $purple; }
+.entry-index-container:hover a:hover { color: $light-purple; }
+
 // -- ENTRY INDEX: action animations --- 
 .entry-enter {
   opacity: 0.01;

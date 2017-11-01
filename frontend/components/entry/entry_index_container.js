@@ -49,7 +49,7 @@ const mapStateToProps = ({ entries, session, users, loading }, { match, location
     pathUsername: match.params.username,
     pathname: location.pathname,
     currentUser: session.currentUser[Object.keys(session.currentUser)[0]],
-    currentWriter: users.current,
+    currentWriter: users.allUsers,
     writers: users.allUsers,
     loading: loading.loadingEntries,
   };
