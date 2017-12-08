@@ -19,10 +19,11 @@ const loggedInLinks = (currentUser, logout) => (
           <li><NavLink to="/feed" activeClassName="nav-active-link">Your Feed</NavLink></li>
           <li><NavLink to="/bookmarks" activeClassName="nav-active-link">Your Bookmarks</NavLink></li>
           <li><NavLink to="/new_entry" activeClassName="nav-active-link">New Entry</NavLink></li>
-          <li><NavLink to="/" onClick={logout} className="logout-button">
+          {/* <li><NavLink to="/" onClick={logout} className="logout-button">
                 Logout, {currentUser.username}
               </NavLink>
-          </li>
+          </li> */}
+          <li><i className="fa fa-user-circle fa-2x" /></li>
       </section>
     </nav>
   </div>

@@ -190,12 +190,12 @@ article h2 {
 }
 
 section {
-  padding-bottom: 1.5em;
   white-space: pre-wrap;
 }
 
 .entry-show section {
   line-height: 2.37rem;
+  padding-bottom: 1.5em;
 }
 
 section h2 {
@@ -417,7 +417,7 @@ strong {
 }
 
 .feature { 
-  color: #fff; 
+  color: #222; 
   @include size(p);
 }
 
@@ -434,7 +434,7 @@ strong {
   // @include size(h6);
   padding-bottom: 0.1rem;
   margin: 0;
-  color: #fff;
+  color: #222;
 }
 
 .welcome-prompt {
