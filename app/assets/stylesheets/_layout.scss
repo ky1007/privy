@@ -331,6 +331,51 @@ main .entry-list-items {
   height: 3px;
 }
 
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+@media (max-width: 740px) {
+  .entry-index-container { 
+    flex-direction: column;
+  }
+  .entry-index-container:after { 
+    border-bottom: 1px solid #aaa;
+  }
+  .entry-list-items article {
+    padding: 1em;
+  }
+  .author-profile {
+    display: inline;
+    float: right;
+  }
+  .country, .race, .age {
+    display: inline;
+  }
+  .entry-index-metadata {
+    text-align: left;
+
+  }
+  .follows, .fa-bookmark-o {
+    opacity: 1;
+  }
+  .fa-bookmark-o {
+    order: 1;
+  }
+  .inline {
+    display: inline;
+    float: left;
+  }
+  .block {
+    display: block;
+    // clear: both;
+  }
+}
+
 // --- ENTRY SHOW page ---
 // .entry-item {
 //   display: flex;

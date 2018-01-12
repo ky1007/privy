@@ -211,6 +211,7 @@ li { list-style: none; }
   display: inline-block;
   padding: 8px;
 }
+
 .profile-text { 
   display: inline-block; 
   padding: 0.6rem; 
@@ -388,7 +389,7 @@ strong {
 
 .follows {
   background-color: $light-purple;
-  display: inline-block;
+  // display: inline-block;
   padding: .4rem 0.8rem .4rem .9rem;
   color: white;
   border-radius: 8px;
@@ -397,6 +398,12 @@ strong {
   transition: 0.65s ease;
   cursor: hand;
   cursor: pointer;
+  float: right;
+  clear: left;
+}
+
+.follows:after {
+  clear: left;
 }
 
 .follows:hover { 

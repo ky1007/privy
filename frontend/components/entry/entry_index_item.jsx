@@ -15,11 +15,17 @@ const writerInfo = (entry, createFollow, destroyFollow, writers) => {
 
   return (
     <div>
-      {writers[entry.writer_id].country ? <div><small className="country">{writers[entry.writer_id].country}</small><br /></div> : null }
-      {writers[entry.writer_id].race ? <div><small className="race">{writers[entry.writer_id].race}</small><br /></div> : null }
-      {writers[entry.writer_id].age ? <div><small className="age">{writers[entry.writer_id].age}</small><br /></div> : null }
-      <div className="follows" onClick={handleFollow(followAction)}role="button">
-        <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
+      {/* <div> */}
+        <div className="inline">
+          {writers[entry.writer_id].country ? <div className="author-profile"><small className="country">{writers[entry.writer_id].country}</small></div> : null }
+          {writers[entry.writer_id].race ? <div className="author-profile"><small className="race">{writers[entry.writer_id].race}</small></div> : null }
+          {writers[entry.writer_id].age ? <div className="author-profile"><small className="age">{writers[entry.writer_id].age}</small></div> : null }
+        </div>
+      {/* </div> */}
+      <div className="block" onClick={handleFollow(followAction)} role="button">
+        <span className="follows">
+          <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
+        </span>
       </div>
     </div>
   );
@@ -51,8 +57,10 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
 
       {/* -- Entry item's author info and follow toggle --  */}
       <aside className="entry-index-metadata">
-        {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
-        <small>{moment(entry.created_at).fromNow()}</small><br /><br />
+        <div className="inline">
+          {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
+          <small>{moment(entry.created_at).fromNow()}</small>
+        </div>
         {pathUsername ? entryOptions(pathUsername, currentUser, entry, destroyEntry) : writerInfo(entry, createFollow, destroyFollow, writers)}
       </aside>
 

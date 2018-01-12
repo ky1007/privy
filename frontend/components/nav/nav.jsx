@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import NavDropdown from './nav_dropdown';
 
 const createSessionLinks = () => (
   <nav className="login-signup">
@@ -9,11 +10,20 @@ const createSessionLinks = () => (
   </nav>
 );
 
-const loggedInLinks = (currentUser, logout) => (
-  <div className="nav-flow">
-    <nav className="main-container">
-      <header className="nav-logo"><Link to="/welcome">Privy</Link></header>
-      <section className="nav-links">
+const loggedInLinks = (currentUser, logout) => {
+  let toggle = 'visible';
+
+  const makeVisible = () => {
+    return () => {
+      toggle = 'invisible';
+    }
+  };
+  
+  return (
+    <div className="nav-flow">
+      <nav className="main-container">
+        <header className="nav-logo"><Link to="/welcome">Privy</Link></header>
+        <section className="nav-links">
           <li><NavLink to="/everyone" activeClassName="nav-active-link">Everyone&apos;s Diary</NavLink></li>
           <li><NavLink to={`/${currentUser.username}/entries`} activeClassName="nav-active-link">Your Diary</NavLink></li>
           <li><NavLink to="/feed" activeClassName="nav-active-link">Your Feed</NavLink></li>
@@ -23,12 +33,13 @@ const loggedInLinks = (currentUser, logout) => (
                 Logout, {currentUser.username}
               </NavLink>
           </li> */}
-          <li><i className="fa fa-user-circle fa-2x" /></li>
-      </section>
-    </nav>
-  </div>
-
-);
+          <li onClick={makeVisible(toggle)}><i className="fa fa-user-circle fa-2x" /></li>
+          <NavDropdown display={`${toggle}`} />
+        </section>
+      </nav>
+    </div>
+  );
+};
 
 const Nav = ({ currentUser, logout }) => {
   if (currentUser) {
