@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const writerInfo = (entry, createFollow, destroyFollow, writers) => {
+  const { following } = writers[entry.writer_id];
+  const followAction = following ? destroyFollow : createFollow;
+
   const handleFollow = (followAction) => {
     const followRequest = {
       followee_id: entry.writer_id,
@@ -10,19 +13,14 @@ const writerInfo = (entry, createFollow, destroyFollow, writers) => {
     return () => followAction(followRequest);
   };
 
-  const { following } = writers[entry.writer_id];
-  const followAction = following ? destroyFollow : createFollow;
-
   return (
-    <div>
-      {/* <div> */}
-        <div className="inline">
-          {writers[entry.writer_id].country ? <div className="author-profile"><small className="country">{writers[entry.writer_id].country}</small></div> : null }
-          {writers[entry.writer_id].race ? <div className="author-profile"><small className="race">{writers[entry.writer_id].race}</small></div> : null }
-          {writers[entry.writer_id].age ? <div className="author-profile"><small className="age">{writers[entry.writer_id].age}</small></div> : null }
-        </div>
-      {/* </div> */}
-      <div className="block" onClick={handleFollow(followAction)} role="button">
+    <div className="inline author-info">
+      <div className="inline author-demographics">
+        {writers[entry.writer_id].country ? <div className="author-profile"><small className="country">{writers[entry.writer_id].country}</small></div> : null }
+        {writers[entry.writer_id].race ? <div className="author-profile"><small className="race">{writers[entry.writer_id].race}</small></div> : null }
+        {writers[entry.writer_id].age ? <div className="author-profile"><small className="age">{writers[entry.writer_id].age}</small></div> : null }
+      </div>
+      <div onClick={handleFollow(followAction)} role="button">
         <span className="follows">
           <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
         </span>
@@ -30,6 +28,27 @@ const writerInfo = (entry, createFollow, destroyFollow, writers) => {
     </div>
   );
 };
+
+// const displayFollow = (entry, createFollow, destroyFollow, writers) => {
+//   const { following } = writers[entry.writer_id];
+//   const followAction = following ? destroyFollow : createFollow;
+
+//   const handleFollow = (followAction) => {
+//     const followRequest = {
+//       followee_id: entry.writer_id,
+//     };
+//     return () => followAction(followRequest);
+//   };
+  
+//   return (
+//     <div onClick={handleFollow(followAction)} role="button">
+//       <span className="follows">
+//         <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
+//       </span>
+//     </div>
+//   );
+
+// };
 
 const entryOptions = (pathUsername, currentUser, entry, destroyEntry) => {
   if (pathUsername === currentUser.username) {
@@ -62,6 +81,7 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
           <small>{moment(entry.created_at).fromNow()}</small>
         </div>
         {pathUsername ? entryOptions(pathUsername, currentUser, entry, destroyEntry) : writerInfo(entry, createFollow, destroyFollow, writers)}
+        {/* {pathUsername ? null : displayFollow(entry, createFollow, destroyFollow, writers)} */}
       </aside>
 
       {/* -- Entry item's preview --  */}

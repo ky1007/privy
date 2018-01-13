@@ -263,6 +263,10 @@ main .entry-list-items {
 .entry-index-container:hover a { color: $purple; }
 .entry-index-container:hover a:hover { color: $light-purple; }
 
+.author-demographics {
+  padding-top: 1rem;
+}
+
 // -- ENTRY INDEX: action animations --- 
 .entry-enter {
   opacity: 0.01;
@@ -342,6 +346,7 @@ main .entry-list-items {
 @media (max-width: 740px) {
   .entry-index-container { 
     flex-direction: column;
+    position: relative;
   }
   .entry-index-container:after { 
     border-bottom: 1px solid #aaa;
@@ -350,30 +355,49 @@ main .entry-list-items {
     padding: 1em;
   }
   .author-profile {
-    display: inline;
+    display: block;
     float: right;
   }
   .country, .race, .age {
     display: inline;
+    padding: 4px;
   }
   .entry-index-metadata {
     text-align: left;
-
+    width: 100%;
+    padding: 1.2em 0;
+    position: relative;
+  }
+  .follows {
+    float: right;
+    padding: 4px;
+    font-size: 0.7744rem;
+    margin-top: 4px;
   }
   .follows, .fa-bookmark-o {
     opacity: 1;
   }
-  .fa-bookmark-o {
+  .fa-bookmark-o, .fa-bookmark {
     order: 1;
+    position: absolute;
+    top: 5.5rem;
+    right: 0;
   }
   .inline {
     display: inline;
     float: left;
   }
-  .block {
-    display: block;
-    // clear: both;
+  .author-demographics {
+    padding: 0.1rem 0 0 1rem;
   }
+  .author-info {
+    position: absolute;
+    right: 0;
+  }
+  // .block {
+  //   display: block;
+  //   clear: bo th;
+  // }
 }
 
 // --- ENTRY SHOW page ---
