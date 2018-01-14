@@ -240,6 +240,7 @@ nav {
 // -- ENTRY INDEX: entry items --- 
 main .entry-list-items {
   flex: 8;
+  width: 100%;
 }
 
 .entry-list-items article {
@@ -251,11 +252,12 @@ main .entry-list-items {
 }
 
 .entry-index-container:hover article { 
-  background: #fff;
+  background: #F5EBFF;
+  // background: #fff;
   transition: 0.65s;
-  -webkit-box-shadow: 0px 0px 27px -7px $light-purple;
-  -moz-box-shadow: 0px 0px 27px -7px $light-purple;
-  box-shadow: 0px 0px 27px -7px $light-purple;
+  // -webkit-box-shadow: 0px 0px 27px -7px $light-purple;
+  // -moz-box-shadow: 0px 0px 27px -7px $light-purple;
+  // box-shadow: 0px 0px 27px -7px $light-purple;
   cursor: hand;
   cursor: pointer;
 }
@@ -347,6 +349,7 @@ main .entry-list-items {
   .entry-index-container { 
     flex-direction: column;
     position: relative;
+    padding: 0.5rem 0;
   }
   .entry-index-container:after { 
     border-bottom: 1px solid #aaa;
@@ -365,8 +368,11 @@ main .entry-list-items {
   .entry-index-metadata {
     text-align: left;
     width: 100%;
-    padding: 1.2em 0;
+    padding: 0.6em 0.8rem;
     position: relative;
+    border-top: 1px solid $lighter-gray;
+    border-right: 1px solid $lighter-gray;
+    border-left: 1px solid $lighter-gray;
   }
   .follows {
     float: right;
@@ -377,10 +383,22 @@ main .entry-list-items {
   .follows, .fa-bookmark-o {
     opacity: 1;
   }
+  .fa-bookmark {
+    color: $light-gray;
+  }
+  .fa-bookmark-o {
+    color: $light-gray;
+  }
+  .entry-index-container:hover .fa-bookmark-o {
+    color: $light-purple;
+  }
+  .entry-index-container:hover .fa-bookmark {
+    color: $light-purple;
+  }
   .fa-bookmark-o, .fa-bookmark {
     order: 1;
     position: absolute;
-    top: 5.5rem;
+    top: 4.9rem;
     right: 0;
   }
   .inline {
@@ -392,12 +410,8 @@ main .entry-list-items {
   }
   .author-info {
     position: absolute;
-    right: 0;
+    right: 0.8rem;
   }
-  // .block {
-  //   display: block;
-  //   clear: bo th;
-  // }
 }
 
 // --- ENTRY SHOW page ---
