@@ -77,11 +77,10 @@ const EntryIndexItem = ({ entry, pathUsername, currentUser, createFollow, destro
       {/* -- Entry item's author info and follow toggle --  */}
       <aside className="entry-index-metadata">
         <div className="inline">
-          {pathUsername ? null : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
+          {pathUsername ? <h3>{moment(entry.created_at).format('MMMM Do YYYY')}</h3> : <h3><Link to={`/${writers[entry.writer_id].username}/entries`}>{writers[entry.writer_id].username}</Link></h3> }
           <small>{moment(entry.created_at).fromNow()}</small>
         </div>
         {pathUsername ? entryOptions(pathUsername, currentUser, entry, destroyEntry) : writerInfo(entry, createFollow, destroyFollow, writers)}
-        {/* {pathUsername ? null : displayFollow(entry, createFollow, destroyFollow, writers)} */}
       </aside>
 
       {/* -- Entry item's preview --  */}

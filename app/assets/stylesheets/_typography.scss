@@ -23,6 +23,7 @@ $type-scale-medium: (
   small:	0.88rem,
   welcome-heading: 3.78rem,
   welcome-prompt: 2.11rem,
+  author-heading: 3.7rem,
 );
 
 $type-scale-small: (
@@ -34,6 +35,7 @@ $type-scale-small: (
   small: 0.7744rem,
   welcome-heading: 3.33rem,
   welcome-prompt: 1.86rem,
+  author-heading: 3rem,
 );
 
 $breakpoint-medium: 75em;
@@ -331,6 +333,7 @@ strong {
 // ENTRY INDEX: author info
 .profile-info h1 {
   @include size(author-heading);
+  // @include size(author-heading);
 }
 
 // .profile-info h2 {
