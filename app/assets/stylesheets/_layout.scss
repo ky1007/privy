@@ -11,6 +11,7 @@ body {
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  position: relative;
 }
 
 // --- COLUMN structuring ---
@@ -110,6 +111,12 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
+.nav-pop {
+  position: absolute;
+  right: 1.8rem;
+  top: 4.5rem;
+  background: gray;
+}
 /* -- HOME PAGE ---  */
 .welcome-container {
   display: flex;
@@ -411,6 +418,35 @@ main .entry-list-items {
   .author-info {
     position: absolute;
     right: 0.8rem;
+  }
+  .nav-logo {
+    display: none;
+  }
+  .nav-links {
+    line-height: 0.8rem;
+  }
+  nav a {
+    font-size: 0.3744rem;
+  }
+  .logout-button {
+    background-color: #fff;
+    padding: 0; 
+  }
+  .logout-button:hover {
+    background-color: #fff;
+    color: $darker-gray;
+  }
+  .welcome-heading {
+    padding-top: 2rem;
+  }
+  .entry-index:nth-of-type(1) {
+    border-top: 0;
+  }
+  .session-form-container {
+    padding-bottom: 0;
+  }
+  .welcome-container {
+    padding-bottom: 1rem;
   }
 }
 
