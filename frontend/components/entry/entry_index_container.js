@@ -42,7 +42,6 @@ const mapStateToProps = ({ entries, session, users, loading }, { match, location
   }
 
   sortEntries = selectEntries(sortEntries).slice(0, -1);
-  sortEntries.sort((a, b) => b.id - a.id);
 
   return {
     entries: sortEntries,
