@@ -29,31 +29,10 @@ const writerInfo = (entry, createFollow, destroyFollow, writers) => {
   );
 };
 
-// const displayFollow = (entry, createFollow, destroyFollow, writers) => {
-//   const { following } = writers[entry.writer_id];
-//   const followAction = following ? destroyFollow : createFollow;
-
-//   const handleFollow = (followAction) => {
-//     const followRequest = {
-//       followee_id: entry.writer_id,
-//     };
-//     return () => followAction(followRequest);
-//   };
-  
-//   return (
-//     <div onClick={handleFollow(followAction)} role="button">
-//       <span className="follows">
-//         <i className={following ? 'fa fa-user-times' : 'fa fa-user-plus'} aria-hidden="true" /> {following ? 'unfollow' : 'follow' }
-//       </span>
-//     </div>
-//   );
-
-// };
-
 const entryOptions = (pathUsername, currentUser, entry, destroyEntry) => {
   if (pathUsername === currentUser.username) {
     return (
-      <span>
+      <span className="entry-options">
         <Link to={`/entries/${entry.id}/edit`}><i className='fa fa-entry-options fa-pencil-square-o fa-2x'/></Link><br />
         <i className='fa fa-entry-options fa-trash-o fa-2x' onClick={() => destroyEntry(entry.id)}/>
       </span>

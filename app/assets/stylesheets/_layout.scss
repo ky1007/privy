@@ -269,6 +269,11 @@ main .entry-list-items {
   cursor: pointer;
 }
 
+.entry-options {
+  display: block;
+  margin-top: 1rem;
+}
+
 .entry-index-container:hover a { color: $purple; }
 .entry-index-container:hover a:hover { color: $light-purple; }
 
