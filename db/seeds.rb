@@ -119,6 +119,8 @@ If I hadn’t gone trough this before, I would be pretty bad right now. When thi
   improvements: "I'm pretty much perfect and there's nothing really else for me to improve :)",
   public: true,
   writer_id: usr1.id,
+created_at: DateTime.now - 900,
+updated_at: DateTime.now - 900,
 })
 entry2 = Entry.create({
   general: "It’s been a week since the Italian is at his grandpa’s. We almost don’t talk. I miss him, but I am getting tired of desperately missing him. I’m exhausted by pointless dreaming all these three months. I am wasted by blaming myself, by hurting and being afraid to hurt again, by restricting myself and trying to make a decision while there must be only one. I have to let go and move on, and let him move on and let me go.
@@ -136,6 +138,8 @@ Now I am listening to sweet indie pop and trying to forget the world.",
   improvements: "i need to keep practicing italian",
   public: true,
   writer_id: usr2.id,
+created_at: DateTime.now - 800,
+updated_at: DateTime.now - 800,
 })
 # https://www.goodnightjournal.com/20usr7.id/07/24/now-playing-oh-wonder-heart-hope/
 
@@ -153,6 +157,8 @@ Never prepared me for this.. Nobody can fix this. Nobody. She changed her whole 
 I’m so broken. Defeated.",
   public: true,
   writer_id: usr3.id,
+created_at: DateTime.now - 700,
+updated_at: DateTime.now - 700,
 })
 # https://www.goodnightjournal.com/20usr7.id/07/24/everything-has-changed-as-we-know-it/
 entry4 = Entry.create({
@@ -167,6 +173,8 @@ Then I watched Supernatural and I have work tomorrow. sigh.
 That’s all for today.",
   public: true,
   writer_id: usr4.id,
+created_at: DateTime.now - 600,
+updated_at: DateTime.now - 600,
 })
 # https://www.goodnightjournal.com/20usr7.id/07/24/day-5usr3.id/
 entry5 = Entry.create({
@@ -187,12 +195,16 @@ Cute things like that just brimming me in confidence… Then there is Alice. Ali
 Now Annie and Alice are both me. I just wish my feelings could just meet in the middle a bit more, either on a high or on a low. And heck none of this is even going to make any sense its just crazy rambles.",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 500,
+updated_at: DateTime.now - 500,
 })
 # https://www.goodnightjournal.com/2017/07/23/nothing-much-changed/
 entry6 = Entry.create({
     general: "For the past few weeks I have been mentioning to my boyfriend about going on vacation. His mom and dad are very Christian and are so against us going. However, my boyfriend is 20 years old and I had told him that if we want to go we should be able to because we are both adults. Finally, he had told his mom that we're going and she responded with fine, if you want to live your life in sin I can't stop you, but you should be ashamed of yourself for wanting to go. Like seriously?? He told me though to book the trip so I did! In August my babe and I are spending a week in an oceanfront suite in Daytona beach! I'm so excited. I need this vacation so bad. Just a week to sit my butt in the nice sand with the love of my life and forget about all the stresses of the world.",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 400,
+updated_at: DateTime.now - 400,
 })
 # https://www.goodnightjournal.com/2017/07/23/nothing-much-changed/
 
@@ -203,6 +215,8 @@ entry7 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr1.id, 
+created_at: DateTime.now - 300,
+updated_at: DateTime.now - 300,
 })
 
 entry8 = Entry.create({
@@ -219,6 +233,8 @@ Nevertheless I make the best of the short season and soak in every ray of sunshi
   gratitude: "",
   public: true,
   writer_id: usr2.id,
+created_at: DateTime.now - 200,
+updated_at: DateTime.now - 200,
 }) 
 
 entry9 = Entry.create({
@@ -241,6 +257,8 @@ I don’t think venting to him about my own abuse would be good anyways. I don�
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+created_at: DateTime.now - 100,
+updated_at: DateTime.now - 100,
 }) 
 
 entry10 = Entry.create({
@@ -253,6 +271,8 @@ That’s all for today.",
   gratitude: "",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 50,
+updated_at: DateTime.now - 50,
 }) 
 
 entry11 = Entry.create({
@@ -273,6 +293,8 @@ Song of the entry: I’m sorry (feat. shiloh) by Swell",
   gratitude: "",
   public: true,
   writer_id: usr6.id,
+created_at: DateTime.now - 25,
+updated_at: DateTime.now - 25,
 }) 
 
 entry12 = Entry.create({
@@ -281,6 +303,8 @@ entry12 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr7.id,
+created_at: DateTime.now - 14,
+updated_at: DateTime.now - 14,
 }) 
 
 entry13 = Entry.create({
@@ -289,6 +313,8 @@ entry13 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr8.id,
+created_at: DateTime.now - 30,
+updated_at: DateTime.now - 30,
 }) 
 
 
@@ -306,6 +332,8 @@ Whatever his purpose in my life is– whether it is something small like finally
   gratitude: "",
   public: true,
   writer_id: usr1.id, 
+created_at: DateTime.now - 60,
+updated_at: DateTime.now - 60,
 })
 
 entry15 = Entry.create({
@@ -324,6 +352,8 @@ Until tomorrow
   gratitude: "",
   public: true,
   writer_id: usr2.id,
+  created_at: DateTime.now - 90,
+  updated_at: DateTime.now - 90,
 }) 
 
 entry16 = Entry.create({
@@ -332,6 +362,8 @@ entry16 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+  created_at: DateTime.now - 120,
+  updated_at: DateTime.now - 120,
 }) 
 
 entry17 = Entry.create({
@@ -340,6 +372,8 @@ entry17 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr5.id,
+  created_at: DateTime.now - 150,
+  updated_at: DateTime.now - 150,
 }) 
 
 entry18 = Entry.create({
@@ -353,6 +387,8 @@ PS. I became so pink recently! It’ll be OK after seein’ my babe. Promise.",
   gratitude: "",
   public: true,
   writer_id: usr6.id,
+created_at: DateTime.now - 180,
+updated_at: DateTime.now - 180,
 }) 
 
 entry19 = Entry.create({
@@ -375,6 +411,8 @@ This summer, you broke things off. We tried to make things work again, but to no
   gratitude: "",
   public: true,
   writer_id: usr7.id,
+created_at: DateTime.now - 220,
+updated_at: DateTime.now - 220,
 }) 
 
 entry20 = Entry.create({
@@ -399,8 +437,9 @@ Speaking of which, my uncle’s father died today. Barely knew the man, he was a
   gratitude: "",
   public: true,
   writer_id: usr8.id,
+  created_at: DateTime.now - 250,
+  updated_at: DateTime.now - 250,
 }) 
-
 
 
 entry21 = Entry.create  ({
@@ -421,6 +460,8 @@ Ugh. I was happy about living in New York when I left here to go to Kentucky two
   gratitude: "",
   public: true,
   writer_id: usr1.id, 
+created_at: DateTime.now - 400,
+updated_at: DateTime.now - 400,
 })
 
 entry22 = Entry.create({
@@ -437,6 +478,8 @@ With that being said, I’m going to try to calm down and relax as my anxiety is
   gratitude: "",
   public: true,
   writer_id: usr2.id,
+created_at: DateTime.now - 550,
+updated_at: DateTime.now - 550,
 }) 
 
 entry23 = Entry.create({
@@ -485,6 +528,8 @@ I need to escape this.  Please",
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+created_at: DateTime.now - 625,
+updated_at: DateTime.now - 625,
 }) 
 
 entry24 = Entry.create({
@@ -499,18 +544,22 @@ So now if people ask me “do I believe in love” I laugh  because love isn’t
   gratitude: "",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 701,
+updated_at: DateTime.now - 701,
 }) 
 
 entry25 = Entry.create({
   general: "In the morning, I was going to work, near the bus station, eventually, I saw a girl sitting on the bench. she looked very familiar to me, I went close to her and said Hi, when I recognized her, I was shocked because she doesn’t live in this neighborhood.   she was my classmate in college.her name is Roya, I like this girl. she is one of the most amazing girls I know.
 
-We talked and until the bus arrived.  about her: she is very kind and beautiful
+We talked and until the bus arrived. About her: she is very kind and beautiful
 
-The Point is,  should I ask her out?", 
+The Point is, should I ask her out?", 
   improvements: "",
   gratitude: "",
   public: true,
   writer_id: usr6.id,
+created_at: DateTime.now - 1300,
+updated_at: DateTime.now - 1300,
 }) 
 
 entry26 = Entry.create({
@@ -523,6 +572,8 @@ How to get the momentum to study?",
   gratitude: "",
   public: true,
   writer_id: usr7.id,
+  created_at: DateTime.now - 920,
+  updated_at: DateTime.now - 920,
 }) 
 
 entry27 = Entry.create({
@@ -531,6 +582,8 @@ entry27 = Entry.create({
   gratitude: "",
   public: true,
   writer_id: usr8.id,
+created_at: DateTime.now - 170,
+updated_at: DateTime.now - 170,
 }) 
 
 
@@ -546,6 +599,8 @@ Thing with Ann and my self have been nothing short of amazing. When we first sta
   gratitude: "",
   public: true,
   writer_id: usr1.id, 
+created_at: DateTime.now - 47,
+updated_at: DateTime.now - 47,
 })
 
 entry29 = Entry.create({
@@ -560,6 +615,8 @@ Oh well I guess its time to go. We are heading to Kentucky tomorrow for the even
   gratitude: "",
   public: true,
   writer_id: usr2.id,
+created_at: DateTime.now - 231,
+updated_at: DateTime.now - 231,
 }) 
 
 entry30 = Entry.create({
@@ -590,6 +647,8 @@ I’m starting to fall for him, even though I promised myself I wouldn’t. Howe
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+  created_at: DateTime.now - 442,
+  updated_at: DateTime.now - 442,
 }) 
 
 entry31 = Entry.create({
@@ -608,6 +667,8 @@ If I had one wish, I’d be as strong as you are. Maybe tomorrow will be my day,
   gratitude: "",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 590,
+updated_at: DateTime.now - 590,
 }) 
 
 entry32 = Entry.create({
@@ -618,6 +679,8 @@ I don’t believe they did wrong even if they tried to hit me, but I just don’
   gratitude: "",
   public: true,
   writer_id: usr6.id,
+created_at: DateTime.now - 610,
+updated_at: DateTime.now - 610,
 }) 
 
 entry33 = Entry.create({
@@ -636,6 +699,8 @@ Well, that’s it.  Feeling rough tonight… maybe tomorrow I’ll feel better. 
   gratitude: "",
   public: true,
   writer_id: usr7.id,
+created_at: DateTime.now - 22,
+updated_at: DateTime.now - 22,
 }) 
 
 entry34 = Entry.create({
@@ -654,6 +719,8 @@ Now Imma head off to wasting more time. ",
   gratitude: "",
   public: true,
   writer_id: usr8.id,
+created_at: DateTime.now - 99,
+updated_at: DateTime.now - 99,
 }) 
 
 entry35 = Entry.create({
@@ -668,6 +735,8 @@ And I’m asking myself if I’m doing enough. I so scared. I have this Instagra
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+created_at: DateTime.now - 190,
+updated_at: DateTime.now - 190,
 }) 
 
 entry36 = Entry.create({
@@ -678,6 +747,8 @@ That’s all for the day.",
   gratitude: "",
   public: true,
   writer_id: usr5.id,
+created_at: DateTime.now - 380,
+updated_at: DateTime.now - 380,
 }) 
 
 entry37 = Entry.create({
@@ -690,6 +761,8 @@ This entry an ode to Chester. Until the very end, the words from their songs hav
   gratitude: "",
   public: true,
   writer_id: usr6.id,
+created_at: DateTime.now - 160,
+updated_at: DateTime.now - 160,
 }) 
 
 entry38 = Entry.create({
@@ -706,6 +779,8 @@ For now the thoughts continue… Till next time.",
   gratitude: "",
   public: true,
   writer_id: usr7.id,
+  created_at: DateTime.now - 59,
+  updated_at: DateTime.now - 59,
 }) 
 
 entry39 = Entry.create({
@@ -720,6 +795,17 @@ I can’t begin to imagine how she’s feeling right now. I want to go to her an
   gratitude: "",
   public: true,
   writer_id: usr8.id,
+  created_at: DateTime.now - 77,
+  updated_at: DateTime.now - 77,
+}) 
+entry39 = Entry.create({
+  general: "I’ve so lakjsdklfj", 
+  improvements: "",
+  gratitude: "",
+  public: true,
+  writer_id: 63,
+  created_at: DateTime.now - 61,
+  updated_at: DateTime.now - 61,
 }) 
 
 entry40 = Entry.create({
@@ -740,6 +826,8 @@ I may not have been vocal for the past few years, but I am very proud of your ac
   gratitude: "",
   public: true,
   writer_id: usr3.id,
+  created_at: DateTime.now - 133,
+  updated_at: DateTime.now - 133,
 }) 
 
 
