@@ -114,13 +114,13 @@ Recently I’ve been disapointed with one of my friends. I realized that everyti
 
 Now, I’ll have to wait 2 or 3 days to have time to see my psychologist. The episode with my friend happend on saturday. On that day I cried, and in the next one (sunday), by the end of the day I was doing ok. Today I wasn’t really caring or remembering the episode but I am bad and I think it has something to do with it.
 
-If I hadn’t gone trough this before, I would be pretty bad right now. When this kind of thing happend 5 years ago, I used to end up in the hospital with  cardiac arrhythmia and an unstoppable crying. Hopefully, I already know how to deal with it better. Also hopefully I have some cigarrets and some bears in the fridge. ",
+If I hadn’t gone through this before, I would be pretty bad right now. When this kind of thing happend 5 years ago, I used to end up in the hospital with  cardiac arrhythmia and an unstoppable crying. Hopefully, I already know how to deal with it better. Also hopefully I have some cigarrets and some bears in the fridge. ",
   gratitude: "My lysol, my cat Breakfast, rainbows and cloudy days.",
   improvements: "I'm pretty much perfect and there's nothing really else for me to improve :)",
   public: true,
   writer_id: usr1.id,
-created_at: DateTime.now - 1,
-updated_at: DateTime.now - 1,
+created_at: DateTime.now - 5,
+updated_at: DateTime.now - 5,
 })
 entry2 = Entry.create({
   general: "It’s been a week since the Italian is at his grandpa’s. We almost don’t talk. I miss him, but I am getting tired of desperately missing him. I’m exhausted by pointless dreaming all these three months. I am wasted by blaming myself, by hurting and being afraid to hurt again, by restricting myself and trying to make a decision while there must be only one. I have to let go and move on, and let him move on and let me go.
@@ -899,10 +899,19 @@ refl10 = Reflection.create({
   writer_id: usr3.id,
   entry_id: entry3.id
 })
+refl11 = Reflection.create({
+  body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
+  writer_id: usr1.id,
+  entry_id: entry1.id,
+  created_at: DateTime.now - 2,
+  updated_at: DateTime.now - 2,
+})
 # refl11 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
+#   body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
+#   writer_id: usr1.id,
+#   entry_id: entry1.id,
+#   created_at: DateTime.now - 2,
+#   updated_at: DateTime.now - 2,
 # })
 # refl12 = Reflection.create({
 #   body: "",
