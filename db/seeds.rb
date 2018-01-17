@@ -1123,26 +1123,26 @@ goal3 = Goal.create({
   done: false,
   entry_id: entry35.id,
 })
-goal = Goal.create({
-  body: "",
+goal4 = Goal.create({
+  body: "get a study group together",
   done: false,
-  entry_id: entry.id,
+  entry_id: entry1.id,
 })
-goal = Goal.create({
-  body: "",
+goal5 = Goal.create({
+  body: "talk to my teacher about other studying strategies",
   done: false,
-  entry_id: entry.id,
+  entry_id: entry1.id,
 })
-goal = Goal.create({
-  body: "",
+goal5 = Goal.create({
+  body: "buy a gift for my crush",
   done: false,
-  entry_id: entry.id,
+  entry_id: entry1.id,
 })
-goal = Goal.create({
-  body: "",
-  done: false,
-  entry_id: entry.id,
-})
+# goal = Goal.create({
+#   body: "",
+#   done: false,
+#   entry_id: entry.id,
+# })
 # goal = Goal.create({
 #   body: "",
 #   done: false,

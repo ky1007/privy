@@ -138,22 +138,26 @@ class EntryShow extends React.Component {
   }
 
   showCompleteEntry() {
-    const { currentUser, writers } = this.props;
+    const { currentUser, writers, entry } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
+    // const author = writers[entry.writer_id].username;
 
     return (
       <div className="main-container">
         <div className="entry-item-container">
-          <h1><strong>{this.showAuthor()}'s</strong> life {entryDate}</h1>
+          <h1><strong>{moment(created_at).format('MMMM Do YYYY')}</strong></h1>
+          <h2 className="entry-subheading">{this.showAuthor()}'s life {entryDate}</h2>
+          {/* <small>{this.showAuthor()}'s life {entryDate}</small> */}
           <main className="entry-item">
             <article className="entry-show">
               <section><h2>thoughts</h2>{general}</section>
               { isEmpty(improvements) ? <div /> : <section><h2>things {this.showAuthor()} wished to improve</h2>{improvements}</section> }
               { isEmpty(gratitude) ? <div /> : <section><h2>things {this.showAuthor()} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
-              { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
+              {/* <button><Link to={`/${author}`}>Read the rest of {author}'s diary</Link></button> */}
               {this.showFollowToggle()}
+              { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
             </article>
           </main>
           {this.showReflectionForm()}

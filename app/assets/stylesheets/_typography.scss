@@ -331,6 +331,13 @@ strong {
   border-top: 1px solid #f9f9f9;
 }
 
+.entry-subheading {
+  text-align: center;
+  @include size(small);
+  color: $purple;
+  font-weight: 300;
+}
+
 // ENTRY INDEX: author info
 .profile-info h1 {
   @include size(author-heading);
