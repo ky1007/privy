@@ -107,16 +107,11 @@ textarea {
   background: $purple;
 }
 
-.entry-show a { 
-  text-align: right; 
-  @include size(small);
-  color: $purple;
-}
 
 @mixin entry-form-buttons {
   background-color: #fff;
-  margin-top: 2.3em;
-  margin-bottom: 4em;
+  // margin-top: 2.3em;
+  margin-bottom: .7em;
   margin-left: 1em;
   padding: .6em .4em;
   text-decoration: none;
@@ -124,10 +119,21 @@ textarea {
   // width: 40%;
   cursor: hand;
   cursor: pointer;
-  @include size(h4);
+  @include size(h5);
   font-weight: 700;
   border: 1px solid $purple;
   color: $purple;
+  display: inline-block;
+}
+
+.entry-show a { 
+  // text-align: right; 
+  // color: $purple;
+  // @include size(h4);
+  // font-weight: 300;
+  // border: 1px solid $purple;
+  @include entry-form-buttons;
+  margin-left: 0;
 }
 
 @mixin entry-submit-hover {
@@ -135,16 +141,23 @@ textarea {
   color: #fff;
 }
 
+.entry-form-button {
+  padding-top: 2.4rem;
+}
+
 .entry-show button {
   @include entry-form-buttons; 
-  margin: -6rem 0 3rem 0;
+  margin: 0 0 3rem 0;
 }
 
 .entry-submit-button {
  @include entry-form-buttons; 
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 .entry-submit-button:hover,
-.entry-show button:hover {
+.entry-show button:hover, 
+.entry-show a:hover {
   @include entry-submit-hover;
 }
 
@@ -153,6 +166,8 @@ textarea {
   border: 1px solid $red;
   color: $red;
   background-color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 .entry-delete-button:hover {
   background: $red;

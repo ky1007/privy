@@ -155,7 +155,7 @@ class EntryShow extends React.Component {
               { isEmpty(improvements) ? <div /> : <section><h2>things {this.showAuthor()} wished to improve</h2>{improvements}</section> }
               { isEmpty(gratitude) ? <div /> : <section><h2>things {this.showAuthor()} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
-              {/* <button><Link to={`/${author}`}>Read the rest of {author}'s diary</Link></button> */}
+              <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {writers[entry.writer_id].username}'s diary</Link></strong><br />
               {this.showFollowToggle()}
               { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
             </article>
@@ -168,7 +168,7 @@ class EntryShow extends React.Component {
   }
 
   render() {
-    if (this.props.entry) {
+    if (this.props.entry && this.props.writers) {
       return (this.showCompleteEntry());
     }
     return (this.waitingToLoad());

@@ -151,8 +151,8 @@ class EntryEditForm extends React.Component {
                 {this.showGoals()} 
               </label>
 
-              <button onClick={this.handleSubmit} className="entry-submit-button">Update Entry</button>
-              <button onClick={this.handleDelete} value={id} className="entry-delete-button">Delete Entry</button>
+              <button onClick={this.handleSubmit} className="entry-form-button entry-submit-button">Update Entry</button>
+              <button onClick={this.handleDelete} value={id} className="entry-form-button entry-delete-button">Delete Entry</button>
             </form>
           </div>
         </div>
