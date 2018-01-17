@@ -15,7 +15,7 @@ usr1 = User.create({
   biography: "Horses are kinda my thing.",
   image_url: "",
   country: "Uzbekistan",
-  age: "53",
+  age: "16",
   race: "Caucasian",
 })
 usr2 = User.create({
@@ -106,15 +106,8 @@ usr9 = User.create({
 #### -------------------------------------- ENTRIES -------------------------------------- entryX
 Entry.delete_all 
 entry1 = Entry.create({
-  general: "Ok so this is what happend
-
-I have an important test tomorrow, and I am almost bad. I am: mentally confused and feeling desesperated. It’s kinda different of anxiety, I feel like my brain is not working like it should. I also can feel it physically.
-
-Recently I’ve been disapointed with one of my friends. I realized that everytime I have problem with people that I believe in, I get in this mental situation again. And I also know that it usually get worse if I don’t treat it properly (from other experiences). 
-
-If I hadn’t gone through this before, I would be pretty bad right now. When this kind of thing happend 5 years ago, I used to end up in the hospital with cardiac arrhythmia and an unstoppable crying. Hopefully, I already know how to deal with it better. Also hopefully I have some cigarrets and some bears in the fridge. ",
-  gratitude: "My lysol, my cat Breakfast, rainbows and cloudy days.",
-  improvements: "I'm pretty much perfect and there's nothing really else for me to improve :)",
+  general: "Feeling disappointed with myself because I didn't get the grade I was hoping to get on the world history test. I thought I had put a lot of effort into studying and going over old quizzes and assignments but I think I just ended up focusing too much on part three for world history.",
+  improvements: "I could do a better job of recognizing my knowledge gaps and figuring out where my weaknesses are.",
   public: true,
   writer_id: usr1.id,
 created_at: DateTime.now - 5,
@@ -893,39 +886,54 @@ refl9 = Reflection.create({
   entry_id: entry31.id
 })
 refl10 = Reflection.create({
-  body: "I'm not sure how much longer I can resist Jack. I need to break things completely off with him.",
+  body: "She is getting better. I didn't think the doctors could make a difference, but I'm pleasantly surprised. Still there's a lot of progress to be made.",
   writer_id: usr3.id,
-  entry_id: entry3.id
+  entry_id: entry3.id,
+  created_at: DateTime.now - 32,
+  updated_at: DateTime.now - 32,
 })
 refl11 = Reflection.create({
-  body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
+  body: "After I talked to some friends I decided to start a study group where we can all test each other on different parts of material. Feeling optimistic that we can find figure out each our weaknesses and strength each other from there.",
   writer_id: usr1.id,
   entry_id: entry1.id,
   created_at: DateTime.now - 2,
   updated_at: DateTime.now - 2,
 })
-refl11 = Reflection.create({
-  body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
-  writer_id: usr1.id,
-  entry_id: entry1.id,
-  created_at: DateTime.now - 1,
-  updated_at: DateTime.now - 1,
+refl12 = Reflection.create({
+  body: "I've decided to stay in touch with as many people I have encountered and love. It's so rare to make a connection where you feel completely at home.",
+  writer_id: usr2.id,
+  entry_id: entry2.id,
+  created_at: DateTime.now - 15,
+  updated_at: DateTime.now - 15,
 })
-# refl12 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
-# refl13 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
-# refl14 = Reflection.create({
-#   body: "",
-#   writer_id: usr.id,
-#   entry_id: entry.id
-# })
+refl13 = Reflection.create({
+  body: "I can't stop listening to Oh Land--they're still my favorite indie pop band.",
+  writer_id: usr2.id,
+  entry_id: entry2.id,
+  created_at: DateTime.now - 2,
+  updated_at: DateTime.now - 2,
+})
+refl14 = Reflection.create({
+  body: "My story is really coming along. I've been listening to new music and records and I think that's been bringing in some fresh inspiration.",
+  writer_id: usr4.id,
+  entry_id: entry4.id,
+  created_at: DateTime.now - 71,
+  updated_at: DateTime.now - 71,
+})
+refl15 = Reflection.create({
+  body: "Note to self: stop watching Supernatural. The plot literally makes no sense.",
+  writer_id: usr4.id,
+  entry_id: entry4.id,
+  created_at: DateTime.now - 30,
+  updated_at: DateTime.now - 30,
+})
+refl16 = Reflection.create({
+  body: "I decided to see a pysch and get professional help. She's helping me consolidate the two personalities fighting inside me.",
+  writer_id: usr4.id,
+  entry_id: entry5.id,
+  created_at: DateTime.now - 88,
+  updated_at: DateTime.now - 88,
+})
 # refl15 = Reflection.create({
 #   body: "",
 #   writer_id: usr.id,
@@ -971,18 +979,18 @@ refl11 = Reflection.create({
 
 #### -------------------------------------- FOLLOWS -------------------------------------- followX
 Follow.delete_all
-follow1 = Follow.create({
-  follower_id: usr1.id,
-  followee_id: usr2.id,
-})
-follow2 = Follow.create({
-  follower_id: usr1.id,
-  followee_id: usr3.id,
-})
-follow3 = Follow.create({
-  follower_id: usr1.id,
-  followee_id: usr4.id,
-})
+# follow1 = Follow.create({
+#   follower_id: usr1.id,
+#   followee_id: usr2.id,
+# })
+# follow2 = Follow.create({
+#   follower_id: usr1.id,
+#   followee_id: usr3.id,
+# })
+# follow3 = Follow.create({
+#   follower_id: usr1.id,
+#   followee_id: usr4.id,
+# })
 
 # ---
 
@@ -1115,3 +1123,29 @@ goal3 = Goal.create({
   done: false,
   entry_id: entry35.id,
 })
+goal = Goal.create({
+  body: "",
+  done: false,
+  entry_id: entry.id,
+})
+goal = Goal.create({
+  body: "",
+  done: false,
+  entry_id: entry.id,
+})
+goal = Goal.create({
+  body: "",
+  done: false,
+  entry_id: entry.id,
+})
+goal = Goal.create({
+  body: "",
+  done: false,
+  entry_id: entry.id,
+})
+# goal = Goal.create({
+#   body: "",
+#   done: false,
+#   entry_id: entry.id,
+# })
+
