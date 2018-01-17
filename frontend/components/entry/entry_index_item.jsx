@@ -33,7 +33,7 @@ const entryOptions = (pathUsername, currentUser, entry, destroyEntry) => {
   if (pathUsername === currentUser.username) {
     return (
       <span className="entry-options">
-        <Link to={`/entries/${entry.id}/edit`}><i className='fa fa-entry-options fa-pencil-square-o fa-2x'/></Link><br />
+        <Link to={`/entries/${entry.id}/edit`}><i className='fa fa-entry-options fa-pencil-square-o fa-2x'/></Link>
         <i className='fa fa-entry-options fa-trash-o fa-2x' onClick={() => destroyEntry(entry.id)}/>
       </span>
     );

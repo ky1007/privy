@@ -112,8 +112,6 @@ I have an important test tomorrow, and I am almost bad. I am: mentally confused 
 
 Recently I’ve been disapointed with one of my friends. I realized that everytime I have problem with people that I believe in, I get in this mental situation again. And I also know that it usually get worse if I don’t treat it properly (from other experiences). 
 
-Now, I’ll have to wait 2 or 3 days to have time to see my psychologist. The episode with my friend happend on saturday. On that day I cried, and in the next one (sunday), by the end of the day I was doing ok. Today I wasn’t really caring or remembering the episode but I am bad and I think it has something to do with it.
-
 If I hadn’t gone through this before, I would be pretty bad right now. When this kind of thing happend 5 years ago, I used to end up in the hospital with cardiac arrhythmia and an unstoppable crying. Hopefully, I already know how to deal with it better. Also hopefully I have some cigarrets and some bears in the fridge. ",
   gratitude: "My lysol, my cat Breakfast, rainbows and cloudy days.",
   improvements: "I'm pretty much perfect and there's nothing really else for me to improve :)",
@@ -906,13 +904,13 @@ refl11 = Reflection.create({
   created_at: DateTime.now - 2,
   updated_at: DateTime.now - 2,
 })
-# refl11 = Reflection.create({
-#   body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
-#   writer_id: usr1.id,
-#   entry_id: entry1.id,
-#   created_at: DateTime.now - 2,
-#   updated_at: DateTime.now - 2,
-# })
+refl11 = Reflection.create({
+  body: "After I talked to some friends I start to feel much better and they helped me get on track with my study habits.",
+  writer_id: usr1.id,
+  entry_id: entry1.id,
+  created_at: DateTime.now - 1,
+  updated_at: DateTime.now - 1,
+})
 # refl12 = Reflection.create({
 #   body: "",
 #   writer_id: usr.id,
