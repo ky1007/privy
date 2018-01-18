@@ -64,11 +64,12 @@ class EntryShow extends React.Component {
   }
 
   showAuthor() {
-    const { writers, entry } = this.props;
+    const { writers, entry, currentUser } = this.props;
     if (writers && entry) {
+      const author = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}`;
       return (
-        <span>{writers[entry.writer_id].username}</span>
-      );
+        <span>{author}</span>
+      ); 
     }
     return null;
   }
@@ -79,7 +80,7 @@ class EntryShow extends React.Component {
     if (currentUser.id === entry.writer_id) {
       return (
         <form className="reflections-form">
-          <label> <h2>reflect back on this entry</h2>
+          <label> <h2>reflect back on your entry</h2>
           <textarea value={this.state.body}
                     onChange={this.update('body')}
                     placeholder="thoughts on your old self">
@@ -142,12 +143,15 @@ class EntryShow extends React.Component {
     const { general, gratitude, improvements, id, created_at, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
     // const author = writers[entry.writer_id].username;
+    const author = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}`;
+    const authorPossessive = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}'s`;
+
 
     return (
       <div className="main-container">
         <div className="entry-item-container">
           <h1><strong>{moment(created_at).format('MMMM Do YYYY')}</strong></h1>
-          <h2 className="entry-subheading">{this.showAuthor()}'s life {entryDate}</h2>
+          <h2 className="entry-subheading">{authorPossessive} life {entryDate}</h2>
           {/* <small>{this.showAuthor()}'s life {entryDate}</small> */}
           <main className="entry-item">
             <article className="entry-show">
@@ -155,7 +159,8 @@ class EntryShow extends React.Component {
               { isEmpty(improvements) ? <div /> : <section><h2>things {this.showAuthor()} wished to improve</h2>{improvements}</section> }
               { isEmpty(gratitude) ? <div /> : <section><h2>things {this.showAuthor()} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
-              <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {writers[entry.writer_id].username}'s diary</Link></strong><br />
+              <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {authorPossessive} diary</Link></strong><br />
+              {/* <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {writers[entry.writer_id].username}'s diary</Link></strong><br /> */}
               {this.showFollowToggle()}
               { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
             </article>
