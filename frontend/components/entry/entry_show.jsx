@@ -142,7 +142,6 @@ class EntryShow extends React.Component {
     const { currentUser, writers, entry } = this.props;
     const { general, gratitude, improvements, id, created_at, writer_id } = this.props.entry;
     const entryDate = moment(created_at).fromNow();
-    // const author = writers[entry.writer_id].username;
     const author = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}`;
     const authorPossessive = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}'s`;
     const pointOfView = entry.writer_id === currentUser.id ? 'you' : `${writers[entry.writer_id].username}`;
@@ -152,7 +151,6 @@ class EntryShow extends React.Component {
         <div className="entry-item-container">
           <h1><strong>{moment(created_at).format('MMMM Do YYYY')}</strong></h1>
           <h2 className="entry-subheading">{authorPossessive} life {entryDate}</h2>
-          {/* <small>{this.showAuthor()}'s life {entryDate}</small> */}
           <main className="entry-item">
             <article className="entry-show">
               <section><h2>thoughts</h2>{general}</section>
@@ -160,7 +158,6 @@ class EntryShow extends React.Component {
               { isEmpty(gratitude) ? null : <section><h2>things {pointOfView} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
               <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {authorPossessive} diary</Link></strong><br />
-              {/* <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {writers[entry.writer_id].username}'s diary</Link></strong><br /> */}
               {this.showFollowToggle()}
               { (currentUser.id === writer_id) ? <Link to={`/entries/${id}/edit`}>Edit Entry</Link> : null }
             </article>
