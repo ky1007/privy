@@ -11,12 +11,16 @@ export const toDate = (dateString) => {
   return new Date(year, month - 1, day);
 };
 
+const rounder = (timeDecimal) => {
+  
+}
+
 export const parseElapsedTime = (minutes) => {
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-  const weeks = Math.floor(days / 7);
-  const months = Math.floor(days / 30.5);
-  const years = Math.floor(365.25);
+  const hours = Math.round(minutes / 60);
+  const days = Math.round(hours / 24);
+  const weeks = Math.round(days / 7);
+  const months = Math.round(days / 30.5);
+  const years = Math.round(days / 365);
 
   if (minutes < 60) {
     return minutes === 1 ? `${minutes} minute` : `${minutes} minutes`;
