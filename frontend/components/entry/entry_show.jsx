@@ -145,8 +145,8 @@ class EntryShow extends React.Component {
     // const author = writers[entry.writer_id].username;
     const author = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}`;
     const authorPossessive = entry.writer_id === currentUser.id ? 'your' : `${writers[entry.writer_id].username}'s`;
-
-
+    const pointOfView = entry.writer_id === currentUser.id ? 'you' : `${writers[entry.writer_id].username}`;
+    
     return (
       <div className="main-container">
         <div className="entry-item-container">
@@ -156,8 +156,8 @@ class EntryShow extends React.Component {
           <main className="entry-item">
             <article className="entry-show">
               <section><h2>thoughts</h2>{general}</section>
-              { isEmpty(improvements) ? <div /> : <section><h2>things {this.showAuthor()} wished to improve</h2>{improvements}</section> }
-              { isEmpty(gratitude) ? <div /> : <section><h2>things {this.showAuthor()} felt grateful for</h2>{gratitude}</section> }
+              { isEmpty(improvements) ? null : <section><h2>things {pointOfView} wished to improve</h2>{improvements}</section> }
+              { isEmpty(gratitude) ? null : <section><h2>things {pointOfView} felt grateful for</h2>{gratitude}</section> }
               <GoalIndexContainer entryId={id} />
               <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {authorPossessive} diary</Link></strong><br />
               {/* <strong><Link className ="entry-links" to={`/${writers[entry.writer_id].username}/entries`}>Read the rest of {writers[entry.writer_id].username}'s diary</Link></strong><br /> */}

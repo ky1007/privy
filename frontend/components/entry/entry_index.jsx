@@ -65,7 +65,7 @@ class EntryIndex extends Component {
     return (
       <section className="profile-info">
         <div className="author">
-          <h1><strong>{pathUsername}'s</strong> Diary</h1>
+          <h1><strong>{pathUsername === currentUser.username ? 'Your' : pathUsername+ '\'s'}</strong> Diary</h1>
         </div>
 
         <div className="author-metadata">
