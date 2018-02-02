@@ -11,10 +11,6 @@ export const toDate = (dateString) => {
   return new Date(year, month - 1, day);
 };
 
-const rounder = (timeDecimal) => {
-  
-}
-
 export const parseElapsedTime = (minutes) => {
   const hours = Math.round(minutes / 60);
   const days = Math.round(hours / 24);

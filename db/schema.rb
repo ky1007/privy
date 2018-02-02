@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20171020190911) do
   create_table "goals", force: :cascade do |t|
     t.string "body"
     t.boolean "done"
-    t.integer "entry_id"
+    t.integer "entry_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entry_id"], name: "index_goals_on_entry_id"

@@ -68,7 +68,7 @@ class EntryForm extends React.Component {
         captureGoal = createGoal(createdEntry.goals[goalId]);
       }
     }
-    return captureGoal;
+    return captureGoal; 
   }
 
   handleSubmit(e) {
@@ -77,7 +77,7 @@ class EntryForm extends React.Component {
     const { entry, goals } = this.state;
     const { createEntry } = this.props;
 
-    if (entry.general !== '' && goals.goal1.body != '') {
+    if (entry.general !== '' && goals.goal1.body !== '') {
       createEntry(entry)
         .then(entry => this.pullEntryId(entry))
         .then(createdEntry => this.submitGoals(createdEntry))
