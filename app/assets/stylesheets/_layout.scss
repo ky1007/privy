@@ -421,10 +421,23 @@ main .entry-list-items {
     right: 0.8rem;
   }
   .nav-links {
-    line-height: 0.8rem;
+    // line-height: 0.8rem;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    top: 4rem;
+    background: white;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 4px;
   }
   nav a {
-    font-size: 0.3744rem;
+    // font-size: 0.3744rem;
+    font-size: 0.9744rem;
   }
   // .logout-button {
   //   background-color: #fff;
