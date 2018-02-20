@@ -1,5 +1,4 @@
 body {
-  // background: url(https://res.cloudinary.com/dtxfmomdh/image/upload/v1500522720/map_gp66el.svg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -104,8 +103,9 @@ nav {
   right: 0;
   top: 4rem;
   background: white;
-  border: 1px solid #999;
+  border: 1px solid #eee;
   padding: 1rem;
+  border-radius: 4px;
 }
 
 .nav-flow {
@@ -175,22 +175,6 @@ nav {
   background-color: #fff;
   padding: 4rem 0rem;
 }
-
-// ---- DEPRECATED FLEX APPROACH - GRID IS PREFERRED
-// .feature { 
-//   flex: 1; 
-//   padding: 3rem 0.8rem;
-//   min-width: 240px;
-//   display: flex;
-//   flex-direction: row;
-// }
-
-// .feature-image {
-//   flex: 1;
-// }
-// .feature-description {
-//   flex: 3;
-// }
 
 // --- LOGIN / LOGOUT form --- 
 .session-form-container {
@@ -354,6 +338,7 @@ main .entry-list-items {
   height: 3px;
 }
 
+// --- MENU TOOLS ---
 .invisible {
   display: none;
 }
@@ -362,6 +347,12 @@ main .entry-list-items {
   display: block;
 }
 
+.lighten {
+  color: #eee;
+}
+
+
+// --- ### RESPONSIVE DESIGN ### ---
 @media (max-width: 740px) {
   .entry-index-container { 
     flex-direction: column;
@@ -429,26 +420,20 @@ main .entry-list-items {
     position: absolute;
     right: 0.8rem;
   }
-  .nav-logo {
-    display: none;
-  }
   .nav-links {
     line-height: 0.8rem;
   }
-  // .nav-links li {
-
-  // }
   nav a {
     font-size: 0.3744rem;
   }
-  .logout-button {
-    background-color: #fff;
-    padding: 0; 
-  }
-  .logout-button:hover {
-    background-color: #fff;
-    color: $darker-gray;
-  }
+  // .logout-button {
+  //   background-color: #fff;
+  //   padding: 0; 
+  // }
+  // .logout-button:hover {
+  //   background-color: #fff;
+  //   color: $darker-gray;
+  // }
   .welcome-heading {
     padding-top: 2rem;
   }
