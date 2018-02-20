@@ -17,11 +17,27 @@ class LoggedInLinks extends React.Component {
       showNav: false,
     };
     this.menuVisibilityToggle = this.menuVisibilityToggle.bind(this);
+    this.handleMenuClick = this.handleMenuClick.bind(this);
+  }
+
+  handleMenuClick(e) {
+    if (e.target !== document.getElementsByClassName('fa-bars')[0]) {
+      this.setState({ showNav: false });
+      window.removeEventListener('click', this.handleMenuClick);
+    }
   }
 
   menuVisibilityToggle(e) {
     e.preventDefault();
-    this.setState({ showNav: !this.state.showNav });
+    
+    if (!this.state.showNav) {
+      window.addEventListener('click', this.handleMenuClick);
+    } 
+    this.setState({ showNav: !this.state.showNav }, );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('click', this.handleMenuClick);
   }
 
   render() {
