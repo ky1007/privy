@@ -12,6 +12,7 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   position: relative;
+  z-index: 1;
 }
 
 // --- COLUMN structuring ---
@@ -96,15 +97,23 @@ nav {
 }
 
 .nav-links {
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-around;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  background: white;
+  border: 1px solid #999;
+  padding: 1rem;
 }
 
 .nav-flow {
   // background-color: #222;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  z-index: 99;
+  position: relative;
 }
 
 .nav-pop {
@@ -426,6 +435,9 @@ main .entry-list-items {
   .nav-links {
     line-height: 0.8rem;
   }
+  // .nav-links li {
+
+  // }
   nav a {
     font-size: 0.3744rem;
   }

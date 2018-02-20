@@ -203,8 +203,14 @@ section h2 {
   padding-bottom: 0.14rem;
 }
 
-li { list-style: none; }
-.nav-links li { padding-left: 1rem; }
+li { 
+  list-style: none; 
+}
+.nav-links li { 
+  padding: 1rem;
+  display: block;
+  z-index: 99;
+}
 
 /* -- SHOWING an ENTRY's AUTHOR -- */
 .country, .age, .race {
