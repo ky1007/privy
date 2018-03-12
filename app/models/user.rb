@@ -15,10 +15,12 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Bookmark
 
+  # a user has many other users they are following
   has_many :out_follows,
     foreign_key: :follower_id,
     class_name: :Follow
 
+  # a user has many other users that follow them
   has_many :in_follows,
     foreign_key: :followee_id,
     class_name: :Follow

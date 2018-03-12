@@ -2,7 +2,7 @@ class Api::EntriesController < ApplicationController
   def index
     if params[:username] # && params[:latest_entries]
       user = User.find_by(username: params[:username])
-      @entries = user.entries.limit(10)
+      @entries = user.entries.order(created_at: :asc).limit(10)
       render :index
     elsif params[:user_id] 
       @bookmarks = Bookmark.where(user_id: params[:user_id]).pluck(:entry_id)

@@ -11,7 +11,7 @@ class EntryIndex extends Component {
     
     if (pathUsername) {
       return fetchEntries(pathUsername);
-    } else if (pathname === '/feed') {``
+    } else if (pathname === '/feed') {
       return fetchFeedEntries(currentUser.id);
     } else if (pathname === '/bookmarks') {
       return fetchBookmarkedEntries(currentUser.id);
